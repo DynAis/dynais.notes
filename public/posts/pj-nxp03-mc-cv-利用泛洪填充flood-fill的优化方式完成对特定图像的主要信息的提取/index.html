@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 | DynAis</title>
+<meta name="keywords" content="单片机, 计算机视觉">
+<meta name="description" content="小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+前言：
+小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+ 利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 完成目标： 处理前
+[图像已丢失]
+处理后
+[图像已丢失]
+可以观察到，背景中多余的信息被算法过滤掉了。
+思路 这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。
+问题与解决方案 1.内存占用过大 首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。
+解
+简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。
+2.数据类型使用错误/不匹配 转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。
+ 参考文献:">
+<meta name="author" content="">
+<link rel="canonical" href="https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dynais.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取" />
+<meta property="og:description" content="小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+前言：
+小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+ 利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 完成目标： 处理前
+[图像已丢失]
+处理后
+[图像已丢失]
+可以观察到，背景中多余的信息被算法过滤掉了。
+思路 这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。
+问题与解决方案 1.内存占用过大 首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。
+解
+简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。
+2.数据类型使用错误/不匹配 转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。
+ 参考文献:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-12-09T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-12-09T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取"/>
+<meta name="twitter:description" content="小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+前言：
+小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+ 利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 完成目标： 处理前
+[图像已丢失]
+处理后
+[图像已丢失]
+可以观察到，背景中多余的信息被算法过滤掉了。
+思路 这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。
+问题与解决方案 1.内存占用过大 首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。
+解
+简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。
+2.数据类型使用错误/不匹配 转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。
+ 参考文献:"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dynais.xyz/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取",
+      "item": "https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取",
+  "name": "利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取",
+  "description": "小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。\n已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。\n前言：\n小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。\n已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。\n 利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 完成目标： 处理前\n[图像已丢失]\n处理后\n[图像已丢失]\n可以观察到，背景中多余的信息被算法过滤掉了。\n思路 这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。\n问题与解决方案 1.内存占用过大 首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。\n解\n简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。\n2.数据类型使用错误/不匹配 转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。\n 参考文献:",
+  "keywords": [
+    "单片机", "计算机视觉"
+  ],
+  "articleBody": "小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。\n已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。\n前言：\n小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。\n已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。\n 利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 完成目标： 处理前\n[图像已丢失]\n处理后\n[图像已丢失]\n可以观察到，背景中多余的信息被算法过滤掉了。\n思路 这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。\n问题与解决方案 1.内存占用过大 首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。\n解\n简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。\n2.数据类型使用错误/不匹配 转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。\n 参考文献:\n",
+  "wordCount" : "39",
+  "inLanguage": "en",
+  "datePublished": "2019-12-09T00:00:00Z",
+  "dateModified": "2019-12-09T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DynAis",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dynais.xyz/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取
+    </h1>
+    <div class="post-meta"><span title='2019-12-09 00:00:00 +0000 UTC'>December 9, 2019</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。</p>
+<p>已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。</p>
+<!-- raw HTML omitted -->
+<p><strong>前言：</strong></p>
+<p>小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。</p>
+<p>已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。</p>
+<hr>
+<h1 id="利用泛洪填充flood-fill的优化方式完成对特定图像的主要信息的提取">利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取<a hidden class="anchor" aria-hidden="true" href="#利用泛洪填充flood-fill的优化方式完成对特定图像的主要信息的提取">#</a></h1>
+<h3 id="完成目标">完成目标：<a hidden class="anchor" aria-hidden="true" href="#完成目标">#</a></h3>
+<p><strong>处理前</strong></p>
+<p>[图像已丢失]</p>
+<p><strong>处理后</strong></p>
+<p>[图像已丢失]</p>
+<p>可以观察到，背景中多余的信息被算法过滤掉了。</p>
+<h2 id="思路">思路<a hidden class="anchor" aria-hidden="true" href="#思路">#</a></h2>
+<p>这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。</p>
+<!-- raw HTML omitted -->
+<h2 id="问题与解决方案">问题与解决方案<a hidden class="anchor" aria-hidden="true" href="#问题与解决方案">#</a></h2>
+<h3 id="1内存占用过大">1.内存占用过大<a hidden class="anchor" aria-hidden="true" href="#1内存占用过大">#</a></h3>
+<p>首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。</p>
+<p><strong>解</strong></p>
+<p>简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。</p>
+<h3 id="2数据类型使用错误不匹配">2.数据类型使用错误/不匹配<a hidden class="anchor" aria-hidden="true" href="#2数据类型使用错误不匹配">#</a></h3>
+<p>转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。</p>
+<hr>
+<p><strong>参考文献:</strong></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dynais.xyz/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></li>
+      <li><a href="https://dynais.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

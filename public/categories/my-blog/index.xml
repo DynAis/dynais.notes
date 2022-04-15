@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>my-blog on DynAis</title>
+    <link>https://dynais.xyz/categories/my-blog/</link>
+    <description>Recent content in my-blog on DynAis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 23 Jul 2020 10:40:06 +0000</lastBuildDate><atom:link href="https://dynais.xyz/categories/my-blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[转载]Hexo&#43;Github Page搭建博客教程</title>
+      <link>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 23 Jul 2020 10:40:06 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</guid>
+      <description>前往原文
+前言 博客有第三方平台，也可以自建，比较早的有博客园、CSDN，近几年新兴的也比较多诸如：WordPress、segmentFault、简书、掘金、知乎专栏、Github Page 等等。
+这次我要说的就是 Github Page + Hexo 搭建个人博客的方式！Github Page 是 Github 提供的一种免费的静态网页托管服务（所以想想免费的空间不用也挺浪费的哈哈哈），可以用来托管博客、项目官网等静态网页。支持 Jekyll、Hugo、Hexo 编译静态资源，这次我们的主角就是 Hexo 了，具体的内容下面在文章内介绍。
+下面就开始吧~
+准备环境 准备 node 和 git 环境， 首先，安装 NodeJS，因为 Hexo 是基于 Node.js 驱动的一款博客框架，相比起前面提到过的 Jekyll 框架更快更简洁，因为天*朝网络被墙的原因尝试过安装 Jekyll 失败而放弃了。 然后，安装 git，一个分布式版本控制系统，用于项目的版本控制管理，作者是 Linux 之父。如果 Git 还不熟悉可以参考廖雪峰大神的 Git 教程。
+两个工具不同的平台安装方法有所不一样，可自行了解按步骤安装，这里不详述了。安装成功后打开git bash（Windowns）或者终端（Mac），下方中将统一称为命令行。 在命令行中输入相应命令验证是否成功，如果成功会有相应的版本号。
+git version node -v npm -v 安装 Hexo 如果以上环境准备好了就可以使用 npm 开始安装 Hexo 了。也可查看 Hexo 的详细文档。 在命令行输入执行以下命令：
+npm install -g hexo-cli 安装 Hexo 完成后，再执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</description>
+    </item>
+    
+  </channel>
+</rss>

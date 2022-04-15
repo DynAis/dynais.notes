@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>OpenCV中人脸识别的Haar实现 | DynAis</title>
+<meta name="keywords" content="OpenCV, 数字图像处理">
+<meta name="description" content="本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+项目总结_人脸识别的Haar实现 项目历时:	2020.2.3 - 2020.2.5 负责人:	Dynais 项目花费:	无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+目录   第一部分	部分原理粗解
+ 1.1	图像压缩 1.2 直方图均衡化 1.3 Haar特征检测    第二部分 软件结构设计与实现
+  第三部分 难点与优化方法
+ 3.1 难点一:	面部检测速度过慢    第四部分 总结
+ 4.1 不足之处 4.2 总结    第五部分 参考文献">
+<meta name="author" content="">
+<link rel="canonical" href="https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dynais.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="OpenCV中人脸识别的Haar实现" />
+<meta property="og:description" content="本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+项目总结_人脸识别的Haar实现 项目历时:	2020.2.3 - 2020.2.5 负责人:	Dynais 项目花费:	无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+目录   第一部分	部分原理粗解
+ 1.1	图像压缩 1.2 直方图均衡化 1.3 Haar特征检测    第二部分 软件结构设计与实现
+  第三部分 难点与优化方法
+ 3.1 难点一:	面部检测速度过慢    第四部分 总结
+ 4.1 不足之处 4.2 总结    第五部分 参考文献" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenCV中人脸识别的Haar实现"/>
+<meta name="twitter:description" content="本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+项目总结_人脸识别的Haar实现 项目历时:	2020.2.3 - 2020.2.5 负责人:	Dynais 项目花费:	无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+目录   第一部分	部分原理粗解
+ 1.1	图像压缩 1.2 直方图均衡化 1.3 Haar特征检测    第二部分 软件结构设计与实现
+  第三部分 难点与优化方法
+ 3.1 难点一:	面部检测速度过慢    第四部分 总结
+ 4.1 不足之处 4.2 总结    第五部分 参考文献"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dynais.xyz/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "OpenCV中人脸识别的Haar实现",
+      "item": "https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OpenCV中人脸识别的Haar实现",
+  "name": "OpenCV中人脸识别的Haar实现",
+  "description": "本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.\n项目总结_人脸识别的Haar实现 项目历时:\t2020.2.3 - 2020.2.5 负责人:\tDynais 项目花费:\t无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.\n目录   第一部分\t部分原理粗解\n 1.1\t图像压缩 1.2 直方图均衡化 1.3 Haar特征检测    第二部分 软件结构设计与实现\n  第三部分 难点与优化方法\n 3.1 难点一:\t面部检测速度过慢    第四部分 总结\n 4.1 不足之处 4.2 总结    第五部分 参考文献",
+  "keywords": [
+    "OpenCV", "数字图像处理"
+  ],
+  "articleBody": "本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.\n项目总结_人脸识别的Haar实现 项目历时:\t2020.2.3 - 2020.2.5 负责人:\tDynais 项目花费:\t无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.\n目录   第一部分\t部分原理粗解\n 1.1\t图像压缩 1.2 直方图均衡化 1.3 Haar特征检测    第二部分 软件结构设计与实现\n  第三部分 难点与优化方法\n 3.1 难点一:\t面部检测速度过慢    第四部分 总结\n 4.1 不足之处 4.2 总结    第五部分 参考文献\n   第一部分 部分原理粗解 1.1 图像压缩 对原图多个像素求和后取平均值, 得到一个新的像素值, 作为目标图像的像素值, 这样得到的新图像就是经过了压缩的原图像, 原理过于简单就不详细展开\n1.2 直方图均衡化 直方图 建立一个桶, 将一幅图像的某一个通道的像素值进行桶排序并可视化, 呈现出来的图像称为直方图\n一幅灰度图像的直方图通常如下:\n[图没了]\n直方图可以直观的反应图像上的像素值分布情况, 如:\n直方图均衡化\n直方图均衡化是将原图像通过某种变换，得到一幅灰度直方图为均匀分布的新图像的方法.\n直方图均衡化方法的基本思想是对在图像中像素个数多的灰度级进行展宽，而对像素个数少的灰度级进行缩减. 从而达到清晰图像的目的.\n将原图的像素值进行重新映射, 使直方图分布更加均匀, 达到了加强图像对比度的目的.\n具体解析见:\n直方图均衡化\n1.3 Haar特征检测 Haar 特征检测部分, 由于已经有大量的博客详细描述过了, 所以不再浪费时间写\n值得一提的是原作者的论文《Robust Real-Time Face Detection》是人脸检测的经典论文, 虽然读起来很困难(更何况是英文) 但还是值得一读, 如果希望深入了解的话\n更多博客文章: 印象笔记关键字: Haar\n 第二部分 软件结构设计与实现方法 文件夹\"OpenCV_FaceDetectPro\"中包含了两个.cpp文件:\n OpenCV_Process.cpp\t包括人脸检测函数及其相关调用函数 OpenCV_main.cpp 程序主入口  人脸检测流程 人脸检测(优化后的版本)的步骤分为:\n  识别标志位, 判断当前状态是检测还是跟踪\n  对摄像头当前采集图像进行分割\n  灰度化\n  压缩\n  直方图均衡化\n  Haar特征检测\n  返回人脸位置\n  相关实现 状态识别 由于时间复杂度问题(在下一章会说到), 采用了检测和跟踪分开的思路, 主要的思路是降低输入图像的大小. 采用每次检测完人脸后进行标志的判断为方法, 确定程序运行在那种状态下.\n对于检测和跟踪模式, 使用了不同的思路来进行图像分割\nHaar 直接使用了现成的数据, 自己并不会训练, 直接调用OpenCV的 CascadeClassifier 类实现\n 第三部分 难点与优化方法 3.1 难点一: 面部检测速度过慢 未优化前的程序, 每次读入摄像头图像后直接进行灰度化与直方图均衡化, 然后进行全图的面部检测, 并且没有面部跟踪的实现, 导致每次图像的处理时间非常长, 达到了每帧图像0.8秒.\n针对时间过长的问题, 首先引入了面部识别的标志位, 每次程序识别到面部时, 打开标志位, 然后在接下来的循环里只根据上次判断的面部位置截取小块图像进行判断,大大降低处理时间\n其次, 使用图像压缩, 使待处理图像处于一个大小和准确度都可以接受的点上.\n引入后, 面部检测的时间从0.8秒降低到0.04秒\n部分代码:\n图像压缩(前置函数为自己写的areaAvarage())\n/**************************************************** * Function: * 用于图像压缩函数zipImg, 基于周边像素求出当前像素值 * * Note: * 算法用左上像素求, 不知道会不会失真 * * ******************************************************/ uchar areaAvarage(Mat src, Point pos, int channal, int gain) { int pixel = 0; if (src.channels() != 1) { int i, j; for (i = 0; i (pos.y - j, pos.x - i)[channal]; } } pixel /= (gain * gain); return saturate_cast(pixel); } else { int i, j; for (i = 0; i (pos.y - j, pos.x - i); } } pixel /= (gain * gain); return saturate_cast(pixel); } } /**************************************************** * Function: * 图像压缩 gain^2 倍,长宽变为原先 1/gain * * Note: *\t速度还是不够理想 * 留出了一圈白边 * ******************************************************/ void zipImg(Mat\u0026 src, Mat\u0026 dst, int gain) { dst = Mat(src.size() / gain, src.type()); int i, j; if (src.channels() != 1) { //遍历 for (i = 1; i (j, i) = { b,g,r }; } } } else { for (i = 1; i (j, i) = g; } } } }  第四部分 总结 4.1 不足之处  虽然采用检测与跟踪同样裁剪画面的方法, 但是效果其实并不理想, 速度提升微弱 面部检测对侧脸准确性几乎没有 光照优化有待加强 速度还是不够快 脸太大或太小检测不了  4.2 总结 总的来说这次项目还是挺成功的, 在几天以内就完成了, 虽然借由了大量API, 但原理也还是有所了解的. 接下来的任务是使他能够在树莓派上也能正常运行.\n",
+  "wordCount" : "455",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DynAis",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dynais.xyz/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      OpenCV中人脸识别的Haar实现
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><p>本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.</p>
+<!-- raw HTML omitted -->
+<h2 id="项目总结_人脸识别的haar实现">项目总结_人脸识别的Haar实现<a hidden class="anchor" aria-hidden="true" href="#项目总结_人脸识别的haar实现">#</a></h2>
+<h5 id="项目历时202023---202025">项目历时:	2020.2.3 - 2020.2.5<a hidden class="anchor" aria-hidden="true" href="#项目历时202023---202025">#</a></h5>
+<h5 id="负责人dynais">负责人:	Dynais<a hidden class="anchor" aria-hidden="true" href="#负责人dynais">#</a></h5>
+<h5 id="项目花费无">项目花费:	无<a hidden class="anchor" aria-hidden="true" href="#项目花费无">#</a></h5>
+<h5 id="报告撰写时间-202026">报告撰写时间: 2020.2.6<a hidden class="anchor" aria-hidden="true" href="#报告撰写时间-202026">#</a></h5>
+<hr>
+<h3 id="项目概述">项目概述<a hidden class="anchor" aria-hidden="true" href="#项目概述">#</a></h3>
+<p>本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.</p>
+<h3 id="目录">目录<a hidden class="anchor" aria-hidden="true" href="#目录">#</a></h3>
+<ul>
+<li>
+<p><strong>第一部分</strong>	部分原理粗解</p>
+<ul>
+<li>1.1	图像压缩</li>
+<li>1.2    直方图均衡化</li>
+<li>1.3    Haar特征检测</li>
+</ul>
+</li>
+<li>
+<p><strong>第二部分</strong>    软件结构设计与实现</p>
+</li>
+<li>
+<p><strong>第三部分</strong>    难点与优化方法</p>
+<ul>
+<li>3.1    难点一:	面部检测速度过慢</li>
+</ul>
+</li>
+<li>
+<p><strong>第四部分</strong>    总结</p>
+<ul>
+<li>4.1    不足之处</li>
+<li>4.2    总结</li>
+</ul>
+</li>
+<li>
+<p><strong>第五部分</strong>    参考文献</p>
+</li>
+</ul>
+<hr>
+<h2 id="第一部分-部分原理粗解">第一部分 部分原理粗解<a hidden class="anchor" aria-hidden="true" href="#第一部分-部分原理粗解">#</a></h2>
+<h3 id="11-图像压缩">1.1 图像压缩<a hidden class="anchor" aria-hidden="true" href="#11-图像压缩">#</a></h3>
+<p>对原图多个像素求和后取平均值, 得到一个新的像素值, 作为目标图像的像素值, 这样得到的新图像就是经过了压缩的原图像, 原理过于简单就不详细展开</p>
+<h3 id="12-直方图均衡化">1.2 直方图均衡化<a hidden class="anchor" aria-hidden="true" href="#12-直方图均衡化">#</a></h3>
+<h5 id="直方图">直方图<a hidden class="anchor" aria-hidden="true" href="#直方图">#</a></h5>
+<p>建立一个桶, 将一幅图像的某一个通道的像素值进行桶排序并可视化, 呈现出来的图像称为直方图</p>
+<p>一幅灰度图像的直方图通常如下:</p>
+<p>[图没了]</p>
+<p>直方图可以直观的反应图像上的像素值分布情况, 如:</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/20181123160536532.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NjaHdlaW5fdmFu,size_16,color_FFFFFF,t_70" alt="图1 4种基本的图像类型：暗图像、亮图像、低对比度图像、高对比度图像及其对应的直方图"  />
+</p>
+<p><strong>直方图均衡化</strong></p>
+<p>直方图均衡化是将原图像通过某种变换，得到一幅灰度直方图为均匀分布的新图像的方法.</p>
+<p>直方图均衡化方法的基本思想是对在图像中像素个数多的灰度级进行展宽，而对像素个数少的灰度级进行缩减. 从而达到清晰图像的目的.</p>
+<p><strong>将原图的像素值进行重新映射, 使直方图分布更加均匀, 达到了加强图像对比度的目的.</strong></p>
+<p>具体解析见:</p>
+<p><a href="https://blog.csdn.net/schwein_van/article/details/84336633">直方图均衡化</a></p>
+<h3 id="13-haar特征检测">1.3 Haar特征检测<a hidden class="anchor" aria-hidden="true" href="#13-haar特征检测">#</a></h3>
+<p>Haar 特征检测部分, 由于已经有大量的博客详细描述过了, 所以不再浪费时间写</p>
+<p>值得一提的是原作者的论文《Robust Real-Time Face Detection》是人脸检测的经典论文, 虽然读起来很困难(更何况是英文) 但还是值得一读, 如果希望深入了解的话</p>
+<p>更多博客文章: 印象笔记关键字: <strong>Haar</strong></p>
+<hr>
+<h2 id="第二部分-软件结构设计与实现方法">第二部分 软件结构设计与实现方法<a hidden class="anchor" aria-hidden="true" href="#第二部分-软件结构设计与实现方法">#</a></h2>
+<p>文件夹&quot;OpenCV_FaceDetectPro&quot;中包含了两个.cpp文件:</p>
+<ul>
+<li>OpenCV_Process.cpp	包括人脸检测函数及其相关调用函数</li>
+<li>OpenCV_main.cpp    程序主入口</li>
+</ul>
+<h3 id="人脸检测流程">人脸检测流程<a hidden class="anchor" aria-hidden="true" href="#人脸检测流程">#</a></h3>
+<p>人脸检测(优化后的版本)的步骤分为:</p>
+<ul>
+<li>
+<p>识别标志位, 判断当前状态是检测还是跟踪</p>
+</li>
+<li>
+<p>对摄像头当前采集图像进行分割</p>
+</li>
+<li>
+<p>灰度化</p>
+</li>
+<li>
+<p>压缩</p>
+</li>
+<li>
+<p>直方图均衡化</p>
+</li>
+<li>
+<p>Haar特征检测</p>
+</li>
+<li>
+<p>返回人脸位置</p>
+</li>
+</ul>
+<h3 id="相关实现">相关实现<a hidden class="anchor" aria-hidden="true" href="#相关实现">#</a></h3>
+<h5 id="状态识别">状态识别<a hidden class="anchor" aria-hidden="true" href="#状态识别">#</a></h5>
+<p>由于时间复杂度问题(在下一章会说到), 采用了检测和跟踪分开的思路, 主要的思路是降低输入图像的大小. 采用每次检测完人脸后进行标志的判断为方法, 确定程序运行在那种状态下.</p>
+<p>对于检测和跟踪模式, 使用了不同的思路来进行图像分割</p>
+<h5 id="haar">Haar<a hidden class="anchor" aria-hidden="true" href="#haar">#</a></h5>
+<p>直接使用了现成的数据, 自己并不会训练, 直接调用OpenCV的 CascadeClassifier 类实现</p>
+<hr>
+<h2 id="第三部分-难点与优化方法">第三部分 难点与优化方法<a hidden class="anchor" aria-hidden="true" href="#第三部分-难点与优化方法">#</a></h2>
+<h3 id="31-难点一-面部检测速度过慢">3.1 难点一: 面部检测速度过慢<a hidden class="anchor" aria-hidden="true" href="#31-难点一-面部检测速度过慢">#</a></h3>
+<p>未优化前的程序, 每次读入摄像头图像后直接进行灰度化与直方图均衡化, 然后进行全图的面部检测, 并且没有面部跟踪的实现, 导致每次图像的处理时间非常长, 达到了每帧图像0.8秒.</p>
+<p>针对时间过长的问题, 首先引入了面部识别的标志位, 每次程序识别到面部时, 打开标志位, 然后在接下来的循环里只根据上次判断的面部位置截取小块图像进行判断,大大降低处理时间</p>
+<p>其次, 使用图像压缩, 使待处理图像处于一个大小和准确度都可以接受的点上.</p>
+<p><strong>引入后, 面部检测的时间从0.8秒降低到0.04秒</strong></p>
+<p><strong>部分代码:</strong></p>
+<p><strong>图像压缩</strong>(前置函数为自己写的areaAvarage())</p>
+<pre tabindex="0"><code>/****************************************************
+*   Function:
+*   用于图像压缩函数zipImg, 基于周边像素求出当前像素值
+*
+*   Note:
+*   算法用左上像素求, 不知道会不会失真
+*
+*
+******************************************************/
+
+uchar areaAvarage(Mat src, Point pos, int channal, int gain) {
+    int pixel = 0;
+
+    if (src.channels() != 1) {
+        int i, j;
+        for (i = 0; i &lt; gain; i++) {
+            for (j = 0; j &lt; gain; j++) {
+                pixel += src.at&lt;Vec3b&gt;(pos.y - j, pos.x - i)[channal];
+            }
+        }
+        pixel /= (gain * gain);
+        return saturate_cast&lt;uchar&gt;(pixel);
+    }
+    else {
+        int i, j;
+        for (i = 0; i &lt; gain; i++) {
+            for (j = 0; j &lt; gain; j++) {
+                pixel += src.at&lt;uchar&gt;(pos.y - j, pos.x - i);
+            }
+        }
+        pixel /= (gain * gain);
+        return saturate_cast&lt;uchar&gt;(pixel);
+    }
+}
+
+
+
+/****************************************************
+*   Function:
+*   图像压缩 gain^2 倍,长宽变为原先 1/gain
+*
+*   Note:
+*	速度还是不够理想
+*   留出了一圈白边
+*
+******************************************************/
+
+void zipImg(Mat&amp; src, Mat&amp; dst, int gain) {
+    dst = Mat(src.size() / gain, src.type());
+    int i, j;
+
+    if (src.channels() != 1) {
+        //遍历
+        for (i = 1; i &lt; dst.cols - 1; i++) {
+            for (j = 1; j &lt; dst.rows - 1; j++) {
+                uchar b, g, r;
+                int realpos_x = i * gain;
+                int realpos_y = j * gain;
+                Point pos(realpos_x, realpos_y);
+
+                //对周边像素求均值,赋值给新图
+                b = areaAvarage(src, pos, 0, gain);
+                g = areaAvarage(src, pos, 1, gain);
+                r = areaAvarage(src, pos, 2, gain);
+                dst.at&lt;Vec3b&gt;(j, i) = { b,g,r };
+            }
+        }
+    }
+    else {
+        for (i = 1; i &lt; dst.cols - 1; i++) {
+            for (j = 1; j &lt; dst.rows - 1; j++) {
+                uchar g;
+                int realpos_x = i * gain;
+                int realpos_y = j * gain;
+                Point pos(realpos_x, realpos_y);
+
+                //对周边像素求均值,赋值给新图
+                g = areaAvarage(src, pos, 1, gain);
+                dst.at&lt;uchar&gt;(j, i) = g;
+            }
+        }
+    }
+}
+</code></pre><hr>
+<h2 id="第四部分-总结">第四部分 总结<a hidden class="anchor" aria-hidden="true" href="#第四部分-总结">#</a></h2>
+<h3 id="41----不足之处">4.1    不足之处<a hidden class="anchor" aria-hidden="true" href="#41----不足之处">#</a></h3>
+<ul>
+<li>虽然采用检测与跟踪同样裁剪画面的方法, 但是效果其实并不理想, 速度提升微弱</li>
+<li>面部检测对侧脸准确性几乎没有</li>
+<li>光照优化有待加强</li>
+<li>速度还是不够快</li>
+<li>脸太大或太小检测不了</li>
+</ul>
+<h3 id="42----总结">4.2    总结<a hidden class="anchor" aria-hidden="true" href="#42----总结">#</a></h3>
+<p>总的来说这次项目还是挺成功的, 在几天以内就完成了, 虽然借由了大量API, 但原理也还是有所了解的. 接下来的任务是使他能够在树莓派上也能正常运行.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dynais.xyz/tags/opencv/">OpenCV</a></li>
+      <li><a href="https://dynais.xyz/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

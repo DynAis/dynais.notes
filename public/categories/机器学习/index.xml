@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>机器学习 on DynAis</title>
+    <link>https://dynais.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 机器学习 on DynAis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线性回归模型分析</title>
+      <link>https://dynais.xyz/posts/nt-ml-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90/</link>
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-ml-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;线性回归是回归问题中的一种，线性回归假设目标值与特征之间线性相关，即满足一个多元一次方程。通过构建损失函数，来求解损失函数最小时的参数 $w$ 和$b$。通常我们可以表达成如下公式：
+$$
+\hat{y} = wX + b 
+$$
+$\hat{y}$ 为预测值，自变量 $x$ 和因变量 $y$ 是已知的，而我们想实现的是预测新增一个 $x$ ，其对应的 $y$ 是多少。因此，为了构建这个函数关系，目标是通过已知数据点，求解线性模型中 $w$ 和 $b$ 两个参数。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;1线性回归概述&#34;&gt;1.线性回归概述&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;线性回归是回归问题中的一种，线性回归假设目标值与特征之间线性相关，即满足一个多元一次方程。通过构建损失函数，来求解损失函数最小时的参数 $w$ 和$b$。通常我们可以表达成如下公式：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{equation}&lt;/p&gt;
+&lt;p&gt;\hat{y} = wX + b \tag{1}&lt;/p&gt;
+&lt;p&gt;\end{equation}
+$$&lt;/p&gt;
+&lt;p&gt;$\hat{y}$ 为预测值，自变量 $x$ 和因变量 $y$ 是已知的，而我们想实现的是预测新增一个 $x$ ，其对应的 $y$ 是多少。因此，为了构建这个函数关系，目标是通过已知数据点，求解线性模型中 $w$ 和 $b$ 两个参数。&lt;/p&gt;
+&lt;p&gt;为此, 线性回归分为两个部分, 向前传播和向后传播, 向前传播负责验证当前参数下对数据的拟合程度, 而向后传播通过在向前传播内得到的数据对参数进行优化&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

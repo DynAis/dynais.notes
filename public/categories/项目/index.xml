@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>项目 on DynAis</title>
+    <link>https://dynais.xyz/categories/%E9%A1%B9%E7%9B%AE/</link>
+    <description>Recent content in 项目 on DynAis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 23 Jul 2020 10:40:06 +0000</lastBuildDate><atom:link href="https://dynais.xyz/categories/%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[转载]Hexo&#43;Github Page搭建博客教程</title>
+      <link>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 23 Jul 2020 10:40:06 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</guid>
+      <description>前往原文
+前言 博客有第三方平台，也可以自建，比较早的有博客园、CSDN，近几年新兴的也比较多诸如：WordPress、segmentFault、简书、掘金、知乎专栏、Github Page 等等。
+这次我要说的就是 Github Page + Hexo 搭建个人博客的方式！Github Page 是 Github 提供的一种免费的静态网页托管服务（所以想想免费的空间不用也挺浪费的哈哈哈），可以用来托管博客、项目官网等静态网页。支持 Jekyll、Hugo、Hexo 编译静态资源，这次我们的主角就是 Hexo 了，具体的内容下面在文章内介绍。
+下面就开始吧~
+准备环境 准备 node 和 git 环境， 首先，安装 NodeJS，因为 Hexo 是基于 Node.js 驱动的一款博客框架，相比起前面提到过的 Jekyll 框架更快更简洁，因为天*朝网络被墙的原因尝试过安装 Jekyll 失败而放弃了。 然后，安装 git，一个分布式版本控制系统，用于项目的版本控制管理，作者是 Linux 之父。如果 Git 还不熟悉可以参考廖雪峰大神的 Git 教程。
+两个工具不同的平台安装方法有所不一样，可自行了解按步骤安装，这里不详述了。安装成功后打开git bash（Windowns）或者终端（Mac），下方中将统一称为命令行。 在命令行中输入相应命令验证是否成功，如果成功会有相应的版本号。
+git version node -v npm -v 安装 Hexo 如果以上环境准备好了就可以使用 npm 开始安装 Hexo 了。也可查看 Hexo 的详细文档。 在命令行输入执行以下命令：
+npm install -g hexo-cli 安装 Hexo 完成后，再执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</description>
+    </item>
+    
+    <item>
+      <title>重构完成, 焕发新生</title>
+      <link>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</guid>
+      <description>项目进度   重构了代码
+  修正了大部分bug
+  一. 重要代码模块 1. Qtimer  https://blog.csdn.net/jia666666/article/details/81672344
+ Qtimer是Qt自带的定时器类, 位于PyQt5.Qcore下, 和单片机的中断函数非常像, 并且提供单次触发和多次触发两种触发方式
+多次触发 timer.timeout.connect(function) ... timer = Qtimer() timer.start(1000) 这里timeout是Qtimer的中断信号, 这里设定timer.start(1000)代表每一秒执行一次中断, 在番茄钟里, 我使用这个中断来进行时间的更新, 时间的更新仍然使用的是原生的time模块
+如果要停止Qtimer,使用
+timer.stop() 2. 自定义信号  https://blog.csdn.net/foreveronly/article/details/82453697
+ 二. 已解决的问题 1. 拖动窗口时时间不走动的问题 加完Qtimer中断完全没有问题
+3. 进程无法完全退出问题 -&amp;gt; window.close()效果问题 -&amp;gt; 响铃bug 通过将子窗口变为主窗口类的成员, 并使用以下语句初始化
+class MainWindow(QMainWindow):  def __init__(self):  super().__init__()  #子窗口建立  self.subBreak = BreakWindow(self)# 注意这里  class BreakWindow(QDialog):  def __init__(self,parent=None):  super().</description>
+    </item>
+    
+    <item>
+      <title>又不是不能用, 番茄钟基本功能建设完毕</title>
+      <link>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</guid>
+      <description>项目进度  加入了自己指定时间的模块   加入保存用户设置的文件config.json 在倒计时结束时发出铃声通知 完善了除统计和To Do List外的Menu界面   修正了部分bug  一. 重要代码模块 1. 打包程序成exe文件 pyInstaller模块 pyInstaller是python的一个库, 使用它可以很方便的打包文件成为exe可执行文件
+要使用这个库, 首先在Pycharm里安装相应的环境, 之后新建一个.py文件, 比如我的:
+在里面输入代码(以这次工程为例):
+import os if __name__ == &amp;#39;__main__&amp;#39;:  from PyInstaller.__main__ import run  opts=[&amp;#39;main.py&amp;#39;,&amp;#39;-w&amp;#39;,&amp;#39;-F&amp;#39;,&amp;#39;--icon=image/tomato.ico&amp;#39;]  run(opts) 其中主要注意opts=[&#39;main.py&#39;,&#39;-w&#39;,&#39;-F&#39;,&#39;--icon=image/tomato.ico&#39;]这一句
+main.py是主文件, 是进程的入口
+-w这个参数使编译出来的文件时exe+文件的形式, 去掉这个参数编译出来是一个整体的exe文件
+-F参数强制编译, 也就是说本次会覆盖上次的文件, 我觉得加上比较好
+最后--icon=image/tomato.ico是我指定的exe文件图标, 需要是一个ico文件
+直接运行.py脚本就可以在/dist里得到编译的文件
+资源文件夹问题 本次制作番茄钟使用到的资源文件, 比如配置文件, 或者是.MP3的铃声文件, pyInstaller在编译的时候都是不会编译的, 也就是说需要自己将文件复制到产生出来的目录下, 不然程序会报错无法运行
+2. 读取和写入配置文件 使用Json作为配置文件 Json是一种常见的语言, 其中一种用法就是作为书写配置文件的语言, 虽然有人说它不适合作为配置文件语言, 但是小项目用用还是没有问题的
+Json配置文件以{开头, 以}结束, 大括号在Json里代表一个对象, 具有一个键与一个值, 用:对应,</description>
+    </item>
+    
+    <item>
+      <title>番茄钟倒计时模块的基本实现</title>
+      <link>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</guid>
+      <description>项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&amp;quot;XX:XX&amp;quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
+# 显示时间转秒数 &amp;#34;XX:XX&amp;#34; -&amp;gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec + 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&amp;gt; &amp;#34;XX:XX&amp;#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &amp;lt; 2:  t[i] = &amp;#34;0&amp;#34; + t[i]   tomato = &amp;#34;:&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Python&#43;Qt5项目环境的搭建</title>
+      <link>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+      <description>一. 软件 1. Pycharm 2019.3.3 ​	Pycharm主要负责进行主体逻辑的编写, 以及统筹整个项目, 此外环境的搭建大多也在Pycharm里完成
+2. Qt 5.12.7 / Qt Creator ​	Qt原本是为C++设计的UI界面搭建软件, 通过加入Py包之后同样也可以为Python编写桌面图形应用程序, 这里用的是官网的免费版
+二. 环境搭建(对于已有Anaconda3) 1.Python解释器 由于已经安装了Anaconda3, 所以没有再安装原生的解释器, 也不清楚, 但觉得应该可以通用
+2. 配置环境变量(对于Anaconda3) 对于Anaconda3的用户, 需要再自行配置一下环境变量, 在环境变量的path选项卡中添加Anaconda的以下目录
+不然在Pycharm中搭建环境时会遇到提示pip无法成功的提示, 导致包无法安装
+3. 在Pycharm里搭建环境/安装必要的包 完成以上两步准备就可以开始配置Pycharm了
+首先新建一个项目
+有几点需要注意的地方:
+首先, 确保New environment using中是新建了一个环境,而不是使用Conda.
+其次, 确保Base interpreter中选择的是pythonw解释器, 而不是python
+最后注意, 此处不需勾选
+然后就可以让它新建一个项目了
+打开工程后进入 文件 -&amp;gt; 设置 -&amp;gt; 项目 -&amp;gt; Project Interpreter 在这里管理需要用到的包文件
+需要使用Qt编程的话, 必须添加QtPy和PyQt5两个包
+Pycharm会自己管理, 下载好就算是配置完成了
+三. 工作流 大致的思路是:
+ 使用Qt Creator创作图形界面 使用包内置函数转化Qt的.ui文件为.py文件, 作为包导入到程序中 使用Pycharm编写整体逻辑  1.</description>
+    </item>
+    
+    <item>
+      <title>利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取</title>
+      <link>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</link>
+      <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</guid>
+      <description>小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+前言：
+小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+ 利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 完成目标： 处理前
+[图像已丢失]
+处理后
+[图像已丢失]
+可以观察到，背景中多余的信息被算法过滤掉了。
+思路 这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。
+问题与解决方案 1.内存占用过大 首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。
+解
+简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。
+2.数据类型使用错误/不匹配 转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。
+ 参考文献:</description>
+    </item>
+    
+    <item>
+      <title>由MRT为原理的OLED计时显示器</title>
+      <link>https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</link>
+      <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</guid>
+      <description>遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定
+  OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可
+  OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠
+  中断计时时间不准确（很慢） 原因是在中断中加入了函数
+mrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出&amp;hellip;
+   工程目标  了解MRT的使用方法 了解OLED的工作协议和引脚定义 了解IIC的工作原理 结合MET和OLED制作计时器 使用按钮控制调节计时器的几个工作状态  问题解决思路 查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。
+待解决问题  如何初始化，打开，调用和关闭MRT IIC协议如何工作 如何开启MRT的计时中断操作 OLED的数据引脚如何发送命令 如何把MRT的反馈显示到OLED上 如何通过按钮控制计时器状态  实行（可能）流程  通过底层函数观察如何使用MRT 通过网上资料或数据手册了解IIC如何工作 通过底层函数观察如何使用OLED 通过简单的程序让OLED显示字符 编写计时函数 编写按钮函数 封装程序   Lösungen   如何操作MRT
+/********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 * * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file MRT(多速率定时器) * @company	成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config.</description>
+    </item>
+    
+    <item>
+      <title>调用GPIO口并使蜂鸣器鸣响</title>
+      <link>https://dynais.xyz/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</guid>
+      <description>工程目标  知道芯片GPIO口的基本操作函数 根据原理图操作GPIO口使蜂鸣器发声  问题解决思路 通过类比C51的发声思路，使GPIO口通过循环发出高低电平形成方波，驱动蜂鸣器鸣响（注意延时函数）
+待解决问题  通过哪些引脚可以操控蜂鸣器？（已解决） 如何操作这些引脚？（初始化，输出信号，结束信号）（已解决） 如何使单片机产生延时函数？（已解决） 如何调用ARM库函数？（已解决）  实行（可能）流程  通过例程观察如何初始化并定义引脚 看原理图找到操作蜂鸣器的引脚 找到实现延时函数的方法： 使用单片机小精灵 向大佬请教 说不定本身就有这个函数，搜索一下 编写程序 封装程序   Lösungen   如何操作引脚？
+  /********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 *
+* 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file GPIO * @company	成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config.h文件内版本宏定义 * @Software IAR 7.8 or MDK 5.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV中人脸识别的Haar实现</title>
+      <link>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
+      <description>本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+项目总结_人脸识别的Haar实现 项目历时:	2020.2.3 - 2020.2.5 负责人:	Dynais 项目花费:	无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+目录   第一部分	部分原理粗解
+ 1.1	图像压缩 1.2 直方图均衡化 1.3 Haar特征检测    第二部分 软件结构设计与实现
+  第三部分 难点与优化方法
+ 3.1 难点一:	面部检测速度过慢    第四部分 总结
+ 4.1 不足之处 4.2 总结    第五部分 参考文献</description>
+    </item>
+    
+  </channel>
+</rss>

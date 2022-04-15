@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on DynAis</title>
+    <link>https://dynais.xyz/posts/</link>
+    <description>Recent content in Posts on DynAis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 23 Feb 2021 12:40:37 +0000</lastBuildDate><atom:link href="https://dynais.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Python脚本在运行环境下依赖库缺失的问题</title>
+      <link>https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 23 Feb 2021 12:40:37 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的
+问题描述 在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的 解决方法 解决方式就是在编写脚本时, 对于第三方的库进行一次检测, 如果没有的话就进行pip install
+try:  import regex as re except ImportError:  os.system(&amp;#39;pip install regex&amp;#39;)  import regex as re 对于小脚本来说这样就足够了, 项目大的话不建议这样使用</description>
+    </item>
+    
+    <item>
+      <title>线性回归模型分析</title>
+      <link>https://dynais.xyz/posts/nt-ml-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90/</link>
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-ml-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;线性回归是回归问题中的一种，线性回归假设目标值与特征之间线性相关，即满足一个多元一次方程。通过构建损失函数，来求解损失函数最小时的参数 $w$ 和$b$。通常我们可以表达成如下公式：
+$$
+\hat{y} = wX + b 
+$$
+$\hat{y}$ 为预测值，自变量 $x$ 和因变量 $y$ 是已知的，而我们想实现的是预测新增一个 $x$ ，其对应的 $y$ 是多少。因此，为了构建这个函数关系，目标是通过已知数据点，求解线性模型中 $w$ 和 $b$ 两个参数。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;1线性回归概述&#34;&gt;1.线性回归概述&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;线性回归是回归问题中的一种，线性回归假设目标值与特征之间线性相关，即满足一个多元一次方程。通过构建损失函数，来求解损失函数最小时的参数 $w$ 和$b$。通常我们可以表达成如下公式：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{equation}&lt;/p&gt;
+&lt;p&gt;\hat{y} = wX + b \tag{1}&lt;/p&gt;
+&lt;p&gt;\end{equation}
+$$&lt;/p&gt;
+&lt;p&gt;$\hat{y}$ 为预测值，自变量 $x$ 和因变量 $y$ 是已知的，而我们想实现的是预测新增一个 $x$ ，其对应的 $y$ 是多少。因此，为了构建这个函数关系，目标是通过已知数据点，求解线性模型中 $w$ 和 $b$ 两个参数。&lt;/p&gt;
+&lt;p&gt;为此, 线性回归分为两个部分, 向前传播和向后传播, 向前传播负责验证当前参数下对数据的拟合程度, 而向后传播通过在向前传播内得到的数据对参数进行优化&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
+      <title>PSpice中常用的Cursor查询命令</title>
+      <link>https://dynais.xyz/posts/nt-psp-probe%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84cursor%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-psp-probe%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84cursor%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4/</guid>
+      <description>受够了在 Probe 窗口中用鼠标拖 Cursor 来找结果数据了, 所以想找一下 Probe 的 SerchCommand 结果连官方用户指导里都找不到, 好不容易才在帮助文档里找到了, 写文档的真不是人, 记录一下防止以后忘了
+Orcad Pspice版本: 9.1 Student
+概述  受够了在 Probe 窗口中用鼠标拖 Cursor 来找结果数据了, 所以想找一下 Probe 的 SerchCommand 结果连官方用户指导里都找不到, 好不容易才在帮助文档里找到了, 写文档的真不是人, 记录一下防止以后忘了
+Orcad Pspice版本: 9.1 Student
+文档进入方法:
+{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161535.png 100% 100% &amp;quot; &amp;quot; %}
+Win10还要上网找一下win32hlp.exe装一下才能看, 下载: win32hlp.exe
+路径:
+{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161557.png 50% 50% &amp;quot; &amp;quot; %}
+语法  search	[direction]	[/start_point/]	[#consecutive_points#]	[(range_x [,range_y])]	[for]	[repeat:]	&amp;lt;condition&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>PSpice模拟数据导入Excel工作流</title>
+      <link>https://dynais.xyz/posts/nt-psp-pspice%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5excel%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-psp-pspice%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5excel%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+      <description>基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析
+概述  基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析
+流程  在 PSpice 得到模拟数据后, 选中需要导出的曲线
+{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217162110.png 50% 50% &amp;quot; &amp;quot; %}
+看到它变红了
+然后直接 Ctrl + C 就可以获得曲线数据
+然后新建一个文本文档, 复制粘贴保存成 .csv 文件
+直接导入 Excel 应该也是可行的, 但是由于改成了德国的计数方法, 这里的逗号和小数点会有问题, 先导入 csv 文件的话就没问题, 所以还是建议保存到 csv, 这样 Matlab 什么的也能用</description>
+    </item>
+    
+    <item>
+      <title>DuinoAccess</title>
+      <link>https://dynais.xyz/posts/pj-da01-adn-duinoaccess/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-da01-adn-duinoaccess/</guid>
+      <description>这次也是因为闲的在家没有事情做，所以又给自己开了一个新坑，其实蛮早以前就有过想做一个电脑上能用的指纹锁的想法了，但是一直没有动手，刚好这次有机会，并且也是刚刚新组了一台电脑，就想着要把这个项目给做了。
+这个项目的一个主要的灵感来源是@稚晖君很早以前发在Arduino论坛上的一个项目 (Link: 如何制作一个带指纹识别的机械键盘), 这次项目的的主要思路都和他的差不多，只不过我想做成独立的一个模块，并且最好能够实现便携功能，也就是说如果可以的话我想加上蓝牙的功能
+然后这次的文章大概也会写好几部分，具体取决于我最后能不能最后好好完成这个项目&amp;hellip;
+这是一个开源项目，后续也会一直更新进度，对你有帮助的话可以给我个星星，传送门：https://github.com/DynAis/duino-access
+0x00 - 前言  这次也是因为闲的在家没有事情做，所以又给自己开了一个新坑，其实蛮早以前就有过想做一个电脑上能用的指纹锁的想法了，但是一直没有动手，刚好这次有机会，并且也是刚刚新组了一台电脑，就想着要把这个项目给做了。
+这个项目的一个主要的灵感来源是@稚晖君很早以前发在Arduino论坛上的一个项目 (Link: 如何制作一个带指纹识别的机械键盘), 这次项目的的主要思路都和他的差不多，只不过我想做成独立的一个模块，并且最好能够实现便携功能，也就是说如果可以的话我想加上蓝牙的功能
+然后这次的文章大概也会写好几部分，具体取决于我最后能不能最后好好完成这个项目&amp;hellip;
+这是一个开源项目，后续也会一直更新进度，对你有帮助的话可以给我个星星，传送门：https://github.com/DynAis/duino-access
+ 0x01 - 核心部分元器件选型 这次的目标是能够使用指纹解锁的方式让电脑自动解锁，思路是使用指纹模块给出信号+单片机模拟键盘输入的简单思路，由于整体的体积要求越小越好，所以元件的选型基本没有选择
+   使用模块 价格     arduino-pro-micro (VCC 5v or 3.3v) 19.80 CNY   HN0610 指纹模块 45.00 CNY   AMS1117-3.3v/5v 降压模块 (假如使用5v的arduino，3.3v的不需要) 1.29 CNY   蜂鸣器、导线若干 -    之所以没有用稚晖的那个FPM3X指纹模块的原因是因为那个好像在TB上已经快找不到了，只剩下最后一家而且卖的很贵，所以当时就选择了这个卖得最好的来做(有几天自闭的时候非常后悔这个选择)，并且从外观上来说我更喜欢这款一点
+ 0x02 - 环境选择与搭建 VSCode + PlatformIO 整个环境方面没有使用传统的 ArduinoIDE 来做，而是选择的使用 VSCode 来完成这次的项目，主要原因是为了以后做其他单片机项目的时候也都统一到 VSCode上去，这样整个一致性会比较好</description>
+    </item>
+    
+    <item>
+      <title>[转载]Hexo&#43;Github Page搭建博客教程</title>
+      <link>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 23 Jul 2020 10:40:06 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</guid>
+      <description>前往原文
+前言 博客有第三方平台，也可以自建，比较早的有博客园、CSDN，近几年新兴的也比较多诸如：WordPress、segmentFault、简书、掘金、知乎专栏、Github Page 等等。
+这次我要说的就是 Github Page + Hexo 搭建个人博客的方式！Github Page 是 Github 提供的一种免费的静态网页托管服务（所以想想免费的空间不用也挺浪费的哈哈哈），可以用来托管博客、项目官网等静态网页。支持 Jekyll、Hugo、Hexo 编译静态资源，这次我们的主角就是 Hexo 了，具体的内容下面在文章内介绍。
+下面就开始吧~
+准备环境 准备 node 和 git 环境， 首先，安装 NodeJS，因为 Hexo 是基于 Node.js 驱动的一款博客框架，相比起前面提到过的 Jekyll 框架更快更简洁，因为天*朝网络被墙的原因尝试过安装 Jekyll 失败而放弃了。 然后，安装 git，一个分布式版本控制系统，用于项目的版本控制管理，作者是 Linux 之父。如果 Git 还不熟悉可以参考廖雪峰大神的 Git 教程。
+两个工具不同的平台安装方法有所不一样，可自行了解按步骤安装，这里不详述了。安装成功后打开git bash（Windowns）或者终端（Mac），下方中将统一称为命令行。 在命令行中输入相应命令验证是否成功，如果成功会有相应的版本号。
+git version node -v npm -v 安装 Hexo 如果以上环境准备好了就可以使用 npm 开始安装 Hexo 了。也可查看 Hexo 的详细文档。 在命令行输入执行以下命令：
+npm install -g hexo-cli 安装 Hexo 完成后，再执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</description>
+    </item>
+    
+    <item>
+      <title>使用差分散列的重复图片检测</title>
+      <link>https://dynais.xyz/posts/nt-ocpy-%E4%BD%BF%E7%94%A8%E5%B7%AE%E5%88%86%E6%95%A3%E5%88%97%E6%A3%80%E6%B5%8B%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-ocpy-%E4%BD%BF%E7%94%A8%E5%B7%AE%E5%88%86%E6%95%A3%E5%88%97%E6%A3%80%E6%B5%8B%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/</guid>
+      <description>关于散列(Hash), 网上的介绍有很多,这里就不费力介绍.
+而对于这个具体的项目要求来说, 我们所做的只是需要把一个图像转换为一个Hash值, 然后储存到字典中. 并且有一下要求:
+ 视觉上相差不大的图片, 他们的Hash值也应该相同 这个Hash计算需要快, 因为有时候数据量会很大  那么我们有以下几个Hash函数的选择:
+ 差分散列(difference hashing) md5 sha-1  最终我们选择了差分散列的方法, 有以下的原因:
+ 差分散列速度很快, 计算量小 对于肉眼相差不大的图片, 差分散列可以得出相似的值 md5 和 sha-1 只要有一点变化, 输出值就会完全改变(这本来很好, 但在这里非常不好!)  Detect and remove duplicate images from a dataset for deep learning  文章链接:
+https://www.pyimagesearch.com/2017/11/27/image-hashing-opencv-python/
+https://www.pyimagesearch.com/2020/04/20/detect-and-remove-duplicate-images-from-a-dataset-for-deep-learning/?__s=bnfo5g8qgjr6gztmvjlb
+  前言:
+为什么要删去数据集中重复的图片?
+Having duplicate images in your dataset creates a problem for two reasons:
+ It introduces bias into your dataset, giving your deep neural network additional opportunities to learn patterns specific to the duplicates It hurts the ability of your model to generalize to new images outside of what it was trained on  Take the time to remove duplicates from your image dataset so you don’t accidentally introduce bias or hurt the ability of your model to generalize.</description>
+    </item>
+    
+    <item>
+      <title>重构完成, 焕发新生</title>
+      <link>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</guid>
+      <description>项目进度   重构了代码
+  修正了大部分bug
+  一. 重要代码模块 1. Qtimer  https://blog.csdn.net/jia666666/article/details/81672344
+ Qtimer是Qt自带的定时器类, 位于PyQt5.Qcore下, 和单片机的中断函数非常像, 并且提供单次触发和多次触发两种触发方式
+多次触发 timer.timeout.connect(function) ... timer = Qtimer() timer.start(1000) 这里timeout是Qtimer的中断信号, 这里设定timer.start(1000)代表每一秒执行一次中断, 在番茄钟里, 我使用这个中断来进行时间的更新, 时间的更新仍然使用的是原生的time模块
+如果要停止Qtimer,使用
+timer.stop() 2. 自定义信号  https://blog.csdn.net/foreveronly/article/details/82453697
+ 二. 已解决的问题 1. 拖动窗口时时间不走动的问题 加完Qtimer中断完全没有问题
+3. 进程无法完全退出问题 -&amp;gt; window.close()效果问题 -&amp;gt; 响铃bug 通过将子窗口变为主窗口类的成员, 并使用以下语句初始化
+class MainWindow(QMainWindow):  def __init__(self):  super().__init__()  #子窗口建立  self.subBreak = BreakWindow(self)# 注意这里  class BreakWindow(QDialog):  def __init__(self,parent=None):  super().</description>
+    </item>
+    
+    <item>
+      <title>又不是不能用, 番茄钟基本功能建设完毕</title>
+      <link>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</guid>
+      <description>项目进度  加入了自己指定时间的模块   加入保存用户设置的文件config.json 在倒计时结束时发出铃声通知 完善了除统计和To Do List外的Menu界面   修正了部分bug  一. 重要代码模块 1. 打包程序成exe文件 pyInstaller模块 pyInstaller是python的一个库, 使用它可以很方便的打包文件成为exe可执行文件
+要使用这个库, 首先在Pycharm里安装相应的环境, 之后新建一个.py文件, 比如我的:
+在里面输入代码(以这次工程为例):
+import os if __name__ == &amp;#39;__main__&amp;#39;:  from PyInstaller.__main__ import run  opts=[&amp;#39;main.py&amp;#39;,&amp;#39;-w&amp;#39;,&amp;#39;-F&amp;#39;,&amp;#39;--icon=image/tomato.ico&amp;#39;]  run(opts) 其中主要注意opts=[&#39;main.py&#39;,&#39;-w&#39;,&#39;-F&#39;,&#39;--icon=image/tomato.ico&#39;]这一句
+main.py是主文件, 是进程的入口
+-w这个参数使编译出来的文件时exe+文件的形式, 去掉这个参数编译出来是一个整体的exe文件
+-F参数强制编译, 也就是说本次会覆盖上次的文件, 我觉得加上比较好
+最后--icon=image/tomato.ico是我指定的exe文件图标, 需要是一个ico文件
+直接运行.py脚本就可以在/dist里得到编译的文件
+资源文件夹问题 本次制作番茄钟使用到的资源文件, 比如配置文件, 或者是.MP3的铃声文件, pyInstaller在编译的时候都是不会编译的, 也就是说需要自己将文件复制到产生出来的目录下, 不然程序会报错无法运行
+2. 读取和写入配置文件 使用Json作为配置文件 Json是一种常见的语言, 其中一种用法就是作为书写配置文件的语言, 虽然有人说它不适合作为配置文件语言, 但是小项目用用还是没有问题的
+Json配置文件以{开头, 以}结束, 大括号在Json里代表一个对象, 具有一个键与一个值, 用:对应,</description>
+    </item>
+    
+    <item>
+      <title>番茄钟倒计时模块的基本实现</title>
+      <link>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</guid>
+      <description>项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&amp;quot;XX:XX&amp;quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
+# 显示时间转秒数 &amp;#34;XX:XX&amp;#34; -&amp;gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec + 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&amp;gt; &amp;#34;XX:XX&amp;#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &amp;lt; 2:  t[i] = &amp;#34;0&amp;#34; + t[i]   tomato = &amp;#34;:&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Python&#43;Qt5项目环境的搭建</title>
+      <link>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+      <description>一. 软件 1. Pycharm 2019.3.3 ​	Pycharm主要负责进行主体逻辑的编写, 以及统筹整个项目, 此外环境的搭建大多也在Pycharm里完成
+2. Qt 5.12.7 / Qt Creator ​	Qt原本是为C++设计的UI界面搭建软件, 通过加入Py包之后同样也可以为Python编写桌面图形应用程序, 这里用的是官网的免费版
+二. 环境搭建(对于已有Anaconda3) 1.Python解释器 由于已经安装了Anaconda3, 所以没有再安装原生的解释器, 也不清楚, 但觉得应该可以通用
+2. 配置环境变量(对于Anaconda3) 对于Anaconda3的用户, 需要再自行配置一下环境变量, 在环境变量的path选项卡中添加Anaconda的以下目录
+不然在Pycharm中搭建环境时会遇到提示pip无法成功的提示, 导致包无法安装
+3. 在Pycharm里搭建环境/安装必要的包 完成以上两步准备就可以开始配置Pycharm了
+首先新建一个项目
+有几点需要注意的地方:
+首先, 确保New environment using中是新建了一个环境,而不是使用Conda.
+其次, 确保Base interpreter中选择的是pythonw解释器, 而不是python
+最后注意, 此处不需勾选
+然后就可以让它新建一个项目了
+打开工程后进入 文件 -&amp;gt; 设置 -&amp;gt; 项目 -&amp;gt; Project Interpreter 在这里管理需要用到的包文件
+需要使用Qt编程的话, 必须添加QtPy和PyQt5两个包
+Pycharm会自己管理, 下载好就算是配置完成了
+三. 工作流 大致的思路是:
+ 使用Qt Creator创作图形界面 使用包内置函数转化Qt的.ui文件为.py文件, 作为包导入到程序中 使用Pycharm编写整体逻辑  1.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记12-模板匹配</title>
+      <link>https://dynais.xyz/posts/nt-oc-a12_%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a12_%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D/</guid>
+      <description>API matchTemplate();//模式查找,API比较简单 minMaxLoc();//用于在模式查找的输出图像中找到极值点,也就是匹配点 笔记   模板匹配(Templet Match)
+相当于上一节说的直方图匹配的实用化,通过现有图像在目标图像上滑行(原文Slide),也就是左到右上到下的以像素为单位进行匹配,找到匹配值最大的点.但也是因为这个原因,对模板图像和在目标图像里的目标的大小进行匹配就非常重要,如果大小差得远,效果就不好,所以使用条件相当苛刻.
+  注意输出图像的大小
+在API中需要提供一个储存输出结果的Mat, 他的大小是
+Size(src.cols-templ.cols+1, src.rows-templ.rows+1)     OpenCV的查找模式
+OpenCV提供了很多种方法,在官网上都有介绍,大部分都是取用了最大值作为最匹配
+根据最小值匹配的只有 TM_SQDIFF 和 MT_SQDIFF_NORMED
+For the first two methods ( TM_SQDIFF and MT_SQDIFF_NORMED ) the best match are the lowest values.
+  OpenCV中32位的图像
+每个数值是一个位于[0,1]间的小数,相当于8位的[0,255]
+   源//API实现模式查找 // OpenCV_Template.cpp : 此文件包含 &amp;#34;main&amp;#34; 函数。程序执行将在此处开始并结束。 //  #include &amp;lt;iostream&amp;gt;#include&amp;lt;opencv2\opencv.hpp&amp;gt; using namespace std; using namespace cv;  Mat src, dst, temp;  int main(int, char**) { 	temp = imread(&amp;#34;D:/WorkSpace/Projects/OpenCV Learning/ImageHub/Lena.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记11-直方图均衡化-直方图比较-反向投影</title>
+      <link>https://dynais.xyz/posts/nt-oc-a11_%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96_%E6%AF%94%E8%BE%83_%E5%8F%8D%E5%90%91%E6%8A%95%E5%BD%B1/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a11_%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96_%E6%AF%94%E8%BE%83_%E5%8F%8D%E5%90%91%E6%8A%95%E5%BD%B1/</guid>
+      <description>API - equalizeHist();//直方图均衡化 - split();//分离通道 - calcHist();//参数dims,bin,range - waitkey();  - mixChannels//分离通道, 与split小有差别,建议看官方文档 - cvtColer//使用此api转换到hsv色彩空间 - calcHist//接受单通道图像计算直方图, 参数略微复杂 - normalize//归一化,常用 - compareHist//比较直方图,可以得到两张图片的相似程度,但是对光非常敏感 - backProject();//直方图反向投影 笔记 这里是几个关于直方图的总结, 这一堆实在是不太好懂, 并且映射和统计接触到了很多数学方面的东西,重要的是理解思路以及了解API, 这里的东西要是有不理解的都建议去看官方的教程文档
+ 直方图均衡化  好像在人脸识别的项目总结里写过了, API并不难理解
+ HSV模型  HSV是一种比较直观的颜色模型，所以在许多图像编辑工具中应用比较广泛，这个模型中颜色的参数分别是：色调（H, Hue），饱和度（S,Saturation），明度（V, Value）
+ 直方图比较  compareHist(); API比较方便,输入两个直方图,比较他们的相似程度
+这两个直方图通常会是图像的HS直方图(虽然我现在还不太懂HS为什么可以变成一张直方图,到时候要用再看原理好了),用HS猜测是要降低算法对光线的敏感度?(实测好像对光线还是很敏感)
+OpenCV提供了一共四种方法
+ 相关性计算:{-1, 1} //1最强 卡方计算:{0, ∞} //0最强 十字交叉 巴氏距离计算:{0, 1} //0最强  其中比较推荐的是相关性计算和巴氏距离计算(不需要归一化了hhhhhhhhh)
+数学公式不列出了(反正我又不会去看)
+ 直方图反向投影  mixChannels(); backProject(); 直方图反向投影是一种基于色彩的对象识别技术,通过该方法可以定位图像中已知物体的位置,反应直方图在目标图像中的分布
+主要思路是提取已知图像的Hue(色相)空间,做出直方图,再反向找到这些色相在目标图片中的分布,已知图像中越多的色相,在backProject中就会(看起来)更亮,利用这点加上一些二值化,就可以得到一张目标物体的掩膜,覆盖到目标图片上就可以得到完成的图像了,如下
+ 源//读取TIM图标, 在桌面截图上找到他 // OpenCV_Template.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记10-霍夫线和圆检测</title>
+      <link>https://dynais.xyz/posts/nt-oc-a10_%E9%9C%8D%E5%A4%AB%E7%BA%BF%E5%92%8C%E5%9C%86%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Sun, 16 Feb 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a10_%E9%9C%8D%E5%A4%AB%E7%BA%BF%E5%92%8C%E5%9C%86%E6%A3%80%E6%B5%8B/</guid>
+      <description>API /*霍夫线检测 输入图像要先Canny过 参数为 - 输入图像 - 输出向量数组,数据类型为Vec4i(就是两个点) - 默认1 - 默认CV_PI / 180, 转角步长 - 阈值(我设了100) - 最小线长 - 最大间隙, 小于这个值的两条线会连成一条, 对于断断续续的线效果好 */ void HoughLinesP( InputArray image, OutputArray lines,  double rho, double theta, int threshold,  double minLineLength = 0, double maxLineGap = 0 );   /*霍夫圆检测 参数从前往后分别是 - 输入图像矩阵(8bit的灰度图,这个API自带Canny边缘检测) - 输出向量数组,数据类型位Vec3f - HOUGH_GRADIENT - 图像缩放,默认1 - 圆心最小距离, 小于会认为是同心圆? - Canny检测的大阈值,小的=大的除二计算 - 点重叠n个以上判定为圆,越小检出越多圆 - 最小圆半径 - 最大圆半径 */ void HoughCircles( InputArray image, OutputArray circles,  int method, double dp, double minDist,  double param1 = 100, double param2 = 100,  int minRadius = 0, int maxRadius = 0 ); 笔记  圆检测对噪声敏感, 需要先中值滤波 太难了,建议看下面的博客,线检测还好,圆检测真的看不懂  相关 源//检出NXP赛道上的几何图 // OpenCV_Template.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记09-Canny边缘检测算法</title>
+      <link>https://dynais.xyz/posts/nt-oc-a09_canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 16 Feb 2020 20:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a09_canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/</guid>
+      <description>API Canny();	//Canny的API, 包含了4个步骤. 注意, 不包含高斯模糊部分 笔记   Canny边缘检测算法可以分为以下5个步骤：
+  使用高斯滤波器，以平滑图像，滤除噪声。(需要调用高斯模糊API)
+  计算图像中每个像素点的梯度强度和方向。
+  应用非极大值（Non-Maximum Suppression）抑制，以消除边缘检测带来的杂散响应。
+  应用双阈值（Double-Threshold）检测来确定真实的和潜在的边缘。
+  通过抑制孤立的弱边缘最终完成边缘检测。
+    非极大值抑制:
+  细化边缘, 但技术的实现细节并不是很懂, 大致思想是取邻域中的梯度极大值点来进行有效边缘的判断, 下面的文章讲的很详细, 可以看看.
+ 关于几种边缘检测方法:  Laplance, Canny 和 Sobel 都是边缘检测的方法, Canny是包含了Sobel算子的边缘检测, 所以可以说是Sobel的实际应用, Laplance的检测效果并不好, 但是有其他的用途, 总的来说Canny能应对大多数的场景
+参考来源   《A Computational Approach to Edge Detection》
+   源//对NXP赛道进行下采样和边缘检测 // OpenCV_Template.cpp : 此文件包含 &amp;#34;main&amp;#34; 函数。程序执行将在此处开始并结束。 //  #include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include&amp;lt;opencv2\opencv.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记08-Sobel算子</title>
+      <link>https://dynais.xyz/posts/nt-oc-a08_sobel%E7%AE%97%E5%AD%90/</link>
+      <pubDate>Sat, 15 Feb 2020 20:48:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a08_sobel%E7%AE%97%E5%AD%90/</guid>
+      <description>相关API Sobel();//索贝尔算子 Scharr();//Sobel的加强 笔记   Sobel: 边缘检测算法及各自的优缺点
+Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), 常用于得到图像的边缘特征, 除了Sobel之外还有其他的算子, Sobel的优势是速度比较快, 但是在准确度上有欠缺
+  使用加减来简化计算机的负担: sobel算子的原理与实现
+乘除对计算机很费力, 对计算机应该采用近似计算, 在Sobel求边缘的合成阶段使用到了这种思想
+  整个流程:
+高斯-&amp;gt;转灰度-&amp;gt;求梯度x与y-&amp;gt;混合
+  源 无 </description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记07-上下采样-高斯不同(DOG)</title>
+      <link>https://dynais.xyz/posts/nt-oc-a07_%E4%B8%8A%E4%B8%8B%E9%87%87%E6%A0%B7_%E9%AB%98%E6%96%AF%E4%B8%8D%E5%90%8Cdog/</link>
+      <pubDate>Sat, 15 Feb 2020 20:39:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a07_%E4%B8%8A%E4%B8%8B%E9%87%87%E6%A0%B7_%E9%AB%98%E6%96%AF%E4%B8%8D%E5%90%8Cdog/</guid>
+      <description>相关函数 - pyrUp();//上采样 - pyrDown();//下采样 - subtract();//图像减法  - threshold()//二值化 - binarythreshold()//还是二值化 笔记   高斯金字塔: 涉及到上采样和下采样的概念 实现步骤是: 1.高斯模糊 2.删除当前层偶数行列
+  高斯不同(DOG): 同图像在不同参数下做高斯模糊然后结果相减, 最后记得归一化, 不然图很淡
+    上/下采样对比几个像素求平均合成的优势:
+最大的好处就是变快了, 在人脸识别那个项目里我自己写了压缩算法,但是速度和这个相差了一倍(在720p下)
+但是也发现这个算法有局限, 首先图像会便模糊, 其次只能实现2的次方倍的缩放(至少根据OpenCV里的API来看)
+  源 无 </description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记06-形态学操作</title>
+      <link>https://dynais.xyz/posts/nt-oc-a06_%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a06_%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</guid>
+      <description>相关函数 getStructuringElement(int shape, Size ksize ,Point anchor);注意size还是要奇数 dilate(src, dst, kernel);膨胀 erode(src, dst, kernel);腐蚀 creatTrackbar();创建滑块,比较实用,但我搞不懂  morphologyEX();形态学操作  adaptiveThreshold(); threshold(); //大津法 实现   膨胀
+  腐蚀
+  开操作
+  形态学梯度
+  提取垂直或水平的线(使用水平或竖直的结构体)
+  二值化
+  对图像取反(用~)
+  笔记   opencv结构元素获取(getStructuringElement)我理解是类似卷积核的东西
+  膨胀:区域最大值覆盖中心值
+  腐蚀:区域最小值覆盖中心值
+  开操作:先腐蚀后膨胀,去掉小的对象
+  闭操作:先膨胀后腐蚀,填充小的洞
+  形态学梯度可以方便得提取边线
+  提取垂直或水平的线思路: 使用特殊的结构体来提取特殊的结构,比如一条横线进行开操作就可以提取出横线结构(操作完以后可以blur一下)
+  在进行阙值分割前对图像进行模糊处理(图像处理领域好像叫滤波?)再分割貌似有更好的效果</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记05-各类模糊</title>
+      <link>https://dynais.xyz/posts/nt-oc-a05_%E5%90%84%E7%B1%BB%E6%A8%A1%E7%B3%8A/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a05_%E5%90%84%E7%B1%BB%E6%A8%A1%E7%B3%8A/</guid>
+      <description>相关函数 blur();	//均值模糊 GaussianBlur();	//高斯模糊 medianBlur();	//中值滤波 bilateralFilter()	//双边滤波 实现   模糊
+ 均值滤波 高斯滤波 中值滤波 双边滤波    笔记  高斯滤波是通过高斯函数也就是正态分布来给mask权重 sigma越大正态分布上表现就是越平滑    中值滤波是统计排序滤波器,对椒盐噪声有很好的抑制作用
+  注意区分中值和均值
+  高斯模糊没有考虑像素值的差异,会导致边缘还是不那么清晰
+  引入空间域核与值域核考虑,空间域就相当于普通的高斯滤波,根据相邻距离决定权重,而值域核是由目标像素值与中心像素值差来给定权重
+  简单来说就是双边模糊对高斯模糊来说多了一层mask,这层mask不是根据像素空间位置来给定权重的,而是根据像素与中心像素值之差得出
+  双边滤波可以磨皮(
+  剩下的看注释
+  相关 无
+源 // OpenCV_Template.cpp : 此文件包含 &amp;#34;main&amp;#34; 函数。程序执行将在此处开始并结束。 //  #include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include&amp;lt;opencv2\opencv.hpp&amp;gt; using namespace std; using namespace cv;  int main(int argc, char** argv){ 	/****************************************	初始化	****************************************************/  	Mat imgIn, imgOut; 	Mat mask;  	imgIn = imread(&amp;#34;Test.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记04-图像混合-亮度对比度-几何绘制</title>
+      <link>https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/</guid>
+      <description>相关函数 mat.at&amp;lt;xxx&amp;gt; bitwise_not();//反色 src.convertTo();//通道转换  addWeighted()//图像混合加权相加,大小类型必须一致 multiply()//图像相乘  Mat::zeros  cv:point cv:scalar line(); cv:rect rectangle(); 实现  对像素的操作 图像混合 对比度和亮度调节 几何绘制(人脸追踪框可能)  笔记  通过权重相加函数实现图像混合效果  addWeighted()  对比度和亮度调节的实现思想  像素值相乘(对比度实现,因为拉大了数值差) 像素值加常数(亮度实现) 公式:g(x,y) = alpha * f(x,y) + beta    相关 无
+源 // OpenCV_Template.cpp : 此文件包含 &amp;#34;main&amp;#34; 函数。程序执行将在此处开始并结束。 //  #include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include&amp;lt;opencv2\opencv.hpp&amp;gt; using namespace std; using namespace cv;  int main(int argc, char** argv){ 	/****************************************	初始化	****************************************************/  	Mat imgIn, imgOut; 	Mat mask;  	imgIn = imread(&amp;#34;Test.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记03-线性滤波器-色彩空间转换</title>
+      <link>https://dynais.xyz/posts/nt-oc-a03_%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2%E5%99%A8_%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a03_%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2%E5%99%A8_%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/</guid>
+      <description>完成  统计时间 色彩空间转换 线性滤波器使用 图像读取写入plus 图像指针  相关函数 gettickcount();//获取时钟 mat.ptr&amp;lt;uchar&amp;gt;;//获取图像指针 saturate_cast&amp;lt;uchar&amp;gt;;//防溢出函数 filter2D;//线性滤波器 imread(); imwrite(); cvtColer();//色彩空间转换 实现 使用卷积加强图像对比度
+笔记   关于imread和imwrite的地址传入
+可以使用c++的string或cv自己的String实现,使用cin读入地址
+  源 // OpenCV_Template.cpp : 此文件包含 &amp;#34;main&amp;#34; 函数。程序执行将在此处开始并结束。 //  #include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include&amp;lt;opencv2\opencv.hpp&amp;gt; using namespace std; using namespace cv;  void colChange(Mat &amp;amp;iImg, Mat &amp;amp;oImg) {	//色彩空间变换 	cvtColor(iImg, oImg, COLOR_BGR2GRAY); 	return; }  void addFilter(Mat &amp;amp;iImg, Mat &amp;amp;oImg,const Mat filter) {	//添加线性滤波器 	filter2D(iImg, oImg, -1, filter); 	return; }  int main(int argc, char** argv)	//实现读取摄像头内容输出加强对比度,并统计每帧处理时间 { 	VideoCapture cap(0); 	if (!</description>
+    </item>
+    
+    <item>
+      <title>CMD控制台常用指令</title>
+      <link>https://dynais.xyz/posts/nt-cs-cmd%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-cs-cmd%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>进入某个盘 进入d盘
+D: 进入F盘
+F: 查看目录文件 查看当前目录下的文件，类似于linux下的ls
+dir 如果是需要查看隐藏文件的或者更多操作的话，可以使用
+dir /? 来查看其它用法
+执行exe文件 直接进入路径输入exe文件名+参数就行
+创建目录和删除目录 创建目录
+md 目录名（文件夹） 删除目录
+rd 目录名（文件夹） 查看本机ip ipconfig 清除屏幕 cls 类似于linux下的clear
+复制文件 copy 路径\文件名 路径\文件名 ：把一个文件拷贝到另一个地方。 移动文件 move 路径\文件名 路径\文件名 ：把一个文件移动（就是剪切+复制）到另一个地方。 删除文件 这个是专门删除文件的，不能删除文件夹
+del 文件名 ping 用来测试网络是否畅通
+ping ip(主机名)  查看cmd下的命令 使用help命令，查看所有的dos命令 找到命令之后，使用 命令+ /?来查看该命令下的其他属性 </description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记02-图像读取</title>
+      <link>https://dynais.xyz/posts/nt-oc-a02_%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a02_%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96/</guid>
+      <description>完成   实现静态图片读取功能
+  复习cmd指令
+  学习了在cmd下使用exe文件
+  实现 相关 </description>
+    </item>
+    
+    <item>
+      <title>OpenCV学习笔记01-Mat操作</title>
+      <link>https://dynais.xyz/posts/nt-oc-a01_mat%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-oc-a01_mat%E6%93%8D%E4%BD%9C/</guid>
+      <description>完成  自己创建指定mat 用算法创建mat 克隆mat  相关函数 mat.clone(); mat.copyTo();  (1) Mat::Mat() (2) Mat::Mat(int rows, int cols, int type) (3) Mat::Mat(Size size, int type) (4) Mat::Mat(int rows, int cols, int type, constScalar&amp;amp; s) (5) Mat::Mat(Size size, int type, constScalar&amp;amp; s) (6) Mat::Mat(const Mat&amp;amp; m)  mat.ptr&amp;lt;uchar&amp;gt; 实现 使用函数克隆一个一样的图
+使用函数创建空白图(全0和全255)
+使空白图成为渐变灰度图
+使空白图成为渐变色度图
+笔记   关于clone() \ copyTo() 和 直接赋值的区别
+clone和copyTo是直接重新创建一个新的内存空间
+而直接赋值则是一个类似传递的作用,这样直接修改B的内容也会影响到A
+  区分Scalar和Vec3b
+Scala指标量,Vec指向量
+Vec类似于C++中的Vector 也就是说可用{}赋值
+Scala我现在只知道在初始化中可用
+  相关 无</description>
+    </item>
+    
+    <item>
+      <title>利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取</title>
+      <link>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</link>
+      <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</guid>
+      <description>小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+前言：
+小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
+已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
+ 利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取 完成目标： 处理前
+[图像已丢失]
+处理后
+[图像已丢失]
+可以观察到，背景中多余的信息被算法过滤掉了。
+思路 这种算法大概的思路相当于画图软件中的油漆桶，选取一个目标点并使用DFS来选出区域内所有和他连通并且颜色相同的像素点，这样根据智能车行驶路径的特点可知捕捉到的画面下方正中间的位置必然是属于白色的，借此就可以只选出当前赛道的图像，并同时纪录下左右边线。
+问题与解决方案 1.内存占用过大 首先遇到的问题就是，如果使用原始的算法，只要图像稍微很大，就需要一个非常大的数组来进行信息的储存。甚至在使用PC进行模拟的时候，都因为内存过大而产生溢出了，所以说如此大的内存消耗对LPC来说是不可接受的。
+解
+简单思路是把原来的对像素堆栈改为了对扫描线种子点的堆栈，大大减小了内存的消耗，具体的算法在参考文献中列出。
+2.数据类型使用错误/不匹配 转移算法的时候出现好几处警告，提示数据类型与逻辑判断可能出现问题，比如 uint8 和 0 比大小，这个运算的结果一定是 uint8 大于 0 的，当 uint类型 “小于” 0 时，他会变为一个很大的数字。并且 uint 与传统 int 进行数学运算的时候也一定要小心，最好避免这种情况，提前转化为相同类型数据再运算。
+ 参考文献:</description>
+    </item>
+    
+    <item>
+      <title>由MRT为原理的OLED计时显示器</title>
+      <link>https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</link>
+      <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</guid>
+      <description>遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定
+  OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可
+  OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠
+  中断计时时间不准确（很慢） 原因是在中断中加入了函数
+mrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出&amp;hellip;
+   工程目标  了解MRT的使用方法 了解OLED的工作协议和引脚定义 了解IIC的工作原理 结合MET和OLED制作计时器 使用按钮控制调节计时器的几个工作状态  问题解决思路 查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。
+待解决问题  如何初始化，打开，调用和关闭MRT IIC协议如何工作 如何开启MRT的计时中断操作 OLED的数据引脚如何发送命令 如何把MRT的反馈显示到OLED上 如何通过按钮控制计时器状态  实行（可能）流程  通过底层函数观察如何使用MRT 通过网上资料或数据手册了解IIC如何工作 通过底层函数观察如何使用OLED 通过简单的程序让OLED显示字符 编写计时函数 编写按钮函数 封装程序   Lösungen   如何操作MRT
+/********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 * * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file MRT(多速率定时器) * @company	成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config.</description>
+    </item>
+    
+    <item>
+      <title>调用GPIO口并使蜂鸣器鸣响</title>
+      <link>https://dynais.xyz/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</guid>
+      <description>工程目标  知道芯片GPIO口的基本操作函数 根据原理图操作GPIO口使蜂鸣器发声  问题解决思路 通过类比C51的发声思路，使GPIO口通过循环发出高低电平形成方波，驱动蜂鸣器鸣响（注意延时函数）
+待解决问题  通过哪些引脚可以操控蜂鸣器？（已解决） 如何操作这些引脚？（初始化，输出信号，结束信号）（已解决） 如何使单片机产生延时函数？（已解决） 如何调用ARM库函数？（已解决）  实行（可能）流程  通过例程观察如何初始化并定义引脚 看原理图找到操作蜂鸣器的引脚 找到实现延时函数的方法： 使用单片机小精灵 向大佬请教 说不定本身就有这个函数，搜索一下 编写程序 封装程序   Lösungen   如何操作引脚？
+  /********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 *
+* 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file GPIO * @company	成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config.h文件内版本宏定义 * @Software IAR 7.8 or MDK 5.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV中人脸识别的Haar实现</title>
+      <link>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
+      <description>本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+项目总结_人脸识别的Haar实现 项目历时:	2020.2.3 - 2020.2.5 负责人:	Dynais 项目花费:	无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
+目录   第一部分	部分原理粗解
+ 1.1	图像压缩 1.2 直方图均衡化 1.3 Haar特征检测    第二部分 软件结构设计与实现
+  第三部分 难点与优化方法
+ 3.1 难点一:	面部检测速度过慢    第四部分 总结
+ 4.1 不足之处 4.2 总结    第五部分 参考文献</description>
+    </item>
+    
+    <item>
+      <title>在Markdown文件中使用Latex表示数学公式</title>
+      <link>https://dynais.xyz/posts/nt-tex-latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-tex-latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid>
+      <description>在Markdown中插入数学公式的语法是 $数学公式$ 和 $$数学公式$$.
+行内公式 行内公式是可以让公式在文中与文字或其他东西混编，不独占一行.在数学模式下,符号会使用单独的字体,字母通常是倾斜的意大利体,数字和符号则是直立体.而且,数学符号之间的距离也与一般的水平模式不同:
+   示例 显示     $2x+3y=34$    2x+3y=34 2x+3y=34    因此,在排版数学公式时,即使没有特殊符号的算式如1+1=2,或者简单的一个字母变量,也要进入数学模式,使用$1+1=2$,$x$,而不是使用排版普通文字的方式
+独立公式 独立公式单独占一行,不和其他文字混编
+多行公式 在独立公式中使用\来换行 示例:
+$$ 2x+3y=34\\ x+4y=25 $$ 显示: ![2x+3y=34\ x+4y=25](https://math.jianshu.com/math?formula=2x%2B3y%3D34\ x%2B4y%3D25)
+常用符号    符号 示例 显示     上下标 S=a_{1}^2+a_{2}^2+a_{3}^2$    括号 $f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace$    分数 $\frac{1}{3} 与 \cfrac{1}{3}$    开方 $\sqrt[3]{X}$和$\sqrt{5 - x}$ !</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>由MRT为原理的OLED计时显示器 | DynAis</title>
+<meta name="keywords" content="单片机">
+<meta name="description" content="遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定
+  OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可
+  OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠
+  中断计时时间不准确（很慢） 原因是在中断中加入了函数
+mrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出&hellip;
+   工程目标  了解MRT的使用方法 了解OLED的工作协议和引脚定义 了解IIC的工作原理 结合MET和OLED制作计时器 使用按钮控制调节计时器的几个工作状态  问题解决思路 查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。
+待解决问题  如何初始化，打开，调用和关闭MRT IIC协议如何工作 如何开启MRT的计时中断操作 OLED的数据引脚如何发送命令 如何把MRT的反馈显示到OLED上 如何通过按钮控制计时器状态  实行（可能）流程  通过底层函数观察如何使用MRT 通过网上资料或数据手册了解IIC如何工作 通过底层函数观察如何使用OLED 通过简单的程序让OLED显示字符 编写计时函数 编写按钮函数 封装程序   Lösungen   如何操作MRT
+/********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 * * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file MRT(多速率定时器) * @company	成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config.">
+<meta name="author" content="">
+<link rel="canonical" href="https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dynais.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="由MRT为原理的OLED计时显示器" />
+<meta property="og:description" content="遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定
+  OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可
+  OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠
+  中断计时时间不准确（很慢） 原因是在中断中加入了函数
+mrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出&hellip;
+   工程目标  了解MRT的使用方法 了解OLED的工作协议和引脚定义 了解IIC的工作原理 结合MET和OLED制作计时器 使用按钮控制调节计时器的几个工作状态  问题解决思路 查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。
+待解决问题  如何初始化，打开，调用和关闭MRT IIC协议如何工作 如何开启MRT的计时中断操作 OLED的数据引脚如何发送命令 如何把MRT的反馈显示到OLED上 如何通过按钮控制计时器状态  实行（可能）流程  通过底层函数观察如何使用MRT 通过网上资料或数据手册了解IIC如何工作 通过底层函数观察如何使用OLED 通过简单的程序让OLED显示字符 编写计时函数 编写按钮函数 封装程序   Lösungen   如何操作MRT
+/********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 * * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file MRT(多速率定时器) * @company	成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-12-08T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-12-08T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="由MRT为原理的OLED计时显示器"/>
+<meta name="twitter:description" content="遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定
+  OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可
+  OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠
+  中断计时时间不准确（很慢） 原因是在中断中加入了函数
+mrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出&hellip;
+   工程目标  了解MRT的使用方法 了解OLED的工作协议和引脚定义 了解IIC的工作原理 结合MET和OLED制作计时器 使用按钮控制调节计时器的几个工作状态  问题解决思路 查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。
+待解决问题  如何初始化，打开，调用和关闭MRT IIC协议如何工作 如何开启MRT的计时中断操作 OLED的数据引脚如何发送命令 如何把MRT的反馈显示到OLED上 如何通过按钮控制计时器状态  实行（可能）流程  通过底层函数观察如何使用MRT 通过网上资料或数据手册了解IIC如何工作 通过底层函数观察如何使用OLED 通过简单的程序让OLED显示字符 编写计时函数 编写按钮函数 封装程序   Lösungen   如何操作MRT
+/********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 * * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file MRT(多速率定时器) * @company	成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dynais.xyz/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "由MRT为原理的OLED计时显示器",
+      "item": "https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "由MRT为原理的OLED计时显示器",
+  "name": "由MRT为原理的OLED计时显示器",
+  "description": "遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定\n  OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可\n  OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠\n  中断计时时间不准确（很慢） 原因是在中断中加入了函数\nmrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出\u0026hellip;\n   工程目标  了解MRT的使用方法 了解OLED的工作协议和引脚定义 了解IIC的工作原理 结合MET和OLED制作计时器 使用按钮控制调节计时器的几个工作状态  问题解决思路 查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。\n待解决问题  如何初始化，打开，调用和关闭MRT IIC协议如何工作 如何开启MRT的计时中断操作 OLED的数据引脚如何发送命令 如何把MRT的反馈显示到OLED上 如何通过按钮控制计时器状态  实行（可能）流程  通过底层函数观察如何使用MRT 通过网上资料或数据手册了解IIC如何工作 通过底层函数观察如何使用OLED 通过简单的程序让OLED显示字符 编写计时函数 编写按钮函数 封装程序   Lösungen   如何操作MRT\n/********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 * * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file MRT(多速率定时器) * @company\t成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config.",
+  "keywords": [
+    "单片机"
+  ],
+  "articleBody": "遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定\n  OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可\n  OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠\n  中断计时时间不准确（很慢） 原因是在中断中加入了函数\nmrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出…\n   工程目标  了解MRT的使用方法 了解OLED的工作协议和引脚定义 了解IIC的工作原理 结合MET和OLED制作计时器 使用按钮控制调节计时器的几个工作状态  问题解决思路 查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。\n待解决问题  如何初始化，打开，调用和关闭MRT IIC协议如何工作 如何开启MRT的计时中断操作 OLED的数据引脚如何发送命令 如何把MRT的反馈显示到OLED上 如何通过按钮控制计时器状态  实行（可能）流程  通过底层函数观察如何使用MRT 通过网上资料或数据手册了解IIC如何工作 通过底层函数观察如何使用OLED 通过简单的程序让OLED显示字符 编写计时函数 编写按钮函数 封装程序   Lösungen   如何操作MRT\n/********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 * * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途， * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。 * * @file MRT(多速率定时器) * @company\t成都逐飞科技有限公司 * @author 逐飞科技(QQ3184284598) * @version 查看LPC546XX_config.h文件内版本宏定义 * @Software IAR 7.8 or MDK 5.24a * @Target core\tLPC54606J512BD100 * @Taobao https://seekfree.taobao.com/ * @date 2018-11-21 ********************************************************************************************************************/   #include \"LPC546XX_mrt.h\"  //------------------------------------------------------------------------------------------------------------------- // @brief MRT周期中断模式初始化 // @param mrtchx MRT通道号 // @param time 周期中断时间 // @return void // Sample usage: mrt_pit_init(MRT_CH0,1000); //无需用户调用 请使用H文件内的宏定义 //------------------------------------------------------------------------------------------------------------------- void mrt_pit_init(MRTNUM_enum mrtchx, uint32 time) {  SYSCON-AHBCLKCTRLSET[1] = SYSCON_AHBCLKCTRL_MRT_MASK; //打开MRT时钟  SYSCON-PRESETCTRLCLR[1] = SYSCON_PRESETCTRL_MRT_RST_MASK; //清除MRT复位时钟   ASSERT(time  MRT_CHANNEL_TIMER_VALUE_MASK);//断言   MRT0-CHANNEL[mrtchx].CTRL = MRT_CHANNEL_CTRL_INTEN_MASK | MRT_CHANNEL_CTRL_MODE(0);//PIT模式 打开中断  MRT0-CHANNEL[mrtchx].INTVAL = time; //设置间隔时间 定时器停止后载入时间 并启动定时器  enable_irq(MRT0_IRQn); //开启RIT中断  //set_irq_priority(MRT0_IRQn,0);//设置优先级 越低优先级越高 }    //------------------------------------------------------------------------------------------------------------------- // @brief MRT延时函数 // @param mrtchx MRT通道号 // @param time 周期中断时间 // @return void // Sample usage: mrt_delay(MRT_CH0,1000); //无需用户调用 请使用H文件内的宏定义 //------------------------------------------------------------------------------------------------------------------- void mrt_delay(MRTNUM_enum mrtchx, uint32 time) {  SYSCON-AHBCLKCTRLSET[1] = SYSCON_AHBCLKCTRL_MRT_MASK; //打开MRT时钟  SYSCON-PRESETCTRLCLR[1] = SYSCON_PRESETCTRL_MRT_RST_MASK; //清除MRT复位时钟   ASSERT(time  MRT_CHANNEL_TIMER_VALUE_MASK);//断言   MRT0-CHANNEL[mrtchx].CTRL = MRT_CHANNEL_CTRL_MODE(1); //一次中断模式模式   MRT0-CHANNEL[mrtchx].INTVAL = time | MRT_CHANNEL_INTVAL_LOAD_MASK; //设置间隔时间 立即载入时间 并启动定时器  while(!MRT_FLAG_READ(mrtchx)); //等待时间到  MRT_FLAG_CLR(mrtchx); //清除标志位 }    //------------------------------------------------------------------------------------------------------------------- // @brief MRT开始计时 // @param mrtchx MRT通道号 // @param time 周期中断时间 // @return void // Sample usage: mrt_start(MRT_CH0); //------------------------------------------------------------------------------------------------------------------- void mrt_start(MRTNUM_enum mrtchx) {  SYSCON-AHBCLKCTRLSET[1] = SYSCON_AHBCLKCTRL_MRT_MASK; //打开MRT时钟  SYSCON-PRESETCTRLCLR[1] = SYSCON_PRESETCTRL_MRT_RST_MASK; //清除MRT复位时钟   MRT0-CHANNEL[mrtchx].CTRL = MRT_CHANNEL_CTRL_MODE(1); //一次中断模式模式  MRT0-CHANNEL[mrtchx].INTVAL = MRT_CHANNEL_INTVAL_IVALUE_MASK | MRT_CHANNEL_INTVAL_LOAD_MASK;//设置间隔时间 立即载入时间 并启动定时器 }  //------------------------------------------------------------------------------------------------------------------- // @brief MRT获取计时时间 // @param mrtchx MRT通道号 // @return void // Sample usage: uint32 time = mrt_get(MRT_CH0); //无需用户调用 请使用H文件内的宏定义 //------------------------------------------------------------------------------------------------------------------- uint32 mrt_get(MRTNUM_enum mrtchx) {  return (MRT_CHANNEL_INTVAL_IVALUE_MASK - MRT0-CHANNEL[mrtchx].TIMER); //如果返回的是0，则计时已经超出 }   //------------------------------------------------------------------------------------------------------------------- // @brief MRT计时清除 // @param mrtchx MRT通道号 // @return void // Sample usage: 清除计时并重新启动 //------------------------------------------------------------------------------------------------------------------- void mrt_clean(MRTNUM_enum mrtchx) {  MRT0-CHANNEL[mrtchx].INTVAL = MRT_CHANNEL_INTVAL_IVALUE_MASK | MRT_CHANNEL_INTVAL_LOAD_MASK;//设置间隔时间 立即载入时间 并启动定时器 }   如何设置延时？\n//------------------------------------------------------------------------------------------------------------------- // @brief 毫秒级systick延时函数 // @param ms 延时多少毫秒 // @return void // Sample usage: systick_delay_ms(1000); //延时1000毫秒 //------------------------------------------------------------------------------------------------------------------- void systick_delay_ms(uint32 ms) {  //get_clk();//获取内核时钟便于后面设置 \twhile(ms--) systick_delay(main_clk_mhz*1000); }   ",
+  "wordCount" : "329",
+  "inLanguage": "en",
+  "datePublished": "2019-12-08T00:00:00Z",
+  "dateModified": "2019-12-08T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DynAis",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dynais.xyz/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      由MRT为原理的OLED计时显示器
+    </h1>
+    <div class="post-meta"><span title='2019-12-08 00:00:00 +0000 UTC'>December 8, 2019</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="遇到的问题">遇到的问题<a hidden class="anchor" aria-hidden="true" href="#遇到的问题">#</a></h2>
+<ol>
+<li>
+<h4 id="oled无法点亮">OLED无法点亮<a hidden class="anchor" aria-hidden="true" href="#oled无法点亮">#</a></h4>
+<p>困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定</p>
+</li>
+<li>
+<h4 id="oled屏幕显示闪烁">OLED屏幕显示闪烁<a hidden class="anchor" aria-hidden="true" href="#oled屏幕显示闪烁">#</a></h4>
+<p>可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可</p>
+</li>
+<li>
+<h4 id="oled屏幕数字重叠">OLED屏幕数字重叠<a hidden class="anchor" aria-hidden="true" href="#oled屏幕数字重叠">#</a></h4>
+<p>使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠</p>
+</li>
+<li>
+<h4 id="中断计时时间不准确很慢">中断计时时间不准确（很慢）<a hidden class="anchor" aria-hidden="true" href="#中断计时时间不准确很慢">#</a></h4>
+<p>原因是在中断中加入了函数</p>
+<pre tabindex="0"><code>mrt_clean(MRT_CH0);
+</code></pre><p>本来是我认为防止数据溢出而使用的，最后发现会使每次中断的速度大大降低，导致计时不准确，并且去掉这个函数数据好像也不会溢出&hellip;</p>
+<!-- raw HTML omitted -->
+</li>
+</ol>
+<hr>
+<h3 id="工程目标">工程目标<a hidden class="anchor" aria-hidden="true" href="#工程目标">#</a></h3>
+<ol>
+<li>了解MRT的使用方法</li>
+<li>了解OLED的工作协议和引脚定义</li>
+<li>了解IIC的工作原理</li>
+<li>结合MET和OLED制作计时器</li>
+<li>使用按钮控制调节计时器的几个工作状态</li>
+</ol>
+<h3 id="问题解决思路">问题解决思路<a hidden class="anchor" aria-hidden="true" href="#问题解决思路">#</a></h3>
+<p>查阅底层函数了解使用方法，结合OLED的数据手册了解OLED的使用方法，查阅IIC的时序，通过一步步调试减少错误，也便于即时修改。</p>
+<h3 id="待解决问题">待解决问题<a hidden class="anchor" aria-hidden="true" href="#待解决问题">#</a></h3>
+<ol>
+<li>如何初始化，打开，调用和关闭MRT</li>
+<li>IIC协议如何工作</li>
+<li>如何开启MRT的计时中断操作</li>
+<li>OLED的数据引脚如何发送命令</li>
+<li>如何把MRT的反馈显示到OLED上</li>
+<li>如何通过按钮控制计时器状态</li>
+</ol>
+<h3 id="实行可能流程">实行（可能）流程<a hidden class="anchor" aria-hidden="true" href="#实行可能流程">#</a></h3>
+<ol>
+<li>通过底层函数观察如何使用MRT</li>
+<li>通过网上资料或数据手册了解IIC如何工作</li>
+<li>通过底层函数观察如何使用OLED</li>
+<li>通过简单的程序让OLED显示字符</li>
+<li>编写计时函数</li>
+<li>编写按钮函数</li>
+<li>封装程序</li>
+</ol>
+<hr>
+<h3 id="lösungen">Lösungen<a hidden class="anchor" aria-hidden="true" href="#lösungen">#</a></h3>
+<ol>
+<li>
+<p><strong>如何操作MRT</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">/*********************************************************************************************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * COPYRIGHT NOTICE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Copyright (c) 2018,逐飞科技
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * All rights reserved.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 技术讨论QQ群：179029047
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @file       		MRT(多速率定时器)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @company	   		成都逐飞科技有限公司
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @author     		逐飞科技(QQ3184284598)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @version    		查看LPC546XX_config.h文件内版本宏定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @Software 		IAR 7.8 or MDK 5.24a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @Target core		LPC54606J512BD100
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @Taobao   		https://seekfree.taobao.com/
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @date       		2018-11-21
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> ********************************************************************************************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;LPC546XX_mrt.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @brief      MRT周期中断模式初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      mrtchx      MRT通道号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      time        周期中断时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @return     void
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Sample usage:           mrt_pit_init(MRT_CH0,1000);         //无需用户调用 请使用H文件内的宏定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mrt_pit_init</span>(MRTNUM_enum mrtchx, uint32 time)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    SYSCON<span style="color:#f92672">-&gt;</span>AHBCLKCTRLSET[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> SYSCON_AHBCLKCTRL_MRT_MASK;      <span style="color:#75715e">//打开MRT时钟
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    SYSCON<span style="color:#f92672">-&gt;</span>PRESETCTRLCLR[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> SYSCON_PRESETCTRL_MRT_RST_MASK;  <span style="color:#75715e">//清除MRT复位时钟
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    ASSERT(time <span style="color:#f92672">&lt;=</span> MRT_CHANNEL_TIMER_VALUE_MASK);<span style="color:#75715e">//断言
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].CTRL <span style="color:#f92672">=</span> MRT_CHANNEL_CTRL_INTEN_MASK <span style="color:#f92672">|</span> MRT_CHANNEL_CTRL_MODE(<span style="color:#ae81ff">0</span>);<span style="color:#75715e">//PIT模式 打开中断
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].INTVAL <span style="color:#f92672">=</span> time;        <span style="color:#75715e">//设置间隔时间 定时器停止后载入时间 并启动定时器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    enable_irq(MRT0_IRQn);     				    <span style="color:#75715e">//开启RIT中断
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//set_irq_priority(MRT0_IRQn,0);//设置优先级 越低优先级越高
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @brief      MRT延时函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      mrtchx      MRT通道号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      time        周期中断时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @return     void
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Sample usage:           mrt_delay(MRT_CH0,1000);            //无需用户调用 请使用H文件内的宏定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mrt_delay</span>(MRTNUM_enum mrtchx, uint32 time)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    SYSCON<span style="color:#f92672">-&gt;</span>AHBCLKCTRLSET[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> SYSCON_AHBCLKCTRL_MRT_MASK;      <span style="color:#75715e">//打开MRT时钟
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    SYSCON<span style="color:#f92672">-&gt;</span>PRESETCTRLCLR[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> SYSCON_PRESETCTRL_MRT_RST_MASK;  <span style="color:#75715e">//清除MRT复位时钟
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    ASSERT(time <span style="color:#f92672">&lt;=</span> MRT_CHANNEL_TIMER_VALUE_MASK);<span style="color:#75715e">//断言
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].CTRL <span style="color:#f92672">=</span> MRT_CHANNEL_CTRL_MODE(<span style="color:#ae81ff">1</span>);      <span style="color:#75715e">//一次中断模式模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].INTVAL <span style="color:#f92672">=</span> time <span style="color:#f92672">|</span> MRT_CHANNEL_INTVAL_LOAD_MASK;        <span style="color:#75715e">//设置间隔时间 立即载入时间 并启动定时器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>MRT_FLAG_READ(mrtchx));              <span style="color:#75715e">//等待时间到
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    MRT_FLAG_CLR(mrtchx);                       <span style="color:#75715e">//清除标志位
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @brief      MRT开始计时
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      mrtchx      MRT通道号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      time        周期中断时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @return     void
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Sample usage:           mrt_start(MRT_CH0);            
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mrt_start</span>(MRTNUM_enum mrtchx)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    SYSCON<span style="color:#f92672">-&gt;</span>AHBCLKCTRLSET[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> SYSCON_AHBCLKCTRL_MRT_MASK;      <span style="color:#75715e">//打开MRT时钟
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    SYSCON<span style="color:#f92672">-&gt;</span>PRESETCTRLCLR[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> SYSCON_PRESETCTRL_MRT_RST_MASK;  <span style="color:#75715e">//清除MRT复位时钟
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].CTRL <span style="color:#f92672">=</span> MRT_CHANNEL_CTRL_MODE(<span style="color:#ae81ff">1</span>);      <span style="color:#75715e">//一次中断模式模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].INTVAL <span style="color:#f92672">=</span> MRT_CHANNEL_INTVAL_IVALUE_MASK <span style="color:#f92672">|</span> MRT_CHANNEL_INTVAL_LOAD_MASK;<span style="color:#75715e">//设置间隔时间 立即载入时间 并启动定时器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @brief      MRT获取计时时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      mrtchx      MRT通道号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @return     void
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Sample usage:           uint32 time = mrt_get(MRT_CH0);     //无需用户调用 请使用H文件内的宏定义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>uint32 <span style="color:#a6e22e">mrt_get</span>(MRTNUM_enum mrtchx)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (MRT_CHANNEL_INTVAL_IVALUE_MASK <span style="color:#f92672">-</span> MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].TIMER); <span style="color:#75715e">//如果返回的是0，则计时已经超出
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @brief      MRT计时清除
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      mrtchx      MRT通道号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @return     void
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Sample usage:           清除计时并重新启动
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mrt_clean</span>(MRTNUM_enum mrtchx)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    MRT0<span style="color:#f92672">-&gt;</span>CHANNEL[mrtchx].INTVAL <span style="color:#f92672">=</span> MRT_CHANNEL_INTVAL_IVALUE_MASK <span style="color:#f92672">|</span> MRT_CHANNEL_INTVAL_LOAD_MASK;<span style="color:#75715e">//设置间隔时间 立即载入时间 并启动定时器
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>如何设置延时？</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @brief      毫秒级systick延时函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @param      ms              延时多少毫秒
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  @return     void
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Sample usage:               systick_delay_ms(1000);   //延时1000毫秒
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//-------------------------------------------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">systick_delay_ms</span>(uint32 ms)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//get_clk();//获取内核时钟便于后面设置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">while</span>(ms<span style="color:#f92672">--</span>) systick_delay(main_clk_mhz<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dynais.xyz/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

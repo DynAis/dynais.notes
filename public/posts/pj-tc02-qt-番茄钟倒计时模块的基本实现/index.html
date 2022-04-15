@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>番茄钟倒计时模块的基本实现 | DynAis</title>
+<meta name="keywords" content="Qt, Python">
+<meta name="description" content="项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&quot;XX:XX&quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
+# 显示时间转秒数 &#34;XX:XX&#34; -&gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec &#43; 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&gt; &#34;XX:XX&#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &lt; 2:  t[i] = &#34;0&#34; &#43; t[i]   tomato = &#34;:&#34;.">
+<meta name="author" content="">
+<link rel="canonical" href="https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dynais.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="番茄钟倒计时模块的基本实现" />
+<meta property="og:description" content="项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&quot;XX:XX&quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
+# 显示时间转秒数 &#34;XX:XX&#34; -&gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec &#43; 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&gt; &#34;XX:XX&#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &lt; 2:  t[i] = &#34;0&#34; &#43; t[i]   tomato = &#34;:&#34;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-10T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-04-10T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="番茄钟倒计时模块的基本实现"/>
+<meta name="twitter:description" content="项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&quot;XX:XX&quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
+# 显示时间转秒数 &#34;XX:XX&#34; -&gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec &#43; 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&gt; &#34;XX:XX&#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &lt; 2:  t[i] = &#34;0&#34; &#43; t[i]   tomato = &#34;:&#34;."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dynais.xyz/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "番茄钟倒计时模块的基本实现",
+      "item": "https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "番茄钟倒计时模块的基本实现",
+  "name": "番茄钟倒计时模块的基本实现",
+  "description": "项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是\u0026quot;XX:XX\u0026quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块\n# 显示时间转秒数 \u0026#34;XX:XX\u0026#34; -\u0026gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec + 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -\u0026gt; \u0026#34;XX:XX\u0026#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) \u0026lt; 2:  t[i] = \u0026#34;0\u0026#34; + t[i]   tomato = \u0026#34;:\u0026#34;.",
+  "keywords": [
+    "Qt", "Python"
+  ],
+  "articleBody": "项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是\"XX:XX\", 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块\n# 显示时间转秒数 \"XX:XX\" - flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec + 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout - \"XX:XX\" def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i])  2:  t[i] = \"0\" + t[i]   tomato = \":\".join(t)  return tomato 2. 获取系统时间 获取系统时间在python里我使用的是time包, 还有一个相似的是datetime.time包, 注意不要搞混了\nimport time 倒计时的基本思路是点击开始按钮时获取一个开启的系统时间, 然后用户会有一个给定的目标时间, 然后点按钮以后会进入一个循环, 知道计时结束才会退出, 在循环里面一直获取系统时间和其实时间运算就得到了已经过了多久, 再和目标时间判断就行了\nt_start = time.time() 这个语句是获取以秒数显示的当前系统时间, 用于运算会比较方便\n3. 页面元素的交互 简单的页面元素交互可以在Qt里直接实现\n原理基本上是, 按下按钮之类的东西, 会发出一个信号\nui_window.button_start.clicked这个信号就是ui_window这个窗口下button_start按钮发出的点击信号, 使用connect绑定一个slot之后\nui_window.button_start.clicked.connect(start_a_tomato) 在这里的意思就是: 单击这个按钮以后执行start_a_tomato函数, 注意函数名在这里不带括号\n二. 已解决的问题 1. 倒计时使用time.sleep()效果不好的问题 最开始的思路里, 用户点击开始后进入一个循环, 这个循环每次执行一秒, 然后让页面更新一次, 用到的函数是这个\nimport time time.sleep(1)\t#控制系统空置一秒 但是问题就是, 和单片机上不能乱用delay()一样, 使用sleep()会使程序整个无法响应, 导致拖拽手感奇怪, 且拖拽时倒计时直接停止\n然后换了思路, 直接不断读取系统时间实时刷新, 解决了拖拽手感的问题, 但拖拽时倒计时还是会停止, 不过放下窗口后时间并不会出错, 就先不管了\n2. 改变窗口元素但窗口显示不刷新的问题 最开始在循环里改变了元素, 但发现直到循环退出窗口才改变了显示, 但使用print输出又没什么问题, 于是想可能是窗口刷新的问题, 最后的解决办法就一条指令\nQtWidgets.QApplication.processEvents() 让窗口刷新\n三. 待解决的问题 1. 拖动窗口时时间不走动的问题 暂时没有思路\n2. Qt里写了中文uic()命令就无法成功执行的问题 应该是编码不统一的问题, 但是改了Qt的编码几次还是不行, 暂时先用英文顶着, 看看以后有没有解决办法\n暂时没有思路\n四. 下一阶段的目标  加入自己指定时间的模块 加入保存用户设置的文件 在倒计时结束时尝试发出通知  ",
+  "wordCount" : "146",
+  "inLanguage": "en",
+  "datePublished": "2020-04-10T00:00:00Z",
+  "dateModified": "2020-04-10T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DynAis",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dynais.xyz/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      番茄钟倒计时模块的基本实现
+    </h1>
+    <div class="post-meta"><span title='2020-04-10 00:00:00 +0000 UTC'>April 10, 2020</span>
+
+</div>
+  </header> 
+  <div class="post-content"><!-- raw HTML omitted -->
+<h2 id="项目进度">项目进度<a hidden class="anchor" aria-hidden="true" href="#项目进度">#</a></h2>
+<ul>
+<li>实现了番茄钟最基本的倒计时功能</li>
+<li>实现了按钮交互的功能</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="一-重要代码模块">一. 重要代码模块<a hidden class="anchor" aria-hidden="true" href="#一-重要代码模块">#</a></h2>
+<h3 id="1-显示时间与计算时间的转换">1. 显示时间与计算时间的转换<a hidden class="anchor" aria-hidden="true" href="#1-显示时间与计算时间的转换">#</a></h3>
+<!-- raw HTML omitted -->
+<p>实现倒计时时的一个问题是: 显示的时间格式需要是&quot;XX:XX&quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 显示时间转秒数 &#34;XX:XX&#34; -&gt; flout</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tomato2sec</span>(tomato):
+</span></span><span style="display:flex;"><span>    sec <span style="color:#f92672">=</span> int(tomato[<span style="color:#ae81ff">3</span>:])
+</span></span><span style="display:flex;"><span>    sec <span style="color:#f92672">=</span> sec <span style="color:#f92672">+</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> int(tomato[:<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sec
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 秒数转显示时间 flout -&gt; &#34;XX:XX&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sec2tomato</span>(sec):
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    t<span style="color:#f92672">.</span>append(str(int(sec <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>)))
+</span></span><span style="display:flex;"><span>    t<span style="color:#f92672">.</span>append(str(int(sec <span style="color:#f92672">%</span> <span style="color:#ae81ff">60</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(t)):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(t[i]) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>            t[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">+</span> t[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    tomato <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;:&#34;</span><span style="color:#f92672">.</span>join(t)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> tomato
+</span></span></code></pre></div><h3 id="2-获取系统时间">2. 获取系统时间<a hidden class="anchor" aria-hidden="true" href="#2-获取系统时间">#</a></h3>
+<p>获取系统时间在python里我使用的是time包, 还有一个相似的是datetime.time包, 注意不要搞混了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span></code></pre></div><p>倒计时的基本思路是点击开始按钮时获取一个开启的系统时间, 然后用户会有一个给定的目标时间, 然后点按钮以后会进入一个循环, 知道计时结束才会退出, 在循环里面一直获取系统时间和其实时间运算就得到了已经过了多久, 再和目标时间判断就行了</p>
+<pre tabindex="0"><code>t_start = time.time()
+</code></pre><p>这个语句是获取以秒数显示的当前系统时间, 用于运算会比较方便</p>
+<h3 id="3-页面元素的交互">3. 页面元素的交互<a hidden class="anchor" aria-hidden="true" href="#3-页面元素的交互">#</a></h3>
+<p>简单的页面元素交互可以在Qt里直接实现</p>
+<p>原理基本上是, 按下按钮之类的东西, 会发出一个信号</p>
+<p><code>ui_window.button_start.clicked</code>这个信号就是<code>ui_window</code>这个窗口下<code>button_start</code>按钮发出的点击信号, 使用<code>connect</code>绑定一个<strong>slot</strong>之后</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ui_window<span style="color:#f92672">.</span>button_start<span style="color:#f92672">.</span>clicked<span style="color:#f92672">.</span>connect(start_a_tomato)
+</span></span></code></pre></div><p>在这里的意思就是: 单击这个按钮以后执行<code>start_a_tomato</code>函数, 注意函数名在这里不带括号</p>
+<h2 id="二-已解决的问题">二. 已解决的问题<a hidden class="anchor" aria-hidden="true" href="#二-已解决的问题">#</a></h2>
+<h3 id="1-倒计时使用timesleep效果不好的问题">1. 倒计时使用time.sleep()效果不好的问题<a hidden class="anchor" aria-hidden="true" href="#1-倒计时使用timesleep效果不好的问题">#</a></h3>
+<p>最开始的思路里, 用户点击开始后进入一个循环, 这个循环每次执行一秒, 然后让页面更新一次, 用到的函数是这个</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)	<span style="color:#75715e">#控制系统空置一秒</span>
+</span></span></code></pre></div><p>但是问题就是, 和单片机上不能乱用<code>delay()</code>一样, 使用<code>sleep()</code>会使程序整个无法响应, 导致拖拽手感奇怪, 且拖拽时倒计时直接停止</p>
+<p>然后换了思路, 直接不断读取系统时间实时刷新, 解决了拖拽手感的问题, 但拖拽时倒计时还是会停止, 不过放下窗口后时间并不会出错, 就先不管了</p>
+<h3 id="2-改变窗口元素但窗口显示不刷新的问题">2. 改变窗口元素但窗口显示不刷新的问题<a hidden class="anchor" aria-hidden="true" href="#2-改变窗口元素但窗口显示不刷新的问题">#</a></h3>
+<p>最开始在循环里改变了元素, 但发现直到循环退出窗口才改变了显示, 但使用print输出又没什么问题, 于是想可能是窗口刷新的问题, 最后的解决办法就一条指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>QtWidgets<span style="color:#f92672">.</span>QApplication<span style="color:#f92672">.</span>processEvents()
+</span></span></code></pre></div><p>让窗口刷新</p>
+<h2 id="三-待解决的问题">三. 待解决的问题<a hidden class="anchor" aria-hidden="true" href="#三-待解决的问题">#</a></h2>
+<h3 id="1-拖动窗口时时间不走动的问题">1. 拖动窗口时时间不走动的问题<a hidden class="anchor" aria-hidden="true" href="#1-拖动窗口时时间不走动的问题">#</a></h3>
+<p>暂时没有思路</p>
+<h3 id="2-qt里写了中文uic命令就无法成功执行的问题">2. Qt里写了中文<code>uic()</code>命令就无法成功执行的问题<a hidden class="anchor" aria-hidden="true" href="#2-qt里写了中文uic命令就无法成功执行的问题">#</a></h3>
+<p>应该是编码不统一的问题, 但是改了Qt的编码几次还是不行, 暂时先用英文顶着, 看看以后有没有解决办法</p>
+<p>暂时没有思路</p>
+<h2 id="四-下一阶段的目标">四. 下一阶段的目标<a hidden class="anchor" aria-hidden="true" href="#四-下一阶段的目标">#</a></h2>
+<ul>
+<li>加入自己指定时间的模块</li>
+<li>加入保存用户设置的文件</li>
+<li>在倒计时结束时尝试发出通知</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dynais.xyz/tags/qt/">Qt</a></li>
+      <li><a href="https://dynais.xyz/tags/python/">Python</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

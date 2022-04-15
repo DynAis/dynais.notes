@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>在Markdown文件中使用Latex表示数学公式 | DynAis</title>
+<meta name="keywords" content="latex">
+<meta name="description" content="在Markdown中插入数学公式的语法是 $数学公式$ 和 $$数学公式$$.
+行内公式 行内公式是可以让公式在文中与文字或其他东西混编，不独占一行.在数学模式下,符号会使用单独的字体,字母通常是倾斜的意大利体,数字和符号则是直立体.而且,数学符号之间的距离也与一般的水平模式不同:
+   示例 显示     $2x&#43;3y=34$    2x&#43;3y=34 2x&#43;3y=34    因此,在排版数学公式时,即使没有特殊符号的算式如1&#43;1=2,或者简单的一个字母变量,也要进入数学模式,使用$1&#43;1=2$,$x$,而不是使用排版普通文字的方式
+独立公式 独立公式单独占一行,不和其他文字混编
+多行公式 在独立公式中使用\来换行 示例:
+$$ 2x&#43;3y=34\\ x&#43;4y=25 $$ 显示: ![2x&#43;3y=34\ x&#43;4y=25](https://math.jianshu.com/math?formula=2x%2B3y%3D34\ x%2B4y%3D25)
+常用符号    符号 示例 显示     上下标 S=a_{1}^2&#43;a_{2}^2&#43;a_{3}^2$    括号 $f(x, y) = 100 * \lbrace[(x &#43; y) * 3] - 5\rbrace$    分数 $\frac{1}{3} 与 \cfrac{1}{3}$    开方 $\sqrt[3]{X}$和$\sqrt{5 - x}$ !">
+<meta name="author" content="">
+<link rel="canonical" href="https://dynais.xyz/posts/nt-tex-latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://dynais.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="在Markdown文件中使用Latex表示数学公式" />
+<meta property="og:description" content="在Markdown中插入数学公式的语法是 $数学公式$ 和 $$数学公式$$.
+行内公式 行内公式是可以让公式在文中与文字或其他东西混编，不独占一行.在数学模式下,符号会使用单独的字体,字母通常是倾斜的意大利体,数字和符号则是直立体.而且,数学符号之间的距离也与一般的水平模式不同:
+   示例 显示     $2x&#43;3y=34$    2x&#43;3y=34 2x&#43;3y=34    因此,在排版数学公式时,即使没有特殊符号的算式如1&#43;1=2,或者简单的一个字母变量,也要进入数学模式,使用$1&#43;1=2$,$x$,而不是使用排版普通文字的方式
+独立公式 独立公式单独占一行,不和其他文字混编
+多行公式 在独立公式中使用\来换行 示例:
+$$ 2x&#43;3y=34\\ x&#43;4y=25 $$ 显示: ![2x&#43;3y=34\ x&#43;4y=25](https://math.jianshu.com/math?formula=2x%2B3y%3D34\ x%2B4y%3D25)
+常用符号    符号 示例 显示     上下标 S=a_{1}^2&#43;a_{2}^2&#43;a_{3}^2$    括号 $f(x, y) = 100 * \lbrace[(x &#43; y) * 3] - 5\rbrace$    分数 $\frac{1}{3} 与 \cfrac{1}{3}$    开方 $\sqrt[3]{X}$和$\sqrt{5 - x}$ !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dynais.xyz/posts/nt-tex-latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在Markdown文件中使用Latex表示数学公式"/>
+<meta name="twitter:description" content="在Markdown中插入数学公式的语法是 $数学公式$ 和 $$数学公式$$.
+行内公式 行内公式是可以让公式在文中与文字或其他东西混编，不独占一行.在数学模式下,符号会使用单独的字体,字母通常是倾斜的意大利体,数字和符号则是直立体.而且,数学符号之间的距离也与一般的水平模式不同:
+   示例 显示     $2x&#43;3y=34$    2x&#43;3y=34 2x&#43;3y=34    因此,在排版数学公式时,即使没有特殊符号的算式如1&#43;1=2,或者简单的一个字母变量,也要进入数学模式,使用$1&#43;1=2$,$x$,而不是使用排版普通文字的方式
+独立公式 独立公式单独占一行,不和其他文字混编
+多行公式 在独立公式中使用\来换行 示例:
+$$ 2x&#43;3y=34\\ x&#43;4y=25 $$ 显示: ![2x&#43;3y=34\ x&#43;4y=25](https://math.jianshu.com/math?formula=2x%2B3y%3D34\ x%2B4y%3D25)
+常用符号    符号 示例 显示     上下标 S=a_{1}^2&#43;a_{2}^2&#43;a_{3}^2$    括号 $f(x, y) = 100 * \lbrace[(x &#43; y) * 3] - 5\rbrace$    分数 $\frac{1}{3} 与 \cfrac{1}{3}$    开方 $\sqrt[3]{X}$和$\sqrt{5 - x}$ !"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dynais.xyz/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "在Markdown文件中使用Latex表示数学公式",
+      "item": "https://dynais.xyz/posts/nt-tex-latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在Markdown文件中使用Latex表示数学公式",
+  "name": "在Markdown文件中使用Latex表示数学公式",
+  "description": "在Markdown中插入数学公式的语法是 $数学公式$ 和 $$数学公式$$.\n行内公式 行内公式是可以让公式在文中与文字或其他东西混编，不独占一行.在数学模式下,符号会使用单独的字体,字母通常是倾斜的意大利体,数字和符号则是直立体.而且,数学符号之间的距离也与一般的水平模式不同:\n   示例 显示     $2x+3y=34$    2x+3y=34 2x+3y=34    因此,在排版数学公式时,即使没有特殊符号的算式如1+1=2,或者简单的一个字母变量,也要进入数学模式,使用$1+1=2$,$x$,而不是使用排版普通文字的方式\n独立公式 独立公式单独占一行,不和其他文字混编\n多行公式 在独立公式中使用\\来换行 示例:\n$$ 2x+3y=34\\\\ x+4y=25 $$ 显示: ![2x+3y=34\\ x+4y=25](https://math.jianshu.com/math?formula=2x%2B3y%3D34\\ x%2B4y%3D25)\n常用符号    符号 示例 显示     上下标 S=a_{1}^2+a_{2}^2+a_{3}^2$    括号 $f(x, y) = 100 * \\lbrace[(x + y) * 3] - 5\\rbrace$    分数 $\\frac{1}{3} 与 \\cfrac{1}{3}$    开方 $\\sqrt[3]{X}$和$\\sqrt{5 - x}$ !",
+  "keywords": [
+    "latex"
+  ],
+  "articleBody": "在Markdown中插入数学公式的语法是 $数学公式$ 和 $$数学公式$$.\n行内公式 行内公式是可以让公式在文中与文字或其他东西混编，不独占一行.在数学模式下,符号会使用单独的字体,字母通常是倾斜的意大利体,数字和符号则是直立体.而且,数学符号之间的距离也与一般的水平模式不同:\n   示例 显示     $2x+3y=34$    2x+3y=34 2x+3y=34    因此,在排版数学公式时,即使没有特殊符号的算式如1+1=2,或者简单的一个字母变量,也要进入数学模式,使用$1+1=2$,$x$,而不是使用排版普通文字的方式\n独立公式 独立公式单独占一行,不和其他文字混编\n多行公式 在独立公式中使用\\来换行 示例:\n$$ 2x+3y=34\\\\ x+4y=25 $$ 显示: ![2x+3y=34\\ x+4y=25](https://math.jianshu.com/math?formula=2x%2B3y%3D34\\ x%2B4y%3D25)\n常用符号    符号 示例 显示     上下标 S=a_{1}^2+a_{2}^2+a_{3}^2$    括号 $f(x, y) = 100 * \\lbrace[(x + y) * 3] - 5\\rbrace$    分数 $\\frac{1}{3} 与 \\cfrac{1}{3}$    开方 $\\sqrt[3]{X}$和$\\sqrt{5 - x}$ ![\\sqrt[3]{X}](D:\\WorkSpace.Typora Images Hub\\math-1583415699231.svg)和    其他字符 关系运算符    代码 符号     \\pm    \\times    \\div    \\mid    \\nmid    \\cdot    \\circ    \\ast    \\bigodot    \\bigotimes    \\bigoplus    \\leq    \\geq    \\neq    \\approx    \\equiv    \\sum    \\prod     对数运算符    代码 符号     \\log    \\lg    \\ln     三角运算符    代码 符号     \\bot    \\angle    \\sin    \\cos    \\tan    \\cot    \\sec    \\csc     微积分运算符    代码 符号     \\prime    \\int    \\iint    \\iiint    \\oint    \\lim    \\infty    \\nabla    \\mathrm{d}     集合运算符    代码 符号     \\emptyset    \\in    \\notin    \\subset    \\subseteq    \\supseteq    \\bigcap    \\bigcup    \\bigvee    \\bigwedge    \\biguplus    \\bigsqcup     希腊字母    代码 大写 代码 小写     A  \\alpha    B  \\beta    \\Gamma  \\gamma    \\Delta  \\delta    E  \\epsilon    Z  \\zeta    H  \\eta    \\Theta  \\theta    I  \\iota    K  \\kappa    \\Lambda  \\lambda    M  \\mu    N  \\nu    Xi  \\xi    O  \\omicron    \\Pi  \\pi    P  \\rho    \\Sigma  \\sigma    T  \\tau    \\Upsilon  \\upsilon    \\Phi  \\phi    X  \\chi    \\Psi  \\psi    \\Omega  \\omega       需要大写希腊字母，将命令首字母大写即可。 \\Gamma呈现为\n  若需要斜体希腊字母，将命令前加上var前缀即可。\n  向量和复数 普通的变量x:x:$x$\n粗体1：使用\\boldsymbol{}进行加粗，如：\\boldsymbol{x}:$\\boldsymbol{x}$\n粗体2：使用\\mathbf{}进行加粗，如：\\mathbf{x}:$\\mathbf{x}$\n带箭头的向量：使用\\vec{}使向量带箭头，如\\vec{x}:$\\vec{x}$\n复数表示: \\underline{} 表示为 $\\underline{U}$\n绝对值 使用\\vert:$\\vert U \\vert$\n字体 分组 括号 求和、极限与积分 空格 矩阵 基本语法 起始标记\\begin{matrix}，结束标记\\end{matrix} 每一行末尾标记\\\\\\，行间元素之间以\u0026分隔 举例:\n$$\\begin{matrix} 1\u00260\u00260\\\\ 0\u00261\u00260\\\\ 0\u00260\u00261\\\\ \\end{matrix}$$ 呈现为：\n矩阵边框  在起始、结束标记处用下列词替换 matrix pmatrix ：小括号边框 bmatrix ：中括号边框 Bmatrix ：大括号边框 vmatrix ：单竖线边框 Vmatrix ：双竖线边框  省略元素  横省略号：\\cdots 竖省略号：\\vdots 斜省略号：\\ddots  $$\\begin{bmatrix} {a_{11}}\u0026{a_{12}}\u0026{\\cdots}\u0026{a_{1n}}\\\\ {a_{21}}\u0026{a_{22}}\u0026{\\cdots}\u0026{a_{2n}}\\\\ {\\vdots}\u0026{\\vdots}\u0026{\\ddots}\u0026{\\vdots}\\\\ {a_{m1}}\u0026{a_{m2}}\u0026{\\cdots}\u0026{a_{mn}}\\\\ \\end{bmatrix}$$ 呈现为：\n阵列 举例\n$$\\begin{array}{c|lll} {↓}\u0026{a}\u0026{b}\u0026{c}\\\\ \\hline {R_1}\u0026{c}\u0026{b}\u0026{a}\\\\ {R_2}\u0026{b}\u0026{c}\u0026{c}\\\\ \\end{array}$$ 呈现为\n方程组  需要cases环境：起始、结束处以{cases}声明  举例\n$$\\begin{cases} a_1x+b_1y+c_1z=d_1\\\\ a_2x+b_2y+c_2z=d_2\\\\ a_3x+b_3y+c_3z=d_3\\\\ \\end{cases} $$ 呈现为\n",
+  "wordCount" : "249",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dynais.xyz/posts/nt-tex-latex%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DynAis",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dynais.xyz/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      在Markdown文件中使用Latex表示数学公式
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><p>在Markdown中插入数学公式的语法是 <code>$数学公式$</code> 和 <code>$$数学公式$$</code>.</p>
+<h2 id="行内公式">行内公式<a hidden class="anchor" aria-hidden="true" href="#行内公式">#</a></h2>
+<p>行内公式是可以让公式在文中与文字或其他东西混编，不独占一行.在数学模式下,符号会使用单独的字体,字母通常是倾斜的意大利体,数字和符号则是直立体.而且,数学符号之间的距离也与一般的水平模式不同:</p>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th>显示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$2x+3y=34$</code></td>
+<td><img loading="lazy" src="https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725005742.svg" alt="2x&#43;3y=34"  />
+</td>
+</tr>
+<tr>
+<td><code>2x+3y=34</code></td>
+<td>2x+3y=34</td>
+</tr>
+</tbody>
+</table>
+<p>因此,在排版数学公式时,即使没有特殊符号的算式如1+1=2,或者简单的一个字母变量<img loading="lazy" src="https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725010108.svg" alt="x"  />
+,也要进入数学模式,使用<code>$1+1=2$</code>,<code>$x$</code>,而不是使用排版普通文字的方式</p>
+<h2 id="独立公式">独立公式<a hidden class="anchor" aria-hidden="true" href="#独立公式">#</a></h2>
+<p>独立公式单独占一行,不和其他文字混编</p>
+<h2 id="多行公式">多行公式<a hidden class="anchor" aria-hidden="true" href="#多行公式">#</a></h2>
+<p>在独立公式中使用\来换行
+示例:</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>$$   
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>x<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>y<span style="color:#f92672">=</span><span style="color:#ae81ff">34</span>\\   
+</span></span><span style="display:flex;"><span>x<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span>y<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span>  
+</span></span><span style="display:flex;"><span>$$
+</span></span></code></pre></div><p>显示:
+![2x+3y=34\ x+4y=25](<a href="https://math.jianshu.com/math?formula=2x%2B3y%3D34">https://math.jianshu.com/math?formula=2x%2B3y%3D34</a>\ x%2B4y%3D25)</p>
+<h2 id="常用符号">常用符号<a hidden class="anchor" aria-hidden="true" href="#常用符号">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>示例</th>
+<th>显示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上下标</td>
+<td><code>S=a_{1}^2+a_{2}^2+a_{3}^2$</code></td>
+<td><img loading="lazy" src="https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725005759.svg" alt="S=a_{1}^2&#43;a_{2}^2&#43;a_{3}^2"  />
+</td>
+</tr>
+<tr>
+<td>括号</td>
+<td><code>$f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace$</code></td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=f%28x%2C%20y%29%20%3D%20100%20*%20%5Clbrace%5B%28x%20%2B%20y%29%20*%203%5D%20-%205%5Crbrace" alt="f(x, y) = 100 * \lbrace[(x &#43; y) * 3] - 5\rbrace"  />
+</td>
+</tr>
+<tr>
+<td>分数</td>
+<td><code>$\frac{1}{3} 与 \cfrac{1}{3}$</code></td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cfrac%7B1%7D%7B3%7D%20%E4%B8%8E%20%5Ccfrac%7B1%7D%7B3%7D" alt="\frac{1}{3} 与 \cfrac{1}{3}"  />
+</td>
+</tr>
+<tr>
+<td>开方</td>
+<td><code>$\sqrt[3]{X}$</code>和<code>$\sqrt{5 - x}$</code></td>
+<td>![\sqrt[3]{X}](D:\WorkSpace.Typora Images Hub\math-1583415699231.svg)和<img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csqrt%7B5%20-%20x%7D" alt="\sqrt{5 - x}"  />
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="其他字符">其他字符<a hidden class="anchor" aria-hidden="true" href="#其他字符">#</a></h2>
+<h3 id="关系运算符">关系运算符<a hidden class="anchor" aria-hidden="true" href="#关系运算符">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\pm</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cpm" alt="\pm"  />
+</td>
+</tr>
+<tr>
+<td>\times</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ctimes" alt="\times"  />
+</td>
+</tr>
+<tr>
+<td>\div</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cdiv" alt="\div"  />
+</td>
+</tr>
+<tr>
+<td>\mid</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cmid" alt="\mid"  />
+</td>
+</tr>
+<tr>
+<td>\nmid</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cnmid" alt="\nmid"  />
+</td>
+</tr>
+<tr>
+<td>\cdot</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ccdot" alt="\cdot"  />
+</td>
+</tr>
+<tr>
+<td>\circ</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ccirc" alt="\circ"  />
+</td>
+</tr>
+<tr>
+<td>\ast</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cast" alt="\ast"  />
+</td>
+</tr>
+<tr>
+<td>\bigodot</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigodot" alt="\bigodot"  />
+</td>
+</tr>
+<tr>
+<td>\bigotimes</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigotimes" alt="\bigotimes"  />
+</td>
+</tr>
+<tr>
+<td>\bigoplus</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigoplus" alt="\bigoplus"  />
+</td>
+</tr>
+<tr>
+<td>\leq</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cleq" alt="\leq"  />
+</td>
+</tr>
+<tr>
+<td>\geq</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cgeq" alt="\geq"  />
+</td>
+</tr>
+<tr>
+<td>\neq</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cneq" alt="\neq"  />
+</td>
+</tr>
+<tr>
+<td>\approx</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Capprox" alt="\approx"  />
+</td>
+</tr>
+<tr>
+<td>\equiv</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cequiv" alt="\equiv"  />
+</td>
+</tr>
+<tr>
+<td>\sum</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csum" alt="\sum"  />
+</td>
+</tr>
+<tr>
+<td>\prod</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cprod" alt="\prod"  />
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="对数运算符">对数运算符<a hidden class="anchor" aria-hidden="true" href="#对数运算符">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\log</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Clog" alt="\log"  />
+</td>
+</tr>
+<tr>
+<td>\lg</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Clg" alt="\lg"  />
+</td>
+</tr>
+<tr>
+<td>\ln</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cln" alt="\ln"  />
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="三角运算符">三角运算符<a hidden class="anchor" aria-hidden="true" href="#三角运算符">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\bot</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbot" alt="\bot"  />
+</td>
+</tr>
+<tr>
+<td>\angle</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cangle" alt="\angle"  />
+</td>
+</tr>
+<tr>
+<td>\sin</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csin" alt="\sin"  />
+</td>
+</tr>
+<tr>
+<td>\cos</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ccos" alt="\cos"  />
+</td>
+</tr>
+<tr>
+<td>\tan</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ctan" alt="\tan"  />
+</td>
+</tr>
+<tr>
+<td>\cot</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ccot" alt="\cot"  />
+</td>
+</tr>
+<tr>
+<td>\sec</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csec" alt="\sec"  />
+</td>
+</tr>
+<tr>
+<td>\csc</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ccsc" alt="\csc"  />
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="微积分运算符">微积分运算符<a hidden class="anchor" aria-hidden="true" href="#微积分运算符">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\prime</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cprime" alt="\prime"  />
+</td>
+</tr>
+<tr>
+<td>\int</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cint" alt="\int"  />
+</td>
+</tr>
+<tr>
+<td>\iint</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ciint" alt="\iint"  />
+</td>
+</tr>
+<tr>
+<td>\iiint</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ciiint" alt="\iiint"  />
+</td>
+</tr>
+<tr>
+<td>\oint</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Coint" alt="\oint"  />
+</td>
+</tr>
+<tr>
+<td>\lim</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Clim" alt="\lim"  />
+</td>
+</tr>
+<tr>
+<td>\infty</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cinfty" alt="\infty"  />
+</td>
+</tr>
+<tr>
+<td>\nabla</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cnabla" alt="\nabla"  />
+</td>
+</tr>
+<tr>
+<td>\mathrm{d}</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cmathrm%7Bd%7D" alt="\mathrm{d}"  />
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="集合运算符">集合运算符<a hidden class="anchor" aria-hidden="true" href="#集合运算符">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\emptyset</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cemptyset" alt="\emptyset"  />
+</td>
+</tr>
+<tr>
+<td>\in</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cin" alt="\in"  />
+</td>
+</tr>
+<tr>
+<td>\notin</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cnotin" alt="\notin"  />
+</td>
+</tr>
+<tr>
+<td>\subset</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csubset" alt="\subset"  />
+</td>
+</tr>
+<tr>
+<td>\subseteq</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csubseteq" alt="\subseteq"  />
+</td>
+</tr>
+<tr>
+<td>\supseteq</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csupseteq" alt="\supseteq"  />
+</td>
+</tr>
+<tr>
+<td>\bigcap</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigcap" alt="\bigcap"  />
+</td>
+</tr>
+<tr>
+<td>\bigcup</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigcup" alt="\bigcup"  />
+</td>
+</tr>
+<tr>
+<td>\bigvee</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigvee" alt="\bigvee"  />
+</td>
+</tr>
+<tr>
+<td>\bigwedge</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigwedge" alt="\bigwedge"  />
+</td>
+</tr>
+<tr>
+<td>\biguplus</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbiguplus" alt="\biguplus"  />
+</td>
+</tr>
+<tr>
+<td>\bigsqcup</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbigsqcup" alt="\bigsqcup"  />
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="希腊字母">希腊字母<a hidden class="anchor" aria-hidden="true" href="#希腊字母">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>大写</th>
+<th>代码</th>
+<th>小写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=A" alt="A"  />
+</td>
+<td>\alpha</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Calpha" alt="\alpha"  />
+</td>
+</tr>
+<tr>
+<td>B</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=B" alt="B"  />
+</td>
+<td>\beta</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cbeta" alt="\beta"  />
+</td>
+</tr>
+<tr>
+<td>\Gamma</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CGamma" alt="\Gamma"  />
+</td>
+<td>\gamma</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cgamma" alt="\gamma"  />
+</td>
+</tr>
+<tr>
+<td>\Delta</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CDelta" alt="\Delta"  />
+</td>
+<td>\delta</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cdelta" alt="\delta"  />
+</td>
+</tr>
+<tr>
+<td>E</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=E" alt="E"  />
+</td>
+<td>\epsilon</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cepsilon" alt="\epsilon"  />
+</td>
+</tr>
+<tr>
+<td>Z</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=Z" alt="Z"  />
+</td>
+<td>\zeta</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Czeta" alt="\zeta"  />
+</td>
+</tr>
+<tr>
+<td>H</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=H" alt="H"  />
+</td>
+<td>\eta</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ceta" alt="\eta"  />
+</td>
+</tr>
+<tr>
+<td>\Theta</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CTheta" alt="\Theta"  />
+</td>
+<td>\theta</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ctheta" alt="\theta"  />
+</td>
+</tr>
+<tr>
+<td>I</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=I" alt="I"  />
+</td>
+<td>\iota</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ciota" alt="\iota"  />
+</td>
+</tr>
+<tr>
+<td>K</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=K" alt="K"  />
+</td>
+<td>\kappa</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ckappa" alt="\kappa"  />
+</td>
+</tr>
+<tr>
+<td>\Lambda</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CLambda" alt="\Lambda"  />
+</td>
+<td>\lambda</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Clambda" alt="\lambda"  />
+</td>
+</tr>
+<tr>
+<td>M</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=M" alt="M"  />
+</td>
+<td>\mu</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cmu" alt="\mu"  />
+</td>
+</tr>
+<tr>
+<td>N</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=N" alt="N"  />
+</td>
+<td>\nu</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cnu" alt="\nu"  />
+</td>
+</tr>
+<tr>
+<td>Xi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=Xi" alt="Xi"  />
+</td>
+<td>\xi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cxi" alt="\xi"  />
+</td>
+</tr>
+<tr>
+<td>O</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=O" alt="O"  />
+</td>
+<td>\omicron</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Comicron" alt="\omicron"  />
+</td>
+</tr>
+<tr>
+<td>\Pi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CPi" alt="\Pi"  />
+</td>
+<td>\pi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cpi" alt="\pi"  />
+</td>
+</tr>
+<tr>
+<td>P</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=P" alt="P"  />
+</td>
+<td>\rho</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Crho" alt="\rho"  />
+</td>
+</tr>
+<tr>
+<td>\Sigma</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CSigma" alt="\Sigma"  />
+</td>
+<td>\sigma</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Csigma" alt="\sigma"  />
+</td>
+</tr>
+<tr>
+<td>T</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=T" alt="T"  />
+</td>
+<td>\tau</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Ctau" alt="\tau"  />
+</td>
+</tr>
+<tr>
+<td>\Upsilon</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CUpsilon" alt="\Upsilon"  />
+</td>
+<td>\upsilon</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cupsilon" alt="\upsilon"  />
+</td>
+</tr>
+<tr>
+<td>\Phi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CPhi" alt="\Phi"  />
+</td>
+<td>\phi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cphi" alt="\phi"  />
+</td>
+</tr>
+<tr>
+<td>X</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=X" alt="X"  />
+</td>
+<td>\chi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cchi" alt="\chi"  />
+</td>
+</tr>
+<tr>
+<td>\Psi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5CPsi" alt="\Psi"  />
+</td>
+<td>\psi</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Cpsi" alt="\psi"  />
+</td>
+</tr>
+<tr>
+<td>\Omega</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5COmega" alt="\Omega"  />
+</td>
+<td>\omega</td>
+<td><img loading="lazy" src="https://math.jianshu.com/math?formula=%5Comega" alt="\omega"  />
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>需要大写希腊字母，将命令首字母大写即可。
+\Gamma呈现为</p>
+<p><img loading="lazy" src="https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210317223633.webp" alt="img"  />
+</p>
+</li>
+<li>
+<p>若需要斜体希腊字母，将命令前加上var前缀即可。</p>
+<p><img loading="lazy" src="https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210317223637.png" alt="img"  />
+</p>
+</li>
+</ul>
+<h2 id="向量和复数">向量和复数<a hidden class="anchor" aria-hidden="true" href="#向量和复数">#</a></h2>
+<p>普通的变量x:<code>x</code>:$x$</p>
+<p>粗体1：使用<code>\boldsymbol{}</code>进行加粗，如：<code>\boldsymbol{x}</code>:$\boldsymbol{x}$</p>
+<p>粗体2：使用<code>\mathbf{}</code>进行加粗，如：<code>\mathbf{x}</code>:$\mathbf{x}$</p>
+<p>带箭头的向量：使用<code>\vec{}</code>使向量带箭头，如<code>\vec{x}</code>:$\vec{x}$</p>
+<p>复数表示: <code>\underline{}</code> 表示为 $\underline{U}$</p>
+<h2 id="绝对值">绝对值<a hidden class="anchor" aria-hidden="true" href="#绝对值">#</a></h2>
+<p>使用<code>\vert</code>:$\vert U \vert$</p>
+<h2 id="字体">字体<a hidden class="anchor" aria-hidden="true" href="#字体">#</a></h2>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-45c8673c41af7c42.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/446/format/webp" alt="img"  />
+</p>
+<h2 id="分组">分组<a hidden class="anchor" aria-hidden="true" href="#分组">#</a></h2>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-434dd3242e693d70.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/375/format/webp" alt="img"  />
+</p>
+<h2 id="括号">括号<a hidden class="anchor" aria-hidden="true" href="#括号">#</a></h2>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-6ef5dd4fd56680f9.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/599/format/webp" alt="img"  />
+</p>
+<h2 id="求和极限与积分">求和、极限与积分<a hidden class="anchor" aria-hidden="true" href="#求和极限与积分">#</a></h2>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-fb2604765d03c8d8.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/526/format/webp" alt="img"  />
+</p>
+<h3 id="空格">空格<a hidden class="anchor" aria-hidden="true" href="#空格">#</a></h3>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-f9b9a026db748466.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/264/format/webp" alt="img"  />
+</p>
+<h2 id="矩阵">矩阵<a hidden class="anchor" aria-hidden="true" href="#矩阵">#</a></h2>
+<h3 id="基本语法">基本语法<a hidden class="anchor" aria-hidden="true" href="#基本语法">#</a></h3>
+<p>起始标记<code>\begin{matrix}</code>，结束标记<code>\end{matrix}</code>
+每一行末尾标记<code>\\\</code>，行间元素之间以<code>&amp;</code>分隔
+举例:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>$$\<span style="color:#66d9ef">begin</span>{matrix}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0</span>\\
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0</span>\\
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;</span><span style="color:#ae81ff">1</span>\\
+</span></span><span style="display:flex;"><span>\<span style="color:#66d9ef">end</span>{matrix}$$
+</span></span></code></pre></div><p>呈现为：</p>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-1548fa2d1079ef70.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/113/format/webp" alt="img"  />
+</p>
+<h3 id="矩阵边框">矩阵边框<a hidden class="anchor" aria-hidden="true" href="#矩阵边框">#</a></h3>
+<ul>
+<li>在起始、结束标记处用下列词替换 <code>matrix</code></li>
+<li><code>pmatrix</code> ：小括号边框</li>
+<li><code>bmatrix</code> ：中括号边框</li>
+<li><code>Bmatrix</code> ：大括号边框</li>
+<li><code>vmatrix</code> ：单竖线边框</li>
+<li><code>Vmatrix</code> ：双竖线边框</li>
+</ul>
+<h3 id="省略元素">省略元素<a hidden class="anchor" aria-hidden="true" href="#省略元素">#</a></h3>
+<ul>
+<li>横省略号：<code>\cdots</code></li>
+<li>竖省略号：<code>\vdots</code></li>
+<li>斜省略号：<code>\ddots</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>$$\<span style="color:#66d9ef">begin</span>{bmatrix}
+</span></span><span style="display:flex;"><span>{a_{<span style="color:#ae81ff">11</span>}}<span style="color:#f92672">&amp;</span>{a_{<span style="color:#ae81ff">12</span>}}<span style="color:#f92672">&amp;</span>{\cdots}<span style="color:#f92672">&amp;</span>{a_{<span style="color:#ae81ff">1</span>n}}\\
+</span></span><span style="display:flex;"><span>{a_{<span style="color:#ae81ff">21</span>}}<span style="color:#f92672">&amp;</span>{a_{<span style="color:#ae81ff">22</span>}}<span style="color:#f92672">&amp;</span>{\cdots}<span style="color:#f92672">&amp;</span>{a_{<span style="color:#ae81ff">2</span>n}}\\
+</span></span><span style="display:flex;"><span>{\vdots}<span style="color:#f92672">&amp;</span>{\vdots}<span style="color:#f92672">&amp;</span>{\ddots}<span style="color:#f92672">&amp;</span>{\vdots}\\
+</span></span><span style="display:flex;"><span>{a_{m1}}<span style="color:#f92672">&amp;</span>{a_{m2}}<span style="color:#f92672">&amp;</span>{\cdots}<span style="color:#f92672">&amp;</span>{a_{mn}}\\
+</span></span><span style="display:flex;"><span>\<span style="color:#66d9ef">end</span>{bmatrix}$$
+</span></span></code></pre></div><p>呈现为：</p>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-72c03690ce9e63b8.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/235/format/webp" alt="img"  />
+</p>
+<h3 id="阵列">阵列<a hidden class="anchor" aria-hidden="true" href="#阵列">#</a></h3>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-19f8205a2b599b86.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/384/format/webp" alt="img"  />
+</p>
+<p>举例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$$\</span>begin{array}{c<span style="color:#f92672">|</span>lll}
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">↓</span>}<span style="color:#f92672">&amp;</span>{a}<span style="color:#f92672">&amp;</span>{b}<span style="color:#f92672">&amp;</span>{c}<span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\</span>hline
+</span></span><span style="display:flex;"><span>{R_1}<span style="color:#f92672">&amp;</span>{c}<span style="color:#f92672">&amp;</span>{b}<span style="color:#f92672">&amp;</span>{a}<span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span>{R_2}<span style="color:#f92672">&amp;</span>{b}<span style="color:#f92672">&amp;</span>{c}<span style="color:#f92672">&amp;</span>{c}<span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\</span>end{array}<span style="color:#960050;background-color:#1e0010">$$</span>
+</span></span></code></pre></div><p>呈现为</p>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-84dac3a98e0e44a9.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/154/format/webp" alt="img"  />
+</p>
+<h3 id="方程组">方程组<a hidden class="anchor" aria-hidden="true" href="#方程组">#</a></h3>
+<ul>
+<li>需要cases环境：起始、结束处以{cases}声明</li>
+</ul>
+<p>举例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$$\</span>begin{cases}
+</span></span><span style="display:flex;"><span>a_1x<span style="color:#f92672">+</span>b_1y<span style="color:#f92672">+</span>c_1z<span style="color:#f92672">=</span>d_1<span style="color:#960050;background-color:#1e0010">\</span>\
+</span></span><span style="display:flex;"><span>a_2x<span style="color:#f92672">+</span>b_2y<span style="color:#f92672">+</span>c_2z<span style="color:#f92672">=</span>d_2<span style="color:#960050;background-color:#1e0010">\</span>\
+</span></span><span style="display:flex;"><span>a_3x<span style="color:#f92672">+</span>b_3y<span style="color:#f92672">+</span>c_3z<span style="color:#f92672">=</span>d_3<span style="color:#960050;background-color:#1e0010">\</span>\
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\</span>end{cases}
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$$</span>
+</span></span></code></pre></div><p>呈现为</p>
+<p><img loading="lazy" src="https:////upload-images.jianshu.io/upload_images/436556-8e608fa9d8906bf1.png?imageMogr2/auto-orient/strip%7cimageView2/2/w/250/format/webp" alt="img"  />
+</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dynais.xyz/tags/latex/">Latex</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

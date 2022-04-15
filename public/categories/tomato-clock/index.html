@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>tomato-clock | DynAis</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://dynais.xyz/categories/tomato-clock/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://dynais.xyz/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://dynais.xyz/categories/tomato-clock/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="tomato-clock" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dynais.xyz/categories/tomato-clock/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="tomato-clock"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>tomato-clock</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>重构完成, 焕发新生
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>项目进度   重构了代码
+  修正了大部分bug
+  一. 重要代码模块 1. Qtimer  https://blog.csdn.net/jia666666/article/details/81672344
+ Qtimer是Qt自带的定时器类, 位于PyQt5.Qcore下, 和单片机的中断函数非常像, 并且提供单次触发和多次触发两种触发方式
+多次触发 timer.timeout.connect(function) ... timer = Qtimer() timer.start(1000) 这里timeout是Qtimer的中断信号, 这里设定timer.start(1000)代表每一秒执行一次中断, 在番茄钟里, 我使用这个中断来进行时间的更新, 时间的更新仍然使用的是原生的time模块
+如果要停止Qtimer,使用
+timer.stop() 2. 自定义信号  https://blog.csdn.net/foreveronly/article/details/82453697
+ 二. 已解决的问题 1. 拖动窗口时时间不走动的问题 加完Qtimer中断完全没有问题
+3. 进程无法完全退出问题 -&gt; window.close()效果问题 -&gt; 响铃bug 通过将子窗口变为主窗口类的成员, 并使用以下语句初始化
+class MainWindow(QMainWindow):  def __init__(self):  super().__init__()  #子窗口建立  self.subBreak = BreakWindow(self)# 注意这里  class BreakWindow(QDialog):  def __init__(self,parent=None):  super()....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-19 00:00:00 +0000 UTC'>April 19, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 重构完成, 焕发新生" href="https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>又不是不能用, 番茄钟基本功能建设完毕
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>项目进度  加入了自己指定时间的模块   加入保存用户设置的文件config.json 在倒计时结束时发出铃声通知 完善了除统计和To Do List外的Menu界面   修正了部分bug  一. 重要代码模块 1. 打包程序成exe文件 pyInstaller模块 pyInstaller是python的一个库, 使用它可以很方便的打包文件成为exe可执行文件
+要使用这个库, 首先在Pycharm里安装相应的环境, 之后新建一个.py文件, 比如我的:
+在里面输入代码(以这次工程为例):
+import os if __name__ == &#39;__main__&#39;:  from PyInstaller.__main__ import run  opts=[&#39;main.py&#39;,&#39;-w&#39;,&#39;-F&#39;,&#39;--icon=image/tomato.ico&#39;]  run(opts) 其中主要注意opts=[&#39;main.py&#39;,&#39;-w&#39;,&#39;-F&#39;,&#39;--icon=image/tomato.ico&#39;]这一句
+main.py是主文件, 是进程的入口
+-w这个参数使编译出来的文件时exe&#43;文件的形式, 去掉这个参数编译出来是一个整体的exe文件
+-F参数强制编译, 也就是说本次会覆盖上次的文件, 我觉得加上比较好
+最后--icon=image/tomato.ico是我指定的exe文件图标, 需要是一个ico文件
+直接运行.py脚本就可以在/dist里得到编译的文件
+资源文件夹问题 本次制作番茄钟使用到的资源文件, 比如配置文件, 或者是.MP3的铃声文件, pyInstaller在编译的时候都是不会编译的, 也就是说需要自己将文件复制到产生出来的目录下, 不然程序会报错无法运行
+2. 读取和写入配置文件 使用Json作为配置文件 Json是一种常见的语言, 其中一种用法就是作为书写配置文件的语言, 虽然有人说它不适合作为配置文件语言, 但是小项目用用还是没有问题的
+Json配置文件以{开头, 以}结束, 大括号在Json里代表一个对象, 具有一个键与一个值, 用:对应,...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-12 00:00:00 +0000 UTC'>April 12, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 又不是不能用, 番茄钟基本功能建设完毕" href="https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>番茄钟倒计时模块的基本实现
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&#34;XX:XX&#34;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
+# 显示时间转秒数 &#34;XX:XX&#34; -&gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec &#43; 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&gt; &#34;XX:XX&#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &lt; 2:  t[i] = &#34;0&#34; &#43; t[i]   tomato = &#34;:&#34;....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-10 00:00:00 +0000 UTC'>April 10, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to 番茄钟倒计时模块的基本实现" href="https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Python&#43;Qt5项目环境的搭建
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>一. 软件 1. Pycharm 2019.3.3 ​	Pycharm主要负责进行主体逻辑的编写, 以及统筹整个项目, 此外环境的搭建大多也在Pycharm里完成
+2. Qt 5.12.7 / Qt Creator ​	Qt原本是为C&#43;&#43;设计的UI界面搭建软件, 通过加入Py包之后同样也可以为Python编写桌面图形应用程序, 这里用的是官网的免费版
+二. 环境搭建(对于已有Anaconda3) 1.Python解释器 由于已经安装了Anaconda3, 所以没有再安装原生的解释器, 也不清楚, 但觉得应该可以通用
+2. 配置环境变量(对于Anaconda3) 对于Anaconda3的用户, 需要再自行配置一下环境变量, 在环境变量的path选项卡中添加Anaconda的以下目录
+不然在Pycharm中搭建环境时会遇到提示pip无法成功的提示, 导致包无法安装
+3. 在Pycharm里搭建环境/安装必要的包 完成以上两步准备就可以开始配置Pycharm了
+首先新建一个项目
+有几点需要注意的地方:
+首先, 确保New environment using中是新建了一个环境,而不是使用Conda.
+其次, 确保Base interpreter中选择的是pythonw解释器, 而不是python
+最后注意, 此处不需勾选
+然后就可以让它新建一个项目了
+打开工程后进入 文件 -&gt; 设置 -&gt; 项目 -&gt; Project Interpreter 在这里管理需要用到的包文件
+需要使用Qt编程的话, 必须添加QtPy和PyQt5两个包
+Pycharm会自己管理, 下载好就算是配置完成了
+三. 工作流 大致的思路是:
+ 使用Qt Creator创作图形界面 使用包内置函数转化Qt的.ui文件为.py文件, 作为包导入到程序中 使用Pycharm编写整体逻辑  1....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-08 00:00:00 +0000 UTC'>April 8, 2020</span></footer>
+  <a class="entry-link" aria-label="post link to Python&#43;Qt5项目环境的搭建" href="https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

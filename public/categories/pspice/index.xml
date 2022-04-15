@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PSpice on DynAis</title>
+    <link>https://dynais.xyz/categories/pspice/</link>
+    <description>Recent content in PSpice on DynAis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.xyz/categories/pspice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PSpice中常用的Cursor查询命令</title>
+      <link>https://dynais.xyz/posts/nt-psp-probe%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84cursor%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-psp-probe%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84cursor%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4/</guid>
+      <description>受够了在 Probe 窗口中用鼠标拖 Cursor 来找结果数据了, 所以想找一下 Probe 的 SerchCommand 结果连官方用户指导里都找不到, 好不容易才在帮助文档里找到了, 写文档的真不是人, 记录一下防止以后忘了
+Orcad Pspice版本: 9.1 Student
+概述  受够了在 Probe 窗口中用鼠标拖 Cursor 来找结果数据了, 所以想找一下 Probe 的 SerchCommand 结果连官方用户指导里都找不到, 好不容易才在帮助文档里找到了, 写文档的真不是人, 记录一下防止以后忘了
+Orcad Pspice版本: 9.1 Student
+文档进入方法:
+{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161535.png 100% 100% &amp;quot; &amp;quot; %}
+Win10还要上网找一下win32hlp.exe装一下才能看, 下载: win32hlp.exe
+路径:
+{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161557.png 50% 50% &amp;quot; &amp;quot; %}
+语法  search	[direction]	[/start_point/]	[#consecutive_points#]	[(range_x [,range_y])]	[for]	[repeat:]	&amp;lt;condition&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>PSpice模拟数据导入Excel工作流</title>
+      <link>https://dynais.xyz/posts/nt-psp-pspice%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5excel%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-psp-pspice%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5excel%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+      <description>基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析
+概述  基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析
+流程  在 PSpice 得到模拟数据后, 选中需要导出的曲线
+{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217162110.png 50% 50% &amp;quot; &amp;quot; %}
+看到它变红了
+然后直接 Ctrl + C 就可以获得曲线数据
+然后新建一个文本文档, 复制粘贴保存成 .csv 文件
+直接导入 Excel 应该也是可行的, 但是由于改成了德国的计数方法, 这里的逗号和小数点会有问题, 先导入 csv 文件的话就没问题, 所以还是建议保存到 csv, 这样 Matlab 什么的也能用</description>
+    </item>
+    
+  </channel>
+</rss>

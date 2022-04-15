@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>计算机科学 on DynAis</title>
+    <link>https://dynais.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</link>
+    <description>Recent content in 计算机科学 on DynAis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMD控制台常用指令</title>
+      <link>https://dynais.xyz/posts/nt-cs-cmd%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/nt-cs-cmd%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>进入某个盘 进入d盘
+D: 进入F盘
+F: 查看目录文件 查看当前目录下的文件，类似于linux下的ls
+dir 如果是需要查看隐藏文件的或者更多操作的话，可以使用
+dir /? 来查看其它用法
+执行exe文件 直接进入路径输入exe文件名+参数就行
+创建目录和删除目录 创建目录
+md 目录名（文件夹） 删除目录
+rd 目录名（文件夹） 查看本机ip ipconfig 清除屏幕 cls 类似于linux下的clear
+复制文件 copy 路径\文件名 路径\文件名 ：把一个文件拷贝到另一个地方。 移动文件 move 路径\文件名 路径\文件名 ：把一个文件移动（就是剪切+复制）到另一个地方。 删除文件 这个是专门删除文件的，不能删除文件夹
+del 文件名 ping 用来测试网络是否畅通
+ping ip(主机名)  查看cmd下的命令 使用help命令，查看所有的dos命令 找到命令之后，使用 命令+ /?来查看该命令下的其他属性 </description>
+    </item>
+    
+  </channel>
+</rss>

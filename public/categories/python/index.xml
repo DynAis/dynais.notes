@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on DynAis</title>
+    <link>https://dynais.xyz/categories/python/</link>
+    <description>Recent content in Python on DynAis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 23 Feb 2021 12:40:37 +0000</lastBuildDate><atom:link href="https://dynais.xyz/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Python脚本在运行环境下依赖库缺失的问题</title>
+      <link>https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 23 Feb 2021 12:40:37 +0000</pubDate>
+      
+      <guid>https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的
+问题描述 在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的 解决方法 解决方式就是在编写脚本时, 对于第三方的库进行一次检测, 如果没有的话就进行pip install
+try:  import regex as re except ImportError:  os.system(&amp;#39;pip install regex&amp;#39;)  import regex as re 对于小脚本来说这样就足够了, 项目大的话不建议这样使用</description>
+    </item>
+    
+  </channel>
+</rss>
