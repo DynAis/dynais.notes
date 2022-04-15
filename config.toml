@@ -1,0 +1,4 @@
+baseURL = 'https://dynais.xyz/'
+languageCode = 'zh'
+title = 'DynAis'
+theme = 'hugo-PaperMod'

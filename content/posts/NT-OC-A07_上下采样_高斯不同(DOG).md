@@ -1,0 +1,65 @@
+---
+title: OpenCV学习笔记07-上下采样-高斯不同(DOG)
+tags:
+  - OpenCV
+  - 数字图像处理
+categories:
+  - 笔记
+  - OpenCV
+keywords:
+- opencv
+- 上采样
+- 下采样
+- 高斯不同
+- DOG
+thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
+thumbnailImagePosition: 
+coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
+coverMeta: in
+coverSize: partial
+metaAlignment: center
+abbrlink: 45be0b87
+date: 2020-02-15 20:39:00
+---
+
+
+
+### 相关函数
+
+```c++
+- pyrUp();//上采样
+- pyrDown();//下采样
+- subtract();//图像减法
+
+- threshold()//二值化
+- binarythreshold()//还是二值化
+
+```
+
+
+
+### 笔记
+
+- **高斯金字塔:**
+涉及到上采样和下采样的概念
+实现步骤是:   1.高斯模糊    2.删除当前层偶数行列
+
+
+
+- **高斯不同(DOG):**
+同图像在不同参数下做高斯模糊然后结果相减, 最后记得归一化, 不然图很淡
+
+<!-- more -->
+
+- **上/下采样对比几个像素求平均合成的优势:**
+
+  最大的好处就是变快了, 在人脸识别那个项目里我自己写了压缩算法,但是速度和这个相差了一倍(在720p下)
+
+  但是也发现这个算法有局限, 首先图像会便模糊, 其次只能实现2的次方倍的缩放(至少根据OpenCV里的API来看)
+
+### 源
+
+```c++
+无
+```
+

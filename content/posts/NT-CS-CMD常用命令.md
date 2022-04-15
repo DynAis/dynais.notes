@@ -1,0 +1,96 @@
+---
+title: CMD控制台常用指令
+tags:
+  - 计算机科学
+  - 控制台
+categories:
+  - 笔记
+  - 计算机科学
+keywords:
+- cmd
+thumbnailImagePosition:
+coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
+coverMeta: in
+coverSize: partial
+metaAlignment: center
+abbrlink: 21afdccc
+date: 2020-01-15 00:00:00
+thumbnailImage:
+---
+
+
+
+### 进入某个盘
+进入d盘
+
+```
+D:
+```
+进入F盘
+
+```
+F:
+```
+### 查看目录文件
+查看当前目录下的文件，类似于linux下的ls
+```
+dir
+```
+如果是需要查看隐藏文件的或者更多操作的话，可以使用
+```
+dir /?
+```
+来查看其它用法
+
+<!-- more -->
+
+### 执行exe文件
+
+直接进入路径输入exe文件名+参数就行
+
+### 创建目录和删除目录
+创建目录
+```
+md 目录名（文件夹）
+```
+删除目录
+```
+rd 目录名（文件夹）
+```
+### 查看本机ip
+```
+ipconfig
+```
+### 清除屏幕
+```
+cls
+```
+类似于linux下的clear
+### 复制文件
+```
+copy 路径\文件名 路径\文件名 ：把一个文件拷贝到另一个地方。
+```
+### 移动文件
+```
+move 路径\文件名 路径\文件名 ：把一个文件移动（就是剪切+复制）到另一个地方。
+```
+### 删除文件
+这个是专门删除文件的，不能删除文件夹
+```
+del 文件名
+```
+### ping
+用来测试网络是否畅通
+```
+ping ip(主机名)
+```
+-----------------
+### 查看cmd下的命令
+```
+使用help命令，查看所有的dos命令
+```
+```
+找到命令之后，使用 命令+ /?来查看该命令下的其他属性
+```
+
+
