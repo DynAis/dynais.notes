@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>计算机视觉 on DynAis</title>
-    <link>https://dynais.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
+    <link>https://dynais.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</link>
     <description>Recent content in 计算机视觉 on DynAis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 09 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取</title>
-      <link>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</link>
+      <link>https://dynais.github.io/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</link>
       <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</guid>
+      <guid>https://dynais.github.io/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</guid>
       <description>小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
 已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
 前言：

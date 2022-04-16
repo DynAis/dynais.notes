@@ -1,7 +1,5 @@
 ---
-title: '[转载]Hexo+Github Page搭建博客教程'
-thumbnailImagePosition: 
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725003809.png
+title: '[转] Hexo-Github-Page搭建博客教程'
 tags:
   - Hexo
   - github-page

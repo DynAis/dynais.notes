@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on DynAis</title>
-    <link>https://dynais.xyz/tags/python/</link>
+    <link>https://dynais.github.io/tags/python/</link>
     <description>Recent content in Python on DynAis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 23 Feb 2021 12:40:37 +0000</lastBuildDate><atom:link href="https://dynais.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 12:40:37 +0000</lastBuildDate><atom:link href="https://dynais.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决Python脚本在运行环境下依赖库缺失的问题</title>
-      <link>https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://dynais.github.io/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 23 Feb 2021 12:40:37 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://dynais.github.io/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的
 问题描述 在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的 解决方法 解决方式就是在编写脚本时, 对于第三方的库进行一次检测, 如果没有的话就进行pip install
 try:  import regex as re except ImportError:  os.system(&amp;#39;pip install regex&amp;#39;)  import regex as re 对于小脚本来说这样就足够了, 项目大的话不建议这样使用</description>
@@ -20,10 +20,10 @@ try:  import regex as re except ImportError:  os.system(&amp;#39;pip install reg
     
     <item>
       <title>重构完成, 焕发新生</title>
-      <link>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</link>
+      <link>https://dynais.github.io/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</guid>
       <description>项目进度   重构了代码
   修正了大部分bug
   一. 重要代码模块 1. Qtimer  https://blog.csdn.net/jia666666/article/details/81672344
@@ -38,10 +38,10 @@ class MainWindow(QMainWindow):  def __init__(self):  super().__init__()  #子窗
     
     <item>
       <title>又不是不能用, 番茄钟基本功能建设完毕</title>
-      <link>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</link>
+      <link>https://dynais.github.io/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</link>
       <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</guid>
       <description>项目进度  加入了自己指定时间的模块   加入保存用户设置的文件config.json 在倒计时结束时发出铃声通知 完善了除统计和To Do List外的Menu界面   修正了部分bug  一. 重要代码模块 1. 打包程序成exe文件 pyInstaller模块 pyInstaller是python的一个库, 使用它可以很方便的打包文件成为exe可执行文件
 要使用这个库, 首先在Pycharm里安装相应的环境, 之后新建一个.py文件, 比如我的:
 在里面输入代码(以这次工程为例):
@@ -58,20 +58,20 @@ Json配置文件以{开头, 以}结束, 大括号在Json里代表一个对象, �
     
     <item>
       <title>番茄钟倒计时模块的基本实现</title>
-      <link>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</guid>
       <description>项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&amp;quot;XX:XX&amp;quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
 # 显示时间转秒数 &amp;#34;XX:XX&amp;#34; -&amp;gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec + 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&amp;gt; &amp;#34;XX:XX&amp;#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &amp;lt; 2:  t[i] = &amp;#34;0&amp;#34; + t[i]   tomato = &amp;#34;:&amp;#34;.</description>
     </item>
     
     <item>
       <title>Python&#43;Qt5项目环境的搭建</title>
-      <link>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+      <link>https://dynais.github.io/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
       <description>一. 软件 1. Pycharm 2019.3.3 ​	Pycharm主要负责进行主体逻辑的编写, 以及统筹整个项目, 此外环境的搭建大多也在Pycharm里完成
 2. Qt 5.12.7 / Qt Creator ​	Qt原本是为C++设计的UI界面搭建软件, 通过加入Py包之后同样也可以为Python编写桌面图形应用程序, 这里用的是官网的免费版
 二. 环境搭建(对于已有Anaconda3) 1.Python解释器 由于已经安装了Anaconda3, 所以没有再安装原生的解释器, 也不清楚, 但觉得应该可以通用

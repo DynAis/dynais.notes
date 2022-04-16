@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>项目 on DynAis</title>
-    <link>https://dynais.xyz/categories/%E9%A1%B9%E7%9B%AE/</link>
+    <link>https://dynais.github.io/categories/%E9%A1%B9%E7%9B%AE/</link>
     <description>Recent content in 项目 on DynAis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 23 Jul 2020 10:40:06 +0000</lastBuildDate><atom:link href="https://dynais.xyz/categories/%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Jul 2020 10:40:06 +0000</lastBuildDate><atom:link href="https://dynais.github.io/categories/%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[转载]Hexo&#43;Github Page搭建博客教程</title>
-      <link>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</link>
+      <link>https://dynais.github.io/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</link>
       <pubDate>Thu, 23 Jul 2020 10:40:06 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://dynais.github.io/posts/nt-web-%E8%BD%AC%E8%BD%BD-hexo-github-page%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</guid>
       <description>前往原文
 前言 博客有第三方平台，也可以自建，比较早的有博客园、CSDN，近几年新兴的也比较多诸如：WordPress、segmentFault、简书、掘金、知乎专栏、Github Page 等等。
 这次我要说的就是 Github Page + Hexo 搭建个人博客的方式！Github Page 是 Github 提供的一种免费的静态网页托管服务（所以想想免费的空间不用也挺浪费的哈哈哈），可以用来托管博客、项目官网等静态网页。支持 Jekyll、Hugo、Hexo 编译静态资源，这次我们的主角就是 Hexo 了，具体的内容下面在文章内介绍。
@@ -25,10 +25,10 @@ npm install -g hexo-cli 安装 Hexo 完成后，再执行下列命令，Hexo 将
     
     <item>
       <title>重构完成, 焕发新生</title>
-      <link>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</link>
+      <link>https://dynais.github.io/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc04-qt-%E9%87%8D%E6%9E%84%E5%AE%8C%E6%88%90-%E7%84%95%E5%8F%91%E6%96%B0%E7%94%9F/</guid>
       <description>项目进度   重构了代码
   修正了大部分bug
   一. 重要代码模块 1. Qtimer  https://blog.csdn.net/jia666666/article/details/81672344
@@ -43,10 +43,10 @@ class MainWindow(QMainWindow):  def __init__(self):  super().__init__()  #子窗
     
     <item>
       <title>又不是不能用, 番茄钟基本功能建设完毕</title>
-      <link>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</link>
+      <link>https://dynais.github.io/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</link>
       <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc03-qt-%E5%8F%88%E4%B8%8D%E6%98%AF%E4%B8%8D%E8%83%BD%E7%94%A8-%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95/</guid>
       <description>项目进度  加入了自己指定时间的模块   加入保存用户设置的文件config.json 在倒计时结束时发出铃声通知 完善了除统计和To Do List外的Menu界面   修正了部分bug  一. 重要代码模块 1. 打包程序成exe文件 pyInstaller模块 pyInstaller是python的一个库, 使用它可以很方便的打包文件成为exe可执行文件
 要使用这个库, 首先在Pycharm里安装相应的环境, 之后新建一个.py文件, 比如我的:
 在里面输入代码(以这次工程为例):
@@ -63,20 +63,20 @@ Json配置文件以{开头, 以}结束, 大括号在Json里代表一个对象, �
     
     <item>
       <title>番茄钟倒计时模块的基本实现</title>
-      <link>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</link>
+      <link>https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</guid>
       <description>项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&amp;quot;XX:XX&amp;quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
 # 显示时间转秒数 &amp;#34;XX:XX&amp;#34; -&amp;gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec + 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&amp;gt; &amp;#34;XX:XX&amp;#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &amp;lt; 2:  t[i] = &amp;#34;0&amp;#34; + t[i]   tomato = &amp;#34;:&amp;#34;.</description>
     </item>
     
     <item>
       <title>Python&#43;Qt5项目环境的搭建</title>
-      <link>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+      <link>https://dynais.github.io/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://dynais.github.io/posts/pj-tc01-qt-python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
       <description>一. 软件 1. Pycharm 2019.3.3 ​	Pycharm主要负责进行主体逻辑的编写, 以及统筹整个项目, 此外环境的搭建大多也在Pycharm里完成
 2. Qt 5.12.7 / Qt Creator ​	Qt原本是为C++设计的UI界面搭建软件, 通过加入Py包之后同样也可以为Python编写桌面图形应用程序, 这里用的是官网的免费版
 二. 环境搭建(对于已有Anaconda3) 1.Python解释器 由于已经安装了Anaconda3, 所以没有再安装原生的解释器, 也不清楚, 但觉得应该可以通用
@@ -98,10 +98,10 @@ Pycharm会自己管理, 下载好就算是配置完成了
     
     <item>
       <title>利用泛洪填充（Flood Fill）的优化方式完成对特定图像的主要信息的提取</title>
-      <link>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</link>
+      <link>https://dynais.github.io/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</link>
       <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</guid>
+      <guid>https://dynais.github.io/posts/pj-nxp03-mc-cv-%E5%88%A9%E7%94%A8%E6%B3%9B%E6%B4%AA%E5%A1%AB%E5%85%85flood-fill%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F%E5%AE%8C%E6%88%90%E5%AF%B9%E7%89%B9%E5%AE%9A%E5%9B%BE%E5%83%8F%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BF%A1%E6%81%AF%E7%9A%84%E6%8F%90%E5%8F%96/</guid>
       <description>小车已经全部搭好了，虽然不确定硬件是否哪里还有些问题，但是好歹摄像头和图像处理模块是已经可以正常使用没有问题的。
 已经写好的二值化算法已经够用了，但是仍然存在不可以过滤背景中无效信息的问题，多多少少会给之后的计算带来麻烦，于是写了一个提取图像主要信息的算法。
 前言：
@@ -122,10 +122,10 @@ Pycharm会自己管理, 下载好就算是配置完成了
     
     <item>
       <title>由MRT为原理的OLED计时显示器</title>
-      <link>https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</link>
+      <link>https://dynais.github.io/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</link>
       <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</guid>
+      <guid>https://dynais.github.io/posts/pj-nxp02-mc-cv-%E7%94%B1mrt%E4%B8%BA%E5%8E%9F%E7%90%86%E7%9A%84oled%E8%AE%A1%E6%97%B6%E6%98%BE%E7%A4%BA%E5%99%A8/</guid>
       <description>遇到的问题   OLED无法点亮 困扰了很久的问题，最后发现是硬件上出了毛病，使用飞线或者杜邦线会导致连接不稳定
   OLED屏幕显示闪烁 可能是因为屏幕刷新不够快，尝试保持一个高刷新率即可
   OLED屏幕数字重叠 使用uint16时调用现有函数显示数字会有5位的空位（0占位）在设定的坐标之前，注意防止显示内容重叠
@@ -138,10 +138,10 @@ mrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发
     
     <item>
       <title>调用GPIO口并使蜂鸣器鸣响</title>
-      <link>https://dynais.xyz/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</link>
+      <link>https://dynais.github.io/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</link>
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</guid>
+      <guid>https://dynais.github.io/posts/pj-nxp01-mc-cv-%E8%B0%83%E7%94%A8gpio%E5%8F%A3%E5%B9%B6%E4%BD%BF%E8%9C%82%E9%B8%A3%E5%99%A8%E9%B8%A3%E5%93%8D/</guid>
       <description>工程目标  知道芯片GPIO口的基本操作函数 根据原理图操作GPIO口使蜂鸣器发声  问题解决思路 通过类比C51的发声思路，使GPIO口通过循环发出高低电平形成方波，驱动蜂鸣器鸣响（注意延时函数）
 待解决问题  通过哪些引脚可以操控蜂鸣器？（已解决） 如何操作这些引脚？（初始化，输出信号，结束信号）（已解决） 如何使单片机产生延时函数？（已解决） 如何调用ARM库函数？（已解决）  实行（可能）流程  通过例程观察如何初始化并定义引脚 看原理图找到操作蜂鸣器的引脚 找到实现延时函数的方法： 使用单片机小精灵 向大佬请教 说不定本身就有这个函数，搜索一下 编写程序 封装程序   Lösungen   如何操作引脚？
   /********************************************************************************************************************* * COPYRIGHT NOTICE * Copyright (c) 2018,逐飞科技 * All rights reserved. * 技术讨论QQ群：179029047 *
@@ -150,10 +150,10 @@ mrt_clean(MRT_CH0); 本来是我认为防止数据溢出而使用的，最后发
     
     <item>
       <title>OpenCV中人脸识别的Haar实现</title>
-      <link>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
+      <link>https://dynais.github.io/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
+      <guid>https://dynais.github.io/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
       <description>本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
 项目总结_人脸识别的Haar实现 项目历时:	2020.2.3 - 2020.2.5 负责人:	Dynais 项目花费:	无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
 目录   第一部分	部分原理粗解

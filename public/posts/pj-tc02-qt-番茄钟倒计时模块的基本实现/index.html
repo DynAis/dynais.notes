@@ -10,15 +10,15 @@
 <meta name="description" content="项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&quot;XX:XX&quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
 # 显示时间转秒数 &#34;XX:XX&#34; -&gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec &#43; 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&gt; &#34;XX:XX&#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &lt; 2:  t[i] = &#34;0&#34; &#43; t[i]   tomato = &#34;:&#34;.">
 <meta name="author" content="">
-<link rel="canonical" href="https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/">
+<link rel="canonical" href="https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://dynais.xyz/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
-<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<link rel="icon" href="https://dynais.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -61,7 +61,7 @@
 <meta property="og:description" content="项目进度  实现了番茄钟最基本的倒计时功能 实现了按钮交互的功能  一. 重要代码模块 1. 显示时间与计算时间的转换 实现倒计时时的一个问题是: 显示的时间格式需要是&quot;XX:XX&quot;, 但是为了方便计算, 需要把这个格式的时间转化为秒数的形式, 这就需要一个显示时间与计算时间互相转换的模块
 # 显示时间转秒数 &#34;XX:XX&#34; -&gt; flout def tomato2sec(tomato):  sec = int(tomato[3:])  sec = sec &#43; 60 * int(tomato[:2])  return sec   # 秒数转显示时间 flout -&gt; &#34;XX:XX&#34; def sec2tomato(sec):  t = []  t.append(str(int(sec / 60)))  t.append(str(int(sec % 60)))   for i in range(0, len(t)):  if len(t[i]) &lt; 2:  t[i] = &#34;0&#34; &#43; t[i]   tomato = &#34;:&#34;." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-10T00:00:00&#43;00:00" />
 <meta property="article:modified_time" content="2020-04-10T00:00:00&#43;00:00" />
 
@@ -80,13 +80,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://dynais.xyz/posts/"
+      "item": "https://dynais.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "番茄钟倒计时模块的基本实现",
-      "item": "https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/"
+      "item": "https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/"
     }
   ]
 }
@@ -108,14 +108,14 @@
   "dateModified": "2020-04-10T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://dynais.xyz/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/"
+    "@id": "https://dynais.github.io/posts/pj-tc02-qt-%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "DynAis",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://dynais.xyz/favicon.ico"
+      "url": "https://dynais.github.io/favicon.ico"
     }
   }
 }
@@ -137,7 +137,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <a href="https://dynais.github.io/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
             <span class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -248,15 +248,15 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://dynais.xyz/tags/qt/">Qt</a></li>
-      <li><a href="https://dynais.xyz/tags/python/">Python</a></li>
+      <li><a href="https://dynais.github.io/tags/qt/">Qt</a></li>
+      <li><a href="https://dynais.github.io/tags/python/">Python</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>&copy; 2022 <a href="https://dynais.github.io/">DynAis</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

@@ -2,116 +2,116 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on DynAis</title>
-    <link>https://dynais.xyz/categories/</link>
+    <link>https://dynais.github.io/categories/</link>
     <description>Recent content in Categories on DynAis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 23 Feb 2021 12:40:37 +0000</lastBuildDate><atom:link href="https://dynais.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 12:40:37 +0000</lastBuildDate><atom:link href="https://dynais.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python</title>
-      <link>https://dynais.xyz/categories/python/</link>
+      <link>https://dynais.github.io/categories/python/</link>
       <pubDate>Tue, 23 Feb 2021 12:40:37 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/python/</guid>
+      <guid>https://dynais.github.io/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>笔记</title>
-      <link>https://dynais.xyz/categories/%E7%AC%94%E8%AE%B0/</link>
+      <link>https://dynais.github.io/categories/%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 23 Feb 2021 12:40:37 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://dynais.github.io/categories/%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>机器学习</title>
-      <link>https://dynais.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <link>https://dynais.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>https://dynais.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PSpice</title>
-      <link>https://dynais.xyz/categories/pspice/</link>
+      <link>https://dynais.github.io/categories/pspice/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/pspice/</guid>
+      <guid>https://dynais.github.io/categories/pspice/</guid>
       <description></description>
     </item>
     
     <item>
       <title>my-blog</title>
-      <link>https://dynais.xyz/categories/my-blog/</link>
+      <link>https://dynais.github.io/categories/my-blog/</link>
       <pubDate>Thu, 23 Jul 2020 10:40:06 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/my-blog/</guid>
+      <guid>https://dynais.github.io/categories/my-blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>项目</title>
-      <link>https://dynais.xyz/categories/%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://dynais.github.io/categories/%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Thu, 23 Jul 2020 10:40:06 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://dynais.github.io/categories/%E9%A1%B9%E7%9B%AE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenCV</title>
-      <link>https://dynais.xyz/categories/opencv/</link>
+      <link>https://dynais.github.io/categories/opencv/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/opencv/</guid>
+      <guid>https://dynais.github.io/categories/opencv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tomato-clock</title>
-      <link>https://dynais.xyz/categories/tomato-clock/</link>
+      <link>https://dynais.github.io/categories/tomato-clock/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/tomato-clock/</guid>
+      <guid>https://dynais.github.io/categories/tomato-clock/</guid>
       <description></description>
     </item>
     
     <item>
       <title>计算机科学</title>
-      <link>https://dynais.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</link>
+      <link>https://dynais.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</guid>
+      <guid>https://dynais.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nxp-smart-car</title>
-      <link>https://dynais.xyz/categories/nxp-smart-car/</link>
+      <link>https://dynais.github.io/categories/nxp-smart-car/</link>
       <pubDate>Mon, 09 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/nxp-smart-car/</guid>
+      <guid>https://dynais.github.io/categories/nxp-smart-car/</guid>
       <description></description>
     </item>
     
     <item>
       <title>harr-face-detect</title>
-      <link>https://dynais.xyz/categories/harr-face-detect/</link>
+      <link>https://dynais.github.io/categories/harr-face-detect/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/harr-face-detect/</guid>
+      <guid>https://dynais.github.io/categories/harr-face-detect/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Latex</title>
-      <link>https://dynais.xyz/categories/latex/</link>
+      <link>https://dynais.github.io/categories/latex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/categories/latex/</guid>
+      <guid>https://dynais.github.io/categories/latex/</guid>
       <description></description>
     </item>
     

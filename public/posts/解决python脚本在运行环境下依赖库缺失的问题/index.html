@@ -11,15 +11,15 @@
 问题描述 在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的 解决方法 解决方式就是在编写脚本时, 对于第三方的库进行一次检测, 如果没有的话就进行pip install
 try:  import regex as re except ImportError:  os.system(&#39;pip install regex&#39;)  import regex as re 对于小脚本来说这样就足够了, 项目大的话不建议这样使用">
 <meta name="author" content="">
-<link rel="canonical" href="https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/">
+<link rel="canonical" href="https://dynais.github.io/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://dynais.xyz/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
-<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<link rel="icon" href="https://dynais.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -63,7 +63,7 @@ try:  import regex as re except ImportError:  os.system(&#39;pip install regex&#
 问题描述 在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90 %} 这是由于虚拟环境和运行环境不一致导致依赖库缺失无法import导致的 解决方法 解决方式就是在编写脚本时, 对于第三方的库进行一次检测, 如果没有的话就进行pip install
 try:  import regex as re except ImportError:  os.system(&#39;pip install regex&#39;)  import regex as re 对于小脚本来说这样就足够了, 项目大的话不建议这样使用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://dynais.github.io/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-23T12:40:37&#43;00:00" />
 <meta property="article:modified_time" content="2021-02-23T12:40:37&#43;00:00" />
 
@@ -83,13 +83,13 @@ try:  import regex as re except ImportError:  os.system(&#39;pip install regex&#
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://dynais.xyz/posts/"
+      "item": "https://dynais.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "解决Python脚本在运行环境下依赖库缺失的问题",
-      "item": "https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/"
+      "item": "https://dynais.github.io/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/"
     }
   ]
 }
@@ -111,14 +111,14 @@ try:  import regex as re except ImportError:  os.system(&#39;pip install regex&#
   "dateModified": "2021-02-23T12:40:37Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://dynais.xyz/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/"
+    "@id": "https://dynais.github.io/posts/%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "DynAis",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://dynais.xyz/favicon.ico"
+      "url": "https://dynais.github.io/favicon.ico"
     }
   }
 }
@@ -140,7 +140,7 @@ try:  import regex as re except ImportError:  os.system(&#39;pip install regex&#
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <a href="https://dynais.github.io/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
             <span class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -204,14 +204,14 @@ try:  import regex as re except ImportError:  os.system(&#39;pip install regex&#
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://dynais.xyz/tags/python/">Python</a></li>
+      <li><a href="https://dynais.github.io/tags/python/">Python</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>&copy; 2022 <a href="https://dynais.github.io/">DynAis</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

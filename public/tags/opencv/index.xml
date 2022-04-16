@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>OpenCV on DynAis</title>
-    <link>https://dynais.xyz/tags/opencv/</link>
+    <link>https://dynais.github.io/tags/opencv/</link>
     <description>Recent content in OpenCV on DynAis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.xyz/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用差分散列的重复图片检测</title>
-      <link>https://dynais.xyz/posts/nt-ocpy-%E4%BD%BF%E7%94%A8%E5%B7%AE%E5%88%86%E6%95%A3%E5%88%97%E6%A3%80%E6%B5%8B%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/</link>
+      <link>https://dynais.github.io/posts/nt-ocpy-%E4%BD%BF%E7%94%A8%E5%B7%AE%E5%88%86%E6%95%A3%E5%88%97%E6%A3%80%E6%B5%8B%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-ocpy-%E4%BD%BF%E7%94%A8%E5%B7%AE%E5%88%86%E6%95%A3%E5%88%97%E6%A3%80%E6%B5%8B%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/</guid>
+      <guid>https://dynais.github.io/posts/nt-ocpy-%E4%BD%BF%E7%94%A8%E5%B7%AE%E5%88%86%E6%95%A3%E5%88%97%E6%A3%80%E6%B5%8B%E9%87%8D%E5%A4%8D%E5%9B%BE%E7%89%87/</guid>
       <description>关于散列(Hash), 网上的介绍有很多,这里就不费力介绍.
 而对于这个具体的项目要求来说, 我们所做的只是需要把一个图像转换为一个Hash值, 然后储存到字典中. 并且有一下要求:
  视觉上相差不大的图片, 他们的Hash值也应该相同 这个Hash计算需要快, 因为有时候数据量会很大  那么我们有以下几个Hash函数的选择:
@@ -28,10 +28,10 @@ Having duplicate images in your dataset creates a problem for two reasons:
     
     <item>
       <title>OpenCV学习笔记12-模板匹配</title>
-      <link>https://dynais.xyz/posts/nt-oc-a12_%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a12_%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D/</link>
       <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a12_%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a12_%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D/</guid>
       <description>API matchTemplate();//模式查找,API比较简单 minMaxLoc();//用于在模式查找的输出图像中找到极值点,也就是匹配点 笔记   模板匹配(Templet Match)
 相当于上一节说的直方图匹配的实用化,通过现有图像在目标图像上滑行(原文Slide),也就是左到右上到下的以像素为单位进行匹配,找到匹配值最大的点.但也是因为这个原因,对模板图像和在目标图像里的目标的大小进行匹配就非常重要,如果大小差得远,效果就不好,所以使用条件相当苛刻.
   注意输出图像的大小
@@ -47,10 +47,10 @@ For the first two methods ( TM_SQDIFF and MT_SQDIFF_NORMED ) the best match are 
     
     <item>
       <title>OpenCV学习笔记11-直方图均衡化-直方图比较-反向投影</title>
-      <link>https://dynais.xyz/posts/nt-oc-a11_%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96_%E6%AF%94%E8%BE%83_%E5%8F%8D%E5%90%91%E6%8A%95%E5%BD%B1/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a11_%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96_%E6%AF%94%E8%BE%83_%E5%8F%8D%E5%90%91%E6%8A%95%E5%BD%B1/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a11_%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96_%E6%AF%94%E8%BE%83_%E5%8F%8D%E5%90%91%E6%8A%95%E5%BD%B1/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a11_%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1%E5%8C%96_%E6%AF%94%E8%BE%83_%E5%8F%8D%E5%90%91%E6%8A%95%E5%BD%B1/</guid>
       <description>API - equalizeHist();//直方图均衡化 - split();//分离通道 - calcHist();//参数dims,bin,range - waitkey();  - mixChannels//分离通道, 与split小有差别,建议看官方文档 - cvtColer//使用此api转换到hsv色彩空间 - calcHist//接受单通道图像计算直方图, 参数略微复杂 - normalize//归一化,常用 - compareHist//比较直方图,可以得到两张图片的相似程度,但是对光非常敏感 - backProject();//直方图反向投影 笔记 这里是几个关于直方图的总结, 这一堆实在是不太好懂, 并且映射和统计接触到了很多数学方面的东西,重要的是理解思路以及了解API, 这里的东西要是有不理解的都建议去看官方的教程文档
  直方图均衡化  好像在人脸识别的项目总结里写过了, API并不难理解
  HSV模型  HSV是一种比较直观的颜色模型，所以在许多图像编辑工具中应用比较广泛，这个模型中颜色的参数分别是：色调（H, Hue），饱和度（S,Saturation），明度（V, Value）
@@ -66,19 +66,19 @@ OpenCV提供了一共四种方法
     
     <item>
       <title>OpenCV学习笔记10-霍夫线和圆检测</title>
-      <link>https://dynais.xyz/posts/nt-oc-a10_%E9%9C%8D%E5%A4%AB%E7%BA%BF%E5%92%8C%E5%9C%86%E6%A3%80%E6%B5%8B/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a10_%E9%9C%8D%E5%A4%AB%E7%BA%BF%E5%92%8C%E5%9C%86%E6%A3%80%E6%B5%8B/</link>
       <pubDate>Sun, 16 Feb 2020 22:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a10_%E9%9C%8D%E5%A4%AB%E7%BA%BF%E5%92%8C%E5%9C%86%E6%A3%80%E6%B5%8B/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a10_%E9%9C%8D%E5%A4%AB%E7%BA%BF%E5%92%8C%E5%9C%86%E6%A3%80%E6%B5%8B/</guid>
       <description>API /*霍夫线检测 输入图像要先Canny过 参数为 - 输入图像 - 输出向量数组,数据类型为Vec4i(就是两个点) - 默认1 - 默认CV_PI / 180, 转角步长 - 阈值(我设了100) - 最小线长 - 最大间隙, 小于这个值的两条线会连成一条, 对于断断续续的线效果好 */ void HoughLinesP( InputArray image, OutputArray lines,  double rho, double theta, int threshold,  double minLineLength = 0, double maxLineGap = 0 );   /*霍夫圆检测 参数从前往后分别是 - 输入图像矩阵(8bit的灰度图,这个API自带Canny边缘检测) - 输出向量数组,数据类型位Vec3f - HOUGH_GRADIENT - 图像缩放,默认1 - 圆心最小距离, 小于会认为是同心圆? - Canny检测的大阈值,小的=大的除二计算 - 点重叠n个以上判定为圆,越小检出越多圆 - 最小圆半径 - 最大圆半径 */ void HoughCircles( InputArray image, OutputArray circles,  int method, double dp, double minDist,  double param1 = 100, double param2 = 100,  int minRadius = 0, int maxRadius = 0 ); 笔记  圆检测对噪声敏感, 需要先中值滤波 太难了,建议看下面的博客,线检测还好,圆检测真的看不懂  相关 源//检出NXP赛道上的几何图 // OpenCV_Template.</description>
     </item>
     
     <item>
       <title>OpenCV学习笔记09-Canny边缘检测算法</title>
-      <link>https://dynais.xyz/posts/nt-oc-a09_canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a09_canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/</link>
       <pubDate>Sun, 16 Feb 2020 20:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a09_canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a09_canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/</guid>
       <description>API Canny();	//Canny的API, 包含了4个步骤. 注意, 不包含高斯模糊部分 笔记   Canny边缘检测算法可以分为以下5个步骤：
   使用高斯滤波器，以平滑图像，滤除噪声。(需要调用高斯模糊API)
   计算图像中每个像素点的梯度强度和方向。
@@ -94,10 +94,10 @@ OpenCV提供了一共四种方法
     
     <item>
       <title>OpenCV学习笔记08-Sobel算子</title>
-      <link>https://dynais.xyz/posts/nt-oc-a08_sobel%E7%AE%97%E5%AD%90/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a08_sobel%E7%AE%97%E5%AD%90/</link>
       <pubDate>Sat, 15 Feb 2020 20:48:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a08_sobel%E7%AE%97%E5%AD%90/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a08_sobel%E7%AE%97%E5%AD%90/</guid>
       <description>相关API Sobel();//索贝尔算子 Scharr();//Sobel的加强 笔记   Sobel: 边缘检测算法及各自的优缺点
 Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), 常用于得到图像的边缘特征, 除了Sobel之外还有其他的算子, Sobel的优势是速度比较快, 但是在准确度上有欠缺
   使用加减来简化计算机的负担: sobel算子的原理与实现
@@ -109,10 +109,10 @@ Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), �
     
     <item>
       <title>OpenCV学习笔记07-上下采样-高斯不同(DOG)</title>
-      <link>https://dynais.xyz/posts/nt-oc-a07_%E4%B8%8A%E4%B8%8B%E9%87%87%E6%A0%B7_%E9%AB%98%E6%96%AF%E4%B8%8D%E5%90%8Cdog/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a07_%E4%B8%8A%E4%B8%8B%E9%87%87%E6%A0%B7_%E9%AB%98%E6%96%AF%E4%B8%8D%E5%90%8Cdog/</link>
       <pubDate>Sat, 15 Feb 2020 20:39:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a07_%E4%B8%8A%E4%B8%8B%E9%87%87%E6%A0%B7_%E9%AB%98%E6%96%AF%E4%B8%8D%E5%90%8Cdog/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a07_%E4%B8%8A%E4%B8%8B%E9%87%87%E6%A0%B7_%E9%AB%98%E6%96%AF%E4%B8%8D%E5%90%8Cdog/</guid>
       <description>相关函数 - pyrUp();//上采样 - pyrDown();//下采样 - subtract();//图像减法  - threshold()//二值化 - binarythreshold()//还是二值化 笔记   高斯金字塔: 涉及到上采样和下采样的概念 实现步骤是: 1.高斯模糊 2.删除当前层偶数行列
   高斯不同(DOG): 同图像在不同参数下做高斯模糊然后结果相减, 最后记得归一化, 不然图很淡
     上/下采样对比几个像素求平均合成的优势:
@@ -123,10 +123,10 @@ Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), �
     
     <item>
       <title>OpenCV学习笔记06-形态学操作</title>
-      <link>https://dynais.xyz/posts/nt-oc-a06_%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a06_%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a06_%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a06_%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</guid>
       <description>相关函数 getStructuringElement(int shape, Size ksize ,Point anchor);注意size还是要奇数 dilate(src, dst, kernel);膨胀 erode(src, dst, kernel);腐蚀 creatTrackbar();创建滑块,比较实用,但我搞不懂  morphologyEX();形态学操作  adaptiveThreshold(); threshold(); //大津法 实现   膨胀
   腐蚀
   开操作
@@ -146,10 +146,10 @@ Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), �
     
     <item>
       <title>OpenCV学习笔记05-各类模糊</title>
-      <link>https://dynais.xyz/posts/nt-oc-a05_%E5%90%84%E7%B1%BB%E6%A8%A1%E7%B3%8A/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a05_%E5%90%84%E7%B1%BB%E6%A8%A1%E7%B3%8A/</link>
       <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a05_%E5%90%84%E7%B1%BB%E6%A8%A1%E7%B3%8A/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a05_%E5%90%84%E7%B1%BB%E6%A8%A1%E7%B3%8A/</guid>
       <description>相关函数 blur();	//均值模糊 GaussianBlur();	//高斯模糊 medianBlur();	//中值滤波 bilateralFilter()	//双边滤波 实现   模糊
  均值滤波 高斯滤波 中值滤波 双边滤波    笔记  高斯滤波是通过高斯函数也就是正态分布来给mask权重 sigma越大正态分布上表现就是越平滑    中值滤波是统计排序滤波器,对椒盐噪声有很好的抑制作用
   注意区分中值和均值
@@ -164,20 +164,20 @@ Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), �
     
     <item>
       <title>OpenCV学习笔记04-图像混合-亮度对比度-几何绘制</title>
-      <link>https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/</link>
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/</guid>
       <description>相关函数 mat.at&amp;lt;xxx&amp;gt; bitwise_not();//反色 src.convertTo();//通道转换  addWeighted()//图像混合加权相加,大小类型必须一致 multiply()//图像相乘  Mat::zeros  cv:point cv:scalar line(); cv:rect rectangle(); 实现  对像素的操作 图像混合 对比度和亮度调节 几何绘制(人脸追踪框可能)  笔记  通过权重相加函数实现图像混合效果  addWeighted()  对比度和亮度调节的实现思想  像素值相乘(对比度实现,因为拉大了数值差) 像素值加常数(亮度实现) 公式:g(x,y) = alpha * f(x,y) + beta    相关 无
 源 // OpenCV_Template.cpp : 此文件包含 &amp;#34;main&amp;#34; 函数。程序执行将在此处开始并结束。 //  #include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include&amp;lt;opencv2\opencv.hpp&amp;gt; using namespace std; using namespace cv;  int main(int argc, char** argv){ 	/****************************************	初始化	****************************************************/  	Mat imgIn, imgOut; 	Mat mask;  	imgIn = imread(&amp;#34;Test.</description>
     </item>
     
     <item>
       <title>OpenCV学习笔记03-线性滤波器-色彩空间转换</title>
-      <link>https://dynais.xyz/posts/nt-oc-a03_%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2%E5%99%A8_%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a03_%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2%E5%99%A8_%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a03_%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2%E5%99%A8_%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a03_%E7%BA%BF%E6%80%A7%E6%BB%A4%E6%B3%A2%E5%99%A8_%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/</guid>
       <description>完成  统计时间 色彩空间转换 线性滤波器使用 图像读取写入plus 图像指针  相关函数 gettickcount();//获取时钟 mat.ptr&amp;lt;uchar&amp;gt;;//获取图像指针 saturate_cast&amp;lt;uchar&amp;gt;;//防溢出函数 filter2D;//线性滤波器 imread(); imwrite(); cvtColer();//色彩空间转换 实现 使用卷积加强图像对比度
 笔记   关于imread和imwrite的地址传入
 可以使用c++的string或cv自己的String实现,使用cin读入地址
@@ -186,10 +186,10 @@ Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), �
     
     <item>
       <title>OpenCV学习笔记02-图像读取</title>
-      <link>https://dynais.xyz/posts/nt-oc-a02_%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a02_%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a02_%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a02_%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96/</guid>
       <description>完成   实现静态图片读取功能
   复习cmd指令
   学习了在cmd下使用exe文件
@@ -198,10 +198,10 @@ Sobel是离散的一阶微分算子,可以用来计算图像的梯度(一阶), �
     
     <item>
       <title>OpenCV学习笔记01-Mat操作</title>
-      <link>https://dynais.xyz/posts/nt-oc-a01_mat%E6%93%8D%E4%BD%9C/</link>
+      <link>https://dynais.github.io/posts/nt-oc-a01_mat%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/nt-oc-a01_mat%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://dynais.github.io/posts/nt-oc-a01_mat%E6%93%8D%E4%BD%9C/</guid>
       <description>完成  自己创建指定mat 用算法创建mat 克隆mat  相关函数 mat.clone(); mat.copyTo();  (1) Mat::Mat() (2) Mat::Mat(int rows, int cols, int type) (3) Mat::Mat(Size size, int type) (4) Mat::Mat(int rows, int cols, int type, constScalar&amp;amp; s) (5) Mat::Mat(Size size, int type, constScalar&amp;amp; s) (6) Mat::Mat(const Mat&amp;amp; m)  mat.ptr&amp;lt;uchar&amp;gt; 实现 使用函数克隆一个一样的图
 使用函数创建空白图(全0和全255)
 使空白图成为渐变灰度图
@@ -218,10 +218,10 @@ Scala我现在只知道在初始化中可用
     
     <item>
       <title>OpenCV中人脸识别的Haar实现</title>
-      <link>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
+      <link>https://dynais.github.io/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://dynais.xyz/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
+      <guid>https://dynais.github.io/posts/pj-hf01-oc-%E4%BD%BF%E7%94%A8opencv%E7%9A%84%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B/</guid>
       <description>本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
 项目总结_人脸识别的Haar实现 项目历时:	2020.2.3 - 2020.2.5 负责人:	Dynais 项目花费:	无 报告撰写时间: 2020.2.6  项目概述 本次项目的计划是在短时间内制作出可以高准确度检测人脸并返回面部相对坐标的程序, 在经过参考他人的程序与查阅资料后采用了OpenCV内建的Haar级联器进行人脸的检测. 因为综合考虑可知Haar检测有准确率高, 速度快, 原理简单的优点, 虽然对于人脸侧面的检测不理想, 但是对于本次项目来说已经足够, 并且OpenCV已经有内建的Haar级联器, 以及训练好的数据集, 非常易于使用, 大大降低了项目的难度.
 目录   第一部分	部分原理粗解

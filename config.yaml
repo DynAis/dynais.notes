@@ -1,0 +1,206 @@
+baseURL: 'https://dynais.github.io/'
+languageCode: 'zh'
+title: 'DynAis'
+theme: 'hugo-PaperMod'
+Copyright: 'Copyrights © 2022 DynAis. All Rights Reserved.'
+
+
+
+env: production
+paginate: 5
+enableInlineShortcodes: true
+enableRobotsTXT: true
+enableEmoji: true
+buildDrafts: true
+# buildFuture: false
+# buildExpired: false
+pygmentsUseClasses: true
+
+
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+
+
+languages:
+    en:
+        languageName: "Home"
+        weight: 1
+        profileMode:
+            enabled: true
+            title: "/ * Hi, it's DynAis * /" # optional default will be site title
+            # subtitle: ""
+            imageUrl: "icon/elusyia_wide.webp" # optional
+            # imageTitle: "" # optional
+            imageWidth: 500 # custom size
+            imageHeight: 100  # custom size
+            # buttons:
+                # - name: 📃Articles
+                #   url: "/posts/"
+                # - name: 🎨Draws
+                #   url: ""
+                # - name: 🎭VRC
+                #   url: ""
+                # - name: ✨PP
+                #   url: "https://polaris.dynais.xyz"
+
+        socialIcons: # optional
+            - name: "twitter"
+              url: "https://mobile.twitter.com/dyn_ais"
+            - name: "instagram"
+              url: "https://www.instagram.com/dynais_/"
+            - name: "github"
+              url: "https://github.com/DynAis"
+            - name: "artstation"
+              url: "https://www.artstation.com/dynais"
+            - name: "pixiv"
+              url: "https://www.pixiv.net/users/18526964"
+            # - name: "polaris"
+            #   url: "https://polaris.dynais.xyz"
+
+    major:
+        languageName: "Major"
+        weight: 2
+        title: Major
+        homeInfoParams:
+            Title: \"Electric Engineering (EE)"
+            Content: >
+                My Major.
+
+                - Control System | Signal&System | Microcontroller
+
+    code:
+        languageName: "Code"
+        weight: 3
+        title: Code
+        homeInfoParams:
+            Title: \"Ctrl C + Ctrl V"
+            Content: >
+              Just kidding :D
+
+              - NLP | Transformer | DeepLearning
+        socialIcons:
+        - name: github
+          url: "https://github.com/DynAis"
+
+    art:
+        languageName: "Art"
+        weight: 4
+        title: Art
+        homeInfoParams:
+            Title: \"Photoshop has stopped working"
+            Content: >
+                Drawing for fun. Not professional.
+
+                - Photograph | Digital 2D | Digital 3D
+        socialIcons:
+        - name: instagram
+          url: "https://www.instagram.com/dynais_/"
+        - name: pixiv
+          url: "https://www.pixiv.net/users/18526964"
+        - name: artstation
+          url: "https://www.artstation.com/dynais"
+
+    vrc:
+        languageName: "VRchat"
+        weight: 5
+        title: VRchat
+        homeInfoParams:
+            Title: \"Metaverse do not need Meta"
+            Content: Unity | Blender | Houdini | MD | SP | ZB
+        socialIcons:
+        - name: "twitter"
+          url: "https://mobile.twitter.com/dyn_ais"
+        - name: discord
+          url: "https://discord.com/channels/DynAis#1788"
+        - name: vrchat
+          url: "https://vrchat.com/home/user/usr_2afe6511-0ea4-4e0f-ac66-55767641b1ac"
+    project:
+        languageName: "Project"
+        weight: 6
+        title: Project
+        homeInfoParams:
+            Title: \"Project Forever"
+            Content: Personal Project record.
+        socialIcons:
+        - name: github
+          url: "https://github.com/DynAis"
+
+
+# Theme param
+params :
+    # defaultTheme: light 
+    # defaultTheme: dark 
+    defaultTheme : auto #根据浏览器主题在深色或浅色之间切换
+    displayFullLangName: true
+
+    # Posts Configs
+    ShowShareButtons: true
+    ShowReadingTime: true
+    ShowToc: true
+    TocOpen: false
+    # editPost:
+    #     URL: "https://github.com/<path_to_repo>/content"
+    #     Text: "Suggest Changes" # edit text
+    #     appendFilePath: true # to append file path to Edit link
+    ShowPostNavLinks: true
+    ShowCodeCopyButtons: true
+
+    # Main Page Configs
+    # ShowBreadCrumbs: true
+    assets:
+        favicon: "favicon.ico/"
+        favicon16x16:  "favicon-16x16.png/"
+        favicon32x32:  "favicon-32x32.png/"
+        apple_touch_icon:  "apple-touch-icon.png/"
+        safari_pinned_tab:  "safari-pinned-tab.svg/"
+
+
+taxonomies:
+    category: categories
+    tag: tags
+    series: series
+
+
+
+menu:
+    main:
+        - identifier: search
+          name: Search
+          url: /search/
+          weight: 10
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 20
+        - identifier: pp
+          name: ✨
+          url: https://polaris.dynais.xyz
+          weight: 30
+
+
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+#     highlight:
+#         # anchorLineNos: true
+#         codeFences: true
+#         guessSyntax: true
+#         lineNos: true
+#         # noClasses: false
+#         style: monokai
+
+
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+
+

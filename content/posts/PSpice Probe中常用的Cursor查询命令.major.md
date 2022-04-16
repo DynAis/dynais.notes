@@ -34,7 +34,8 @@ Orcad Pspice版本: 9.1 Student
 
 文档进入方法:
 
-{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161535.png 100% 100% " " %}
+![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161535.png#center)
+
 
 Win10还要上网找一下**win32hlp.exe**装一下才能看, 下载: [**win32hlp.exe**](http://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/storage/win10%E7%9A%84winhlp32%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%A1%88.zip)
 
@@ -43,6 +44,7 @@ Win10还要上网找一下**win32hlp.exe**装一下才能看, 下载: [**win32hl
 {% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161557.png 50% 50% " " %}
 
 <br/>
+
 
 ## 语法
 

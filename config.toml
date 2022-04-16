@@ -1,4 +1,0 @@
-baseURL = 'https://dynais.github.io/'
-languageCode = 'zh'
-title = 'DynAis'
-theme = 'hugo-PaperMod'

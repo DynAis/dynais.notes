@@ -10,15 +10,15 @@
 <meta name="description" content="相关函数 mat.at&lt;xxx&gt; bitwise_not();//反色 src.convertTo();//通道转换  addWeighted()//图像混合加权相加,大小类型必须一致 multiply()//图像相乘  Mat::zeros  cv:point cv:scalar line(); cv:rect rectangle(); 实现  对像素的操作 图像混合 对比度和亮度调节 几何绘制(人脸追踪框可能)  笔记  通过权重相加函数实现图像混合效果  addWeighted()  对比度和亮度调节的实现思想  像素值相乘(对比度实现,因为拉大了数值差) 像素值加常数(亮度实现) 公式:g(x,y) = alpha * f(x,y) &#43; beta    相关 无
 源 // OpenCV_Template.cpp : 此文件包含 &#34;main&#34; 函数。程序执行将在此处开始并结束。 //  #include &lt;iostream&gt;#include &lt;string&gt;#include&lt;opencv2\opencv.hpp&gt; using namespace std; using namespace cv;  int main(int argc, char** argv){ 	/****************************************	初始化	****************************************************/  	Mat imgIn, imgOut; 	Mat mask;  	imgIn = imread(&#34;Test.">
 <meta name="author" content="">
-<link rel="canonical" href="https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/">
+<link rel="canonical" href="https://dynais.github.io/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css" integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.2840b7fccd34145847db71a290569594bdbdb00047097f75d6495d162f5d7dff.js" integrity="sha256-KEC3/M00FFhH23GikFaVlL29sABHCX911kldFi9dff8="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://dynais.xyz/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.xyz/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.xyz/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://dynais.xyz/apple-touch-icon.png">
-<link rel="mask-icon" href="https://dynais.xyz/safari-pinned-tab.svg">
+<link rel="icon" href="https://dynais.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dynais.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dynais.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dynais.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dynais.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -61,7 +61,7 @@
 <meta property="og:description" content="相关函数 mat.at&lt;xxx&gt; bitwise_not();//反色 src.convertTo();//通道转换  addWeighted()//图像混合加权相加,大小类型必须一致 multiply()//图像相乘  Mat::zeros  cv:point cv:scalar line(); cv:rect rectangle(); 实现  对像素的操作 图像混合 对比度和亮度调节 几何绘制(人脸追踪框可能)  笔记  通过权重相加函数实现图像混合效果  addWeighted()  对比度和亮度调节的实现思想  像素值相乘(对比度实现,因为拉大了数值差) 像素值加常数(亮度实现) 公式:g(x,y) = alpha * f(x,y) &#43; beta    相关 无
 源 // OpenCV_Template.cpp : 此文件包含 &#34;main&#34; 函数。程序执行将在此处开始并结束。 //  #include &lt;iostream&gt;#include &lt;string&gt;#include&lt;opencv2\opencv.hpp&gt; using namespace std; using namespace cv;  int main(int argc, char** argv){ 	/****************************************	初始化	****************************************************/  	Mat imgIn, imgOut; 	Mat mask;  	imgIn = imread(&#34;Test." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://dynais.github.io/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-25T00:00:00&#43;00:00" />
 <meta property="article:modified_time" content="2020-01-25T00:00:00&#43;00:00" />
 
@@ -80,13 +80,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://dynais.xyz/posts/"
+      "item": "https://dynais.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "OpenCV学习笔记04-图像混合-亮度对比度-几何绘制",
-      "item": "https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/"
+      "item": "https://dynais.github.io/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/"
     }
   ]
 }
@@ -108,14 +108,14 @@
   "dateModified": "2020-01-25T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://dynais.xyz/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/"
+    "@id": "https://dynais.github.io/posts/nt-oc-a04_%E5%9B%BE%E5%83%8F%E6%B7%B7%E5%90%88_%E4%BA%AE%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%BA%A6_%E5%87%A0%E4%BD%95%E7%BB%98%E5%88%B6/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "DynAis",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://dynais.xyz/favicon.ico"
+      "url": "https://dynais.github.io/favicon.ico"
     }
   }
 }
@@ -137,7 +137,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://dynais.xyz/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
+            <a href="https://dynais.github.io/" accesskey="h" title="DynAis (Alt + H)">DynAis</a>
             <span class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -308,15 +308,15 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://dynais.xyz/tags/opencv/">OpenCV</a></li>
-      <li><a href="https://dynais.xyz/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></li>
+      <li><a href="https://dynais.github.io/tags/opencv/">OpenCV</a></li>
+      <li><a href="https://dynais.github.io/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">数字图像处理</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2022 <a href="https://dynais.xyz/">DynAis</a></span>
+    <span>&copy; 2022 <a href="https://dynais.github.io/">DynAis</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
