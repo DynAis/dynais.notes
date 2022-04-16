@@ -30,12 +30,12 @@ languages:
         weight: 1
         profileMode:
             enabled: true
-            title: "/* Hi, its DynAis */" # optional default will be site title
+            title: "/* Hi, it's DynAis */" # optional default will be site title
             # subtitle: ""
             imageUrl: "icon/elusyia_wide.webp" # optional
             # imageTitle: "" # optional
             imageWidth: 350 # custom size
-            imageHeight: 75  # custom size
+            imageHeight: 65  # custom size
             buttons:
                 - name: Major
                   url: "/major/"
@@ -202,7 +202,7 @@ params :
     ShowCodeCopyButtons: true
 
     # Main Page Configs
-    ShowBreadCrumbs: true
+    # ShowBreadCrumbs: true
     assets:
         favicon: "favicon.ico/"
         favicon16x16:  "favicon-16x16.png/"
