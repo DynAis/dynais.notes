@@ -1,5 +1,5 @@
 baseURL: 'https://dynais.github.io/'
-languageCode: 'zh'
+languageCode: 'en-us'
 title: 'DynAis'
 theme: 'hugo-PaperMod'
 Copyright: 'Copyrights © 2022 DynAis. All Rights Reserved.'
@@ -30,21 +30,23 @@ languages:
         weight: 1
         profileMode:
             enabled: true
-            title: "/ * Hi, it's DynAis * /" # optional default will be site title
+            title: "/* Hi, its DynAis */" # optional default will be site title
             # subtitle: ""
             imageUrl: "icon/elusyia_wide.webp" # optional
             # imageTitle: "" # optional
-            imageWidth: 500 # custom size
-            imageHeight: 100  # custom size
-            # buttons:
-                # - name: 📃Articles
-                #   url: "/posts/"
-                # - name: 🎨Draws
-                #   url: ""
-                # - name: 🎭VRC
-                #   url: ""
-                # - name: ✨PP
-                #   url: "https://polaris.dynais.xyz"
+            imageWidth: 350 # custom size
+            imageHeight: 75  # custom size
+            buttons:
+                - name: Major
+                  url: "/major/"
+                - name: Code
+                  url: "/code/"
+                - name: Art
+                  url: "/art/"
+                - name: VRChat
+                  url: "/vrc/"
+                - name: Project
+                  url: "/project/"
 
         socialIcons: # optional
             - name: "twitter"
@@ -104,9 +106,9 @@ languages:
           url: "https://www.artstation.com/dynais"
 
     vrc:
-        languageName: "VRchat"
+        languageName: "VRChat"
         weight: 5
-        title: VRchat
+        title: VRChat
         homeInfoParams:
             Title: \"Metaverse do not need Meta"
             Content: Unity | Blender | Houdini | MD | SP | ZB
@@ -117,6 +119,7 @@ languages:
           url: "https://discord.com/channels/DynAis#1788"
         - name: vrchat
           url: "https://vrchat.com/home/user/usr_2afe6511-0ea4-4e0f-ac66-55767641b1ac"
+
     project:
         languageName: "Project"
         weight: 6
@@ -149,7 +152,7 @@ params :
     ShowCodeCopyButtons: true
 
     # Main Page Configs
-    # ShowBreadCrumbs: true
+    ShowBreadCrumbs: true
     assets:
         favicon: "favicon.ico/"
         favicon16x16:  "favicon-16x16.png/"

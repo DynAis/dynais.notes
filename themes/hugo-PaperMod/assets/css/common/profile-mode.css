@@ -29,8 +29,8 @@
 .button {
     background: var(--tertiary);
     border-radius: var(--radius);
-    margin: 8px;
-    padding: 6px;
+    margin: 4px;
+    padding: 4px;
     transition: transform 0.1s;
 }
 
