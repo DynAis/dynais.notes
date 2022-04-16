@@ -1,5 +1,5 @@
 ---
-title: "艺术造型中的节奏感/力量感/画面平衡的表现"
+title: "节奏变化在艺术造型中的应用"
 # author: 
 tags:
   - Art
@@ -7,19 +7,13 @@ date: 2020-01-16
 ShowToc: true
 draft: false
 ---
-![image-20201028201901590](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028201901590.png)
-
-
-
-
-
 ## 营造画面的节奏感
 
 ### 反面：缺乏节奏的画面
 
 如下图所示, 三块石头放在一起, 如果大小一致, 看起来就会觉得单调, 这就是节奏单一的表现
 
-![image-20201028202044097](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202044097.png)
+![image-20201028202044097](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202044097.png#center)
 
 节奏也可以称为变化, **大小**, **形状**, **疏密**, **明暗**都可以称为节奏的一部分, 具有节奏感的画面看起来就会觉得舒适, 具有视觉重心
 
@@ -27,13 +21,13 @@ draft: false
 
 ### 大小的变化
 
-![image-20201028202147164](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202147164.png)
+![image-20201028202147164](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202147164.png#center)
 
 大小的对比可以很简单的营造画面的节奏感, 但是需要注意在分布大小比例时不要束缚手脚，对于绘画来说, 可以适当夸大对比，3：7和2：8是比较推荐的尺寸
 
 下图是一个很好地例子: 角色的身体部位被适当的夸张比例, 营造出了很好地节奏感
 
-![image-20201028202617264](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202617264.png)
+![image-20201028202617264](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202617264.png#center)
 
 这种大小对比在卡通角色身上表现得会更加明显
 
@@ -43,7 +37,7 @@ draft: false
 
 除了在大小上做出变化以外, 物理的形状也应该多种多样
 
-![image-20201028202306076](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202306076.png)
+![image-20201028202306076](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202306076.png#center)
 
 
 
@@ -51,13 +45,13 @@ draft: false
 
 疏密一般来说可以指细节的分布, 举例来说, 如果一幅画面全是细节, 没有一个视觉重心, 那么就会让人产生疲劳的感觉, 所以有的时候一味的加细节并不是很好地选择, 适当选择细节的分布既可以减轻整体的工作量, 又可以使画面更上一层
 
-![image-20201028202333259](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202333259.png)
+![image-20201028202333259](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202333259.png#center)
 
 细节的疏密在很大程度上与明暗关系有关, 过暗或者过亮的地方细节会丢失, 而中性灰的地方保留了最多的物体细节
 
-![image-20201103200441158](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201103200441158.png)
+![image-20201103200441158](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201103200441158.png#center)
 
-![image-20201103200813598](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201103200813598.png)
+![image-20201103200813598](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201103200813598.png#center)
 
 
 
@@ -65,19 +59,19 @@ draft: false
 
 看下面这张图
 
-![image-20201028202519513](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202519513.png)
+![image-20201028202519513](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028202519513.png#center)
 
 下面涂黑的地方差不多是每个物体的**大小面积**, 可以看出, 中间的主体建筑在画面中占据了绝大部分的画面, 而剩下的远处的高楼大小分布也错落有致, 这样的分布就使得整体的画面看起来和谐, 并且具有一个视觉中心
 
-![image-20201028203214689](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028203214689.png)
+![image-20201028203214689](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028203214689.png#center)
 
 接着看下图红笔圈出的地方, 可以看出全图中的整体**形状分布错落有致**, 基本上是三种几何形状的穿插, 这样的好处就是不会让人觉得画面单调
 
-![image-20201028203154838](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028203154838.png)
+![image-20201028203154838](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028203154838.png#center)
 
 在整体细节分布方面, **主体建筑占据了绝大部分细节**, 虽然这是张草图, 但是任然可以看出主要细节是分布在视觉中心上的, 远处或者暗处的物体细节应该尽量减少, 在渲染阶段, 也许我们会得到一张全图细节都非常高的图, 那在后期阶段就需要手动去降低某些地方的细节
 
-![image-20201028203515939](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028203515939.png)
+![image-20201028203515939](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028203515939.png#center)
 
 **总结：忌讳重复，需要有一定的变化**
 
@@ -85,7 +79,8 @@ draft: false
 
 ### 节奏变化在建模中的具体表现（以卡通为例）
 
-![image-20201028204525410](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028204525410.png)
+![image-20201028204525410](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028204525410.png)
+![image-20201028204525410](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028204525410.png) 
 
 上图是节奏变化理论在卡通造型中的一种体现(也许是卡通特色), 人物的肩甲及手环腰带等常规来说是粗细相等的物体在实际建模的时候变成了粗细不一的样子, 在一些不需要特别写实的动画上, 这样做能显著加强画面的动感.
 
@@ -99,7 +94,7 @@ draft: false
 
 观察迪士尼的动画
 
-![image-20201028204750264](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028204750264.png)
+![image-20201028204750264](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028204750264.png)
 
 如上图中的史迪奇, 右边的史迪奇明显看起来更加具有动感, 这是因为左边的史迪奇相比拥有了更多的曲线变化, 简而言之就是没有"大曲线", 或者说, 原有曲线的力量感被多余的曲线给"打断了"
 
@@ -107,7 +102,7 @@ draft: false
 
 看下面这张草图
 
-![image-20201028204739245](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028204739245.png)
+![image-20201028204739245](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028204739245.png)
 
 从身体两边的对比来看, 一遍是干净的C型曲线, 一边有着更多的弯折, 就形成了一种力量感的对比
 
@@ -115,7 +110,7 @@ draft: false
 
 相比左图, 右图主要修改了刀和身体的曲线, 马上就使兽人挥刀的姿势更具有力量感
 
-![image-20201028205624492](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028205624492.png)
+![image-20201028205624492](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028205624492.png)
 
 
 
@@ -125,11 +120,11 @@ draft: false
 
 典型来说, 首要规避的就是下图左边所示的所谓"葫芦形"曲线, 表现时可以让两条曲线错开, 画面就会和谐很多
 
-![image-20201028205055081](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028205055081.png)
+![image-20201028205055081](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028205055081.png)
 
 在另一方面, 直线和曲线的对比就会比较舒适, 如下图雕像少女左边身体的曲线便和右边形成了鲜明的对比
 
-![image-20201028210143396](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028210143396.png)
+![image-20201028210143396](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028210143396.png)
 
 
 
@@ -143,9 +138,9 @@ draft: false
 
 例如, 在人体体块的分布上, 使用重量分布的原则就可以很轻易塑造出角色给人的感觉
 
-![image-20201028210626479](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028210626479.png)
+![image-20201028210626479](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028210626479.png)
 
 下面是一个直观的例子
 
-![image-20201028210718452](D:%5CWorkspace%5C.Typora%20Images%20Hub%5Cimage-20201028210718452.png)
+![image-20201028210718452](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/image-20201028210718452.png)
 

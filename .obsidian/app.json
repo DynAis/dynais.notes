@@ -1,0 +1,12 @@
+{
+  "legacyEditor": false,
+  "livePreview": false,
+  "promptDelete": false,
+  "spellcheck": true,
+  "spellcheckLanguages": [
+    "en-US",
+    "de-DE"
+  ],
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "./"
+}

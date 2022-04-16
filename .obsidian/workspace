@@ -1,0 +1,119 @@
+{
+  "main": {
+    "id": "c070eb9f20370200",
+    "type": "split",
+    "children": [
+      {
+        "id": "905cfb5e83178fb7",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "content/posts/major.latex.Latex公式查找表.major.md",
+            "mode": "source",
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c87c971ae8664895",
+    "type": "split",
+    "children": [
+      {
+        "id": "2efbe88ed3e11321",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5fe6de60570d67d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "738c6a89ceb39630",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "40d34434df4365e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "466cd9f2afbdbbd9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "24bbbd6df95318d1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/posts/major.latex.Latex公式查找表.major.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "68d22a9b9e59d98b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "164df2c6ab27164f",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "905cfb5e83178fb7",
+  "lastOpenFiles": [
+    "content/posts/major.latex.Latex公式查找表.major.md",
+    "content/posts/art.节奏变化在艺术造型中的应用.art.md",
+    "content/posts/TEMPLET/new.md",
+    "content/posts/code.cv.Mat操作.code.md",
+    "content/posts/code.ml.线性回归模型.code.md",
+    "content/posts/code.CMD常用命令查找表.code.md",
+    "temp.md",
+    "content/posts/code.cv.各类模糊.code.md",
+    "使用差分散列检测重复图片.code.md",
+    "[CV] 各类模糊.code.md"
+  ]
+}
