@@ -1,23 +1,8 @@
 ---
-title: OpenCV学习笔记10-霍夫线和圆检测
+title: "[CV] 霍夫线和圆检测"
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- 霍夫
-- 检测
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725003650.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: e1955f21
-date: 2020-02-16 22:00:00
+date: 2020-02-16
 ---
 
 ### API

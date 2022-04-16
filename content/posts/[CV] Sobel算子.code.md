@@ -1,22 +1,8 @@
 ---
-title: OpenCV学习笔记08-Sobel算子
+title: '[CV] Sobel算子'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- sobel
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 87b7dd44
-date: 2020-02-15 20:48:00
+date: 2020-02-15
 ---
 
 

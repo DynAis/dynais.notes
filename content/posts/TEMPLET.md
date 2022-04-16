@@ -1,11 +1,8 @@
 ---
-title: MD-TEMPLET
+title: "How did you find hire?"
 # author: 
 tags:
   - TEMPLET
-keywords:
-  - templet
-  - markdown
 date: 2020-01-15
 ShowToc: true
 draft: true

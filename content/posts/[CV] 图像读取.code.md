@@ -1,23 +1,8 @@
 ---
-title: OpenCV学习笔记02-图像读取
+title: '[CV] 图像读取'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- 图像
-- 读取
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: db26335f
-date: 2020-01-15 00:00:00
+date: 2020-01-15
 ---
 
 ### 完成

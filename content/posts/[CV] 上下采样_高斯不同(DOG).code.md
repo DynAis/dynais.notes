@@ -1,25 +1,8 @@
 ---
-title: OpenCV学习笔记07-上下采样-高斯不同(DOG)
+title: '[CV] 上下采样-高斯不同(DOG)'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- 上采样
-- 下采样
-- 高斯不同
-- DOG
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 45be0b87
-date: 2020-02-15 20:39:00
+date: 2020-02-15
 ---
 
 

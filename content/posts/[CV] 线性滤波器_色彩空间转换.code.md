@@ -1,24 +1,8 @@
 ---
-title: OpenCV学习笔记03-线性滤波器-色彩空间转换
+title: '[CV] 线性滤波器-色彩空间转换'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- 线性滤波器
-- 色彩空间转换
-- cvtColer
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: a5f2a55c
-date: 2020-01-21 00:00:00
+date: 2020-01-21
 ---
 
 ### 完成

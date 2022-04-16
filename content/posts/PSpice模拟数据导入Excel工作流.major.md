@@ -2,20 +2,7 @@
 title: PSpice模拟数据导入Excel工作流
 tags:
   - PSpice
-categories:
-  - 笔记
-  - PSpice
-keywords:
-  - cursor
-  - pspice
-thumbnailImage: 'https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161006.png'
-thumbnailImagePosition: top
-coverImage: 'https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg'
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: da7f3a9c
-date: 2020-12-17 00:00:00
+date: 2020-12-17
 ---
 
 基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析

@@ -1,25 +1,8 @@
 ---
-title: OpenCV学习笔记04-图像混合-亮度对比度-几何绘制
+title: '[CV] 图像混合-亮度对比度-几何绘制'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- 亮度对比度
-- 图像混合
-- 几何绘制
-- rectangle
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 9610a6dd
-date: 2020-01-25 00:00:00
+date: 2020-01-25
 ---
 
 ### 相关函数

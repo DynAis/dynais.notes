@@ -1,21 +1,8 @@
 ---
-title: CMD控制台常用指令
+title: CMD常用命令查找表
 tags:
-  - 计算机科学
-  - 控制台
-categories:
-  - 笔记
-  - 计算机科学
-keywords:
-- cmd
-thumbnailImagePosition:
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 21afdccc
-date: 2020-01-15 00:00:00
-thumbnailImage:
+  - CMD
+date: 2020-01-15
 ---
 
 

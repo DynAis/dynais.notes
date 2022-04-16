@@ -1,22 +1,8 @@
 ---
-title: OpenCV学习笔记01-Mat操作
+title: '[CV] Mat操作'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- mat
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition:
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: f8bbd26a
-date: 2020-01-14 00:00:00
+date: 2020-01-14
 ---
 
 

@@ -1,22 +1,8 @@
 ---
-title: OpenCV学习笔记05-各类模糊
+title: "[CV] 各类模糊"
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- blur
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 84d10aa8
-date: 2020-01-29 00:00:00
+date: 2020-01-29
 ---
 
 

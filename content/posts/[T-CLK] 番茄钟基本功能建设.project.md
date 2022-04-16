@@ -1,19 +1,8 @@
 ---
-title: '又不是不能用, 番茄钟基本功能建设完毕'
+title: '[T-CLK] 番茄钟基本功能建设'
 tags:
-  - Qt
-  - Python
-categories:
-  - 项目
-  - tomato-clock
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212241.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: f3590d7f
-date: 2020-04-12 00:00:00
+  - tomato-clk
+date: 2020-04-12
 ---
 
 <!-- toc -->

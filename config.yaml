@@ -72,6 +72,16 @@ languages:
                 My Major.
 
                 - Control System | Signal&System | Microcontroller
+        menu:
+            main:
+                - identifier: search
+                  name: Search
+                  url: /search/
+                  weight: 10
+                - identifier: tags
+                  name: Tags
+                  url: /tags/
+                  weight: 20
 
     code:
         languageName: "Code"
@@ -86,6 +96,16 @@ languages:
         socialIcons:
         - name: github
           url: "https://github.com/DynAis"
+        menu:
+            main:
+                - identifier: search
+                  name: Search
+                  url: /search/
+                  weight: 10
+                - identifier: tags
+                  name: Tags
+                  url: /tags/
+                  weight: 20
 
     art:
         languageName: "Art"
@@ -104,6 +124,16 @@ languages:
           url: "https://www.pixiv.net/users/18526964"
         - name: artstation
           url: "https://www.artstation.com/dynais"
+        menu:
+            main:
+                - identifier: search
+                  name: Search
+                  url: /search/
+                  weight: 10
+                - identifier: tags
+                  name: Tags
+                  url: /tags/
+                  weight: 20
 
     vrc:
         languageName: "VRChat"
@@ -119,6 +149,16 @@ languages:
           url: "https://discord.com/channels/DynAis#1788"
         - name: vrchat
           url: "https://vrchat.com/home/user/usr_2afe6511-0ea4-4e0f-ac66-55767641b1ac"
+        menu:
+            main:
+                - identifier: search
+                  name: Search
+                  url: /search/
+                  weight: 10
+                - identifier: tags
+                  name: Tags
+                  url: /tags/
+                  weight: 20
 
     project:
         languageName: "Project"
@@ -130,6 +170,16 @@ languages:
         socialIcons:
         - name: github
           url: "https://github.com/DynAis"
+        menu:
+            main:
+                - identifier: search
+                  name: Search
+                  url: /search/
+                  weight: 10
+                - identifier: tags
+                  name: Tags
+                  url: /tags/
+                  weight: 20
 
 
 # Theme param
@@ -161,23 +211,23 @@ params :
         safari_pinned_tab:  "safari-pinned-tab.svg/"
 
 
-taxonomies:
-    category: categories
-    tag: tags
-    series: series
+# taxonomies:
+#     category: categories
+#     tag: tags
+#     series: series
 
 
 
 menu:
     main:
-        - identifier: search
-          name: Search
-          url: /search/
-          weight: 10
-        - identifier: tags
-          name: Tags
-          url: /tags/
-          weight: 20
+        # - identifier: search
+        #   name: Search
+        #   url: /search/
+        #   weight: 10
+        # - identifier: tags
+        #   name: Tags
+        #   url: /tags/
+        #   weight: 20
         - identifier: pp
           name: ✨
           url: https://polaris.dynais.xyz

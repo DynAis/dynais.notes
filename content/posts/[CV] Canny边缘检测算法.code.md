@@ -1,23 +1,8 @@
 ---
-title: OpenCV学习笔记09-Canny边缘检测算法
+title: '[CV] Canny边缘检测算法'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- canny
-- 边缘检测
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 80e5fe0
-date: 2020-02-16 20:00:00
+date: 2020-02-16
 ---
 
 ### API

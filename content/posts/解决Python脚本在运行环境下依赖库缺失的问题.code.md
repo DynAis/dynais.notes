@@ -2,20 +2,7 @@
 title: 解决Python脚本在运行环境下依赖库缺失的问题
 tags: 
   - Python
-categories: 
-  - 笔记 
-  - Python
-keywords: 
-  - 库文件
-  - python
-thumbnailImagePosition: top
-coverImage: 'https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg'
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: ce920ebf
-date: 2021-02-23 12:40:37
-thumbnailImage:
+date: 2021-02-23
 ---
 
 在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误

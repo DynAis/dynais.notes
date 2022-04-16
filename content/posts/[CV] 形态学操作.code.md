@@ -1,22 +1,8 @@
 ---
-title: OpenCV学习笔记06-形态学操作
+title: '[CV] 形态学操作'
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-- 形态学
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212717.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 31a76d3a
-date: 2020-01-30 00:00:00
+date: 2020-01-30
 ---
 
 ### 相关函数

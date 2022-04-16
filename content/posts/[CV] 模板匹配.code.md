@@ -1,21 +1,8 @@
 ---
-title: OpenCV学习笔记12-模板匹配
+title: "[CV] 模版匹配"
 tags:
   - OpenCV
-  - 数字图像处理
-categories:
-  - 笔记
-  - OpenCV
-keywords:
-- opencv
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725003650.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 63d72132
-date: 2020-02-20 00:00:00
+date: 2020-02-20
 ---
 
 

@@ -1,19 +1,8 @@
 ---
-title: '重构完成, 焕发新生'
+title: '[T-CLK] 番茄钟重构'
 tags:
-  - Qt
-  - Python
-categories:
-  - 项目
-  - tomato-clock
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212241.png
-thumbnailImagePosition:
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 237b1f9f
-date: 2020-04-19 00:00:00
+  - tomato-clk
+date: 2020-04-19 
 ---
 
 <!-- toc -->

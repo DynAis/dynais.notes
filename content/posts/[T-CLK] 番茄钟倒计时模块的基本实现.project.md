@@ -1,19 +1,8 @@
 ---
-title: 番茄钟倒计时模块的基本实现
+title: '[T-CLK] 番茄钟倒计时模块的基本实现'
 tags:
-  - Qt
-  - Python
-categories:
-  - 项目
-  - tomato-clock
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212241.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 378efd60
-date: 2020-04-10 00:00:00
+  - tomato-clk
+date: 2020-04-10
 ---
 
 <!-- toc -->

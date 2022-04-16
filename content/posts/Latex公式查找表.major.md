@@ -1,20 +1,8 @@
 ---
-title: 在Markdown文件中使用Latex表示数学公式
+title: Latex公式查找表
 tags:
-  - Latex
-categories:
-  - 笔记
-  - Latex
-keywords:
-  - latex
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725005610.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-date: 2020-03-5 22:00:00
-abbrlink: ae2a8b3f
+  - LaTex
+date: 2020-03-5
 ---
  在Markdown中插入数学公式的语法是 `$数学公式$` 和 `$$数学公式$$`.
 

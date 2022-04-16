@@ -1,19 +1,8 @@
 ---
-title: Python+Qt5项目环境的搭建
+title: '[T-CLK] Python+Qt5项目环境的搭建'
 tags:
-  - Qt
-  - Python
-categories:
-  - 项目
-  - tomato-clock
-thumbnailImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200724212241.png
-thumbnailImagePosition: 
-coverImage: https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725004705.jpg
-coverMeta: in
-coverSize: partial
-metaAlignment: center
-abbrlink: 6b47c0e1
-date: 2020-04-08 00:00:00
+  - tomato-clk
+date: 2020-04-08
 ---
 
 <!-- toc -->
