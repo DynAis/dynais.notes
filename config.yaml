@@ -32,7 +32,7 @@ languages:
             enabled: true
             title: "/* Hi, it's DynAis */" # optional default will be site title
             # subtitle: ""
-            imageUrl: "icon/elusyia_wide.webp" # optional
+            imageUrl: "icon/profile.gif" # optional
             # imageTitle: "" # optional
             imageWidth: 350 # custom size
             imageHeight: 65  # custom size
@@ -194,6 +194,7 @@ params :
     ShowReadingTime: true
     ShowToc: true
     TocOpen: false
+    math: true
     # editPost:
     #     URL: "https://github.com/<path_to_repo>/content"
     #     Text: "Suggest Changes" # edit text

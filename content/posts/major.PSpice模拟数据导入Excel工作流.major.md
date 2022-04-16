@@ -7,25 +7,15 @@ date: 2020-12-17
 
 基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析
 
-<!-- excerpt -->
-
-## 概述
+<!--more-->
 
 ---
-
-基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析
-
-<br>
-
-<br>
 
 ## 流程
 
----
-
 在 PSpice 得到模拟数据后, 选中需要导出的曲线
 
-{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217162110.png 50% 50% " " %}
+![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217162110.png#center)
 
 看到它变红了
 

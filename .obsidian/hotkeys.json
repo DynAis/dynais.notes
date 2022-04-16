@@ -33,14 +33,7 @@
       "key": "L"
     }
   ],
-  "editor:attach-file": [
-    {
-      "modifiers": [
-        "Shift"
-      ],
-      "key": "A"
-    }
-  ],
+  "editor:attach-file": [],
   "editor:toggle-code": [
     {
       "modifiers": [

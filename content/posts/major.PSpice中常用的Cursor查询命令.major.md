@@ -9,13 +9,9 @@ date: 2020-12-17
 
 Orcad Pspice版本: 9.1 Student
 
-<!-- excerpt -->
-
-## 概述
+<!--more-->
 
 ---
-
-受够了在 Probe 窗口中用鼠标拖 Cursor 来找结果数据了, 所以想找一下 Probe 的 SerchCommand 结果连官方用户指导里都找不到, 好不容易才在帮助文档里找到了, 写文档的真不是人, 记录一下防止以后忘了
 
 Orcad Pspice版本: 9.1 Student
 
@@ -28,20 +24,20 @@ Win10还要上网找一下**win32hlp.exe**装一下才能看, 下载: [**win32hl
 
 路径:
 
-{% image fancybox center clear group:default https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161557.png 50% 50% " " %}
-
-<br/>
+![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20201217161557.png#center)
 
 
 ## 语法
 
 ---
 
-`search	[direction]	[/start_point/]	[#consecutive_points#]	[(range_x [,range_y])]	[for]	[repeat:]	<condition>`
+```
+search	[direction]	[/start_point/]	[#consecutive_points#]	[(range_x [,range_y])]	[for]	[repeat:]	<condition>`
+
+```
 
 能把搜索语法写这么麻烦我真的服
 
-<br/>
 
 ## 常用范例
 

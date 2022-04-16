@@ -9,9 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/major.latex.Latex公式查找表.major.md",
+            "file": "content/posts/project.da.DuinoAccess.project.md",
             "mode": "source",
-            "source": true
+            "source": false
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/major.latex.Latex公式查找表.major.md",
+                "file": "content/posts/project.da.DuinoAccess.project.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,15 +105,15 @@
   },
   "active": "905cfb5e83178fb7",
   "lastOpenFiles": [
-    "content/posts/major.latex.Latex公式查找表.major.md",
-    "content/posts/art.节奏变化在艺术造型中的应用.art.md",
-    "content/posts/TEMPLET/new.md",
+    "content/posts/project.da.DuinoAccess.project.md",
+    "content/posts/project.tclk.番茄钟基本功能建设.project.md",
+    "content/posts/project.tclk.Python+Qt5项目环境的搭建.project.md",
+    "content/posts/project.tclk.番茄钟重构.project.md",
+    "content/posts/code.cv.Sobel算子.code.md",
     "content/posts/code.cv.Mat操作.code.md",
     "content/posts/code.ml.线性回归模型.code.md",
-    "content/posts/code.CMD常用命令查找表.code.md",
-    "temp.md",
-    "content/posts/code.cv.各类模糊.code.md",
-    "使用差分散列检测重复图片.code.md",
-    "[CV] 各类模糊.code.md"
+    "content/posts/code.cv.Canny边缘检测算法.code.md",
+    "content/posts/code.cv.直方图均衡化_比较_反向投影.code.md",
+    "content/posts/code.cv.形态学操作.code.md"
   ]
 }
