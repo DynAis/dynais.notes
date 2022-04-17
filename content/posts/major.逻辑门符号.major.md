@@ -13,7 +13,7 @@ draft: false
 ---
 
 ## 表
-![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/202204162333732.png#center)
+![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/202204162333732.png?x-oss-process=image/format,jpg/interlace,1#center)
 
 
 ## 参考

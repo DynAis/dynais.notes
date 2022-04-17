@@ -11,28 +11,28 @@ draft: false
 ---
 
 
-# 前置知识
+## 前置知识
 
 - python
 
-# 安装
+## 安装
 
 ```python
 pip install spleeter
 ```
 
-# DEMO - 分离人声和乐器
+## DEMO - 分离人声和乐器
 
 ```python
 spleeter separate -o 输出路径 源音频.mp3
 ```
 
-# DEMO - 分离人声/贝斯/鼓/钢琴/其他
+## DEMO - 分离人声/贝斯/鼓/钢琴/其他
 
 ```python
 spleeter separate -o 输出路径 -p spleeter:5stems 源音频.mp3
 ```
 
-# 参考
+## 参考
 
 - [https://github.com/deezer/spleeter](https://github.com/deezer/spleeter)

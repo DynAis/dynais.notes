@@ -19,7 +19,7 @@ VRC人物建模全流程 from Scrach, 这篇文章定的目标有点大, 现在�
 
 ---
 
-# 前置知识
+## 前置知识
   - Blender
   - Substance Painter
   - RizonUV
@@ -28,7 +28,7 @@ VRC人物建模全流程 from Scrach, 这篇文章定的目标有点大, 现在�
   - Fusion360
   - Unity
 
-# 参考
+## 参考
 
 1. [https://docs.vrchat.com/docs/avatar-optimizing-tips](https://docs.vrchat.com/docs/avatar-optimizing-tips)
 2. [https://github.com/absolute-quantum/cats-blender-plugin#custom-model-creation](https://github.com/absolute-quantum/cats-blender-plugin#custom-model-creation)

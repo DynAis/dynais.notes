@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/vrc.网页端模型展示测试(以VRCBBS徽章为例).vrc.md",
+            "file": "content/posts/vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/vrc.网页端模型展示测试(以VRCBBS徽章为例).vrc.md",
+                "file": "content/posts/vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,15 +105,15 @@
   },
   "active": "5237a6fda06090c6",
   "lastOpenFiles": [
-    "content/posts/vrc.网页端模型展示测试(以VRCBBS徽章为例).vrc.md",
-    "content/posts/project.tclk.Python+Qt5项目环境的搭建.project.md",
-    "content/posts/vrc.一种提取艾尔登法环游戏模型的方法.vrc.md",
     "content/posts/vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md",
     "content/posts/vrc.blender.Blender-MD动画数据流程.vrc.md",
-    "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
-    "content/posts/_major.latex.Latex公式查找表.major.md",
-    "content/posts/_code.Docker部署.code.md",
-    "content/posts/major.使用四分之一lambda传输线匹配任意纯电阻.major.md",
-    "content/posts/art.ps.线稿提取.art.md"
+    "content/posts/vrc.一种提取艾尔登法环游戏模型的方法.vrc.md",
+    "content/posts/vrc.网页端模型展示测试(以VRCBBS徽章为例).vrc.md",
+    "content/posts/project.tclk.Python+Qt5项目环境的搭建.project.md",
+    "content/posts/project.tclk.番茄钟重构.project.md",
+    "content/posts/project.tclk.番茄钟基本功能建设.project.md",
+    "content/posts/project.tclk.番茄钟倒计时模块的基本实现.project.md",
+    "content/posts/project.da.DuinoAccess.project.md",
+    "content/posts/major.PSpice中常用的Cursor查询命令.major.md"
   ]
 }

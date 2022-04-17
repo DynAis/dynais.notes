@@ -18,15 +18,15 @@ draft: false
 
 ![after](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210913115700.png?x-oss-process=image/format,jpg/interlace,1#center)
 
-# 前置知识
+## 前置知识
 - PS
 - 图像处理
 
-# 1 源图像需求
+## 1 源图像需求
 
 原图像要求线条清晰, 并且颜色应当深于内部颜色, 考虑到后续的侵蚀操作, 图像分辨率越高提取的效果越好.
 
-# 2 线稿提取
+## 2 线稿提取
 
 提取线稿分为五步, **去色 反向 叠加 侵蚀 调整,** 通过原图像在反向后使用线性减淡(添加)(既加法模式)会变为白色这一特点, 配合侵蚀操作消除反向后的线条从而保留线稿的思路完成.
 
@@ -58,10 +58,10 @@ draft: false
 
 ![https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210913121820.png](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210913121820.png?x-oss-process=image/format,jpg/interlace,1#center)
 
-# 3 不足
+## 3 不足
 
 就算是调整过后, 也依然存在一些未清理干净的线条需要手动进行清理, 且此方法在厚涂或者半厚涂的作品上表现并不好.
 
-# 参考
+## 参考
 
 1. [https://www.bilibili.com/video/BV1Uf4y1n7zK](https://www.bilibili.com/video/BV1Uf4y1n7zK)

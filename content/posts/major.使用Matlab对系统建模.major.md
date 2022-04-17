@@ -15,10 +15,10 @@ draft: false
 - 信号与系统
 - Matlab
 
-# 1 库函数
-![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/202204170020665.png#center)
+## 1 库函数
+![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/202204170020665.png?x-oss-process=image/format,jpg/interlace,1#center)
 
-# 2 Templet
+## 2 Templet
 
 ```matlab
 clc;
@@ -82,4 +82,4 @@ legend('Hochpass','Tiefpass','Bandpass');
 title('Bode-Diagramme');
 ```
 
-# 参考
+## 参考

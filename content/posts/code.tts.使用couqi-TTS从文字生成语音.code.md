@@ -12,12 +12,12 @@ draft: false
 
 ---
 
-# 前置知识
+## 前置知识
 
 - TTS(架构知识)
 - Git
 
-# 1 安装(使用Git)
+## 1 安装(使用Git)
 
 对于需要后续进行模型训练的目的来说, 官方推荐使用Git的方式进行安装
 
@@ -32,7 +32,7 @@ pip install -e .[all,dev,notebooks,tf]  # Select the relevant extras
 
 安装会有点久
 
-# 2 使用现有模型进行语音合成
+## 2 使用现有模型进行语音合成
 
 首先可以键入
 
@@ -52,7 +52,7 @@ tts --text "YOUR_TEXT" --model_name "MODEL_NAME" --vocoder_name "VOCODER_NAME"
 
 结束后会生成 `.wav` 文件在当前的路径下, 语音最短似乎是六秒钟.
 
-# 参考
+## 参考
 
 1. [https://github.com/coqui-ai/TTS](https://github.com/coqui-ai/TTS)
 2. [https://tts.readthedocs.io/en/latest/training_a_model.html](https://tts.readthedocs.io/en/latest/training_a_model.html)
