@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/art.md",
+            "file": "content/posts/art.玻璃松.art.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/art.md",
+                "file": "content/posts/art.玻璃松.art.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
   },
   "active": "5237a6fda06090c6",
   "lastOpenFiles": [
-    "content/posts/art.md",
+    "content/posts/art.玻璃松.art.md",
     "content/posts/vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md",
     "content/posts/vrc.blender.Blender-MD动画数据流程.vrc.md",
     "content/posts/vrc.一种提取艾尔登法环游戏模型的方法.vrc.md",
