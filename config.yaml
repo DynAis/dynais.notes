@@ -15,7 +15,7 @@ buildDrafts: true
 buildFuture: true
 # buildExpired: false
 pygmentsUseClasses: true
-googleAnalytics: G-RB48HHB90Q
+googleAnalyticsv4: G-RB48HHB90Q
 
 
 
@@ -253,7 +253,9 @@ markup:
 #         # noClasses: false
 #         style: monokai
 
-
+analytics:
+        google:
+            SiteVerificationTag: "G-RB48HHB90Q"
 
 outputs:
     home:
