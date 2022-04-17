@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Art</title>
+    <link>https://dynais.github.io/art/posts/</link>
+    <description>Recent content in Posts on Art</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/art/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>节奏变化在艺术造型中的应用</title>
+      <link>https://dynais.github.io/art/posts/art.%E8%8A%82%E5%A5%8F%E5%8F%98%E5%8C%96%E5%9C%A8%E8%89%BA%E6%9C%AF%E9%80%A0%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/art/posts/art.%E8%8A%82%E5%A5%8F%E5%8F%98%E5%8C%96%E5%9C%A8%E8%89%BA%E6%9C%AF%E9%80%A0%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <description>营造画面的节奏感 反面：缺乏节奏的画面 如下图所示, 三块石头放在一起, 如果大小一致, 看起来就会觉得单调, 这就是节奏单一的表现
+节奏也可以称为变化, 大小, 形状, 疏密, 明暗都可以称为节奏的一部分, 具有节奏感的画面看起来就会觉得舒适, 具有视觉重心
+大小的变化 大小的对比可以很简单的营造画面的节奏感, 但是需要注意在分布大小比例时不要束缚手脚，对于绘画来说, 可以适当夸大对比，3：7和2：8是比较推荐的尺寸
+下图是一个很好地例子: 角色的身体部位被适当的夸张比例, 营造出了很好地节奏感
+这种大小对比在卡通角色身上表现得会更加明显
+形状的变化 除了在大小上做出变化以外, 物理的形状也应该多种多样
+疏密的变化 疏密一般来说可以指细节的分布, 举例来说, 如果一幅画面全是细节, 没有一个视觉重心, 那么就会让人产生疲劳的感觉, 所以有的时候一味的加细节并不是很好地选择, 适当选择细节的分布既可以减轻整体的工作量, 又可以使画面更上一层
+细节的疏密在很大程度上与明暗关系有关, 过暗或者过亮的地方细节会丢失, 而中性灰的地方保留了最多的物体细节
+结合以上的案例分析 看下面这张图
+下面涂黑的地方差不多是每个物体的大小面积, 可以看出, 中间的主体建筑在画面中占据了绝大部分的画面, 而剩下的远处的高楼大小分布也错落有致, 这样的分布就使得整体的画面看起来和谐, 并且具有一个视觉中心
+接着看下图红笔圈出的地方, 可以看出全图中的整体形状分布错落有致, 基本上是三种几何形状的穿插, 这样的好处就是不会让人觉得画面单调
+在整体细节分布方面, 主体建筑占据了绝大部分细节, 虽然这是张草图, 但是任然可以看出主要细节是分布在视觉中心上的, 远处或者暗处的物体细节应该尽量减少, 在渲染阶段, 也许我们会得到一张全图细节都非常高的图, 那在后期阶段就需要手动去降低某些地方的细节
+总结：忌讳重复，需要有一定的变化
+节奏变化在建模中的具体表现（以卡通为例） 上图是节奏变化理论在卡通造型中的一种体现(也许是卡通特色), 人物的肩甲及手环腰带等常规来说是粗细相等的物体在实际建模的时候变成了粗细不一的样子, 在一些不需要特别写实的动画上, 这样做能显著加强画面的动感.
+营造画面和力量感 力量感的表现 观察迪士尼的动画
+如上图中的史迪奇, 右边的史迪奇明显看起来更加具有动感, 这是因为左边的史迪奇相比拥有了更多的曲线变化, 简而言之就是没有&amp;quot;大曲线&amp;quot;, 或者说, 原有曲线的力量感被多余的曲线给&amp;quot;打断了&amp;quot;</description>
+    </item>
+    
+  </channel>
+</rss>

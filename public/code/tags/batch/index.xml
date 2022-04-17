@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Batch on Code</title>
+    <link>https://dynais.github.io/code/tags/batch/</link>
+    <description>Recent content in Batch on Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/code/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>批处理</title>
+      <link>https://dynais.github.io/code/posts/code.%E6%89%B9%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.%E6%89%B9%E5%A4%84%E7%90%86/</guid>
+      <description>&lt;p&gt;批处理基础语法参考&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

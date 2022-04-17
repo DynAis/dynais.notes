@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on Code</title>
+    <link>https://dynais.github.io/code/tags/python/</link>
+    <description>Recent content in Python on Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/code/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Colab自动挂机代码</title>
+      <link>https://dynais.github.io/code/posts/code.python.colab%E8%87%AA%E5%8A%A8%E6%8C%82%E6%9C%BA%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.python.colab%E8%87%AA%E5%8A%A8%E6%8C%82%E6%9C%BA%E4%BB%A3%E7%A0%81/</guid>
+      <description>&lt;p&gt;防Colab踢你下线😢&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Anaconda管理Python环境</title>
+      <link>https://dynais.github.io/code/posts/code.python.%E4%BD%BF%E7%94%A8anaconda%E7%AE%A1%E7%90%86python%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.python.%E4%BD%BF%E7%94%A8anaconda%E7%AE%A1%E7%90%86python%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;p&gt;使用Conda更方便得管理Python环境&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用requirements文件快速安装/导出开发环境</title>
+      <link>https://dynais.github.io/code/posts/code.python.%E4%BD%BF%E7%94%A8requirements%E6%96%87%E4%BB%B6%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E5%AF%BC%E5%87%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.python.%E4%BD%BF%E7%94%A8requirements%E6%96%87%E4%BB%B6%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E5%AF%BC%E5%87%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;p&gt;通过 &lt;code&gt;requirements.txt&lt;/code&gt; 文件快速安装和导出python环境的方法&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>配置Jupyter Notebook默认工作路径</title>
+      <link>https://dynais.github.io/code/posts/code.python.%E9%85%8D%E7%BD%AEjupyter-notebook%E9%BB%98%E8%AE%A4%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.python.%E9%85%8D%E7%BD%AEjupyter-notebook%E9%BB%98%E8%AE%A4%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84/</guid>
+      <description>&lt;p&gt;配置Jupyter Notebook默认工作路径&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决Python脚本在运行环境下依赖库缺失的问题</title>
+      <link>https://dynais.github.io/code/posts/code.python.%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.python.%E8%A7%A3%E5%86%B3python%E8%84%9A%E6%9C%AC%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BE%9D%E8%B5%96%E5%BA%93%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;解决脚本在某一个虚拟环境中完成后, 想要实际使用时可能会出现库依赖不存在的问题&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

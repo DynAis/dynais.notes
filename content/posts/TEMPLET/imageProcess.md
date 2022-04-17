@@ -1,0 +1,1 @@
+?x-oss-process=image/format,jpg/interlace,1#center

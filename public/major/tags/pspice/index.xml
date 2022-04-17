@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PSpice on Major</title>
+    <link>https://dynais.github.io/major/tags/pspice/</link>
+    <description>Recent content in PSpice on Major</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/major/tags/pspice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PSpice中常用的Cursor查询命令</title>
+      <link>https://dynais.github.io/major/posts/major.pspice%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84cursor%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/major/posts/major.pspice%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84cursor%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;受够了在 Probe 窗口中用鼠标拖 Cursor 来找结果数据了, 所以想找一下 Probe 的 SerchCommand 结果连官方用户指导里都找不到, 好不容易才在帮助文档里找到了, 写文档的真不是人, 记录一下防止以后忘了&lt;/p&gt;
+&lt;p&gt;Orcad Pspice版本: 9.1 Student&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PSpice模拟数据导入Excel工作流</title>
+      <link>https://dynais.github.io/major/posts/major.pspice%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5excel%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/major/posts/major.pspice%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5excel%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+      <description>&lt;p&gt;基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

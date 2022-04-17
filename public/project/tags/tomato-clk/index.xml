@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>tomato-clk on Project</title>
+    <link>https://dynais.github.io/project/tags/tomato-clk/</link>
+    <description>Recent content in tomato-clk on Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/project/tags/tomato-clk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[T-CLK] 番茄钟重构</title>
+      <link>https://dynais.github.io/project/posts/project.tclk.%E7%95%AA%E8%8C%84%E9%92%9F%E9%87%8D%E6%9E%84/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/project/posts/project.tclk.%E7%95%AA%E8%8C%84%E9%92%9F%E9%87%8D%E6%9E%84/</guid>
+      <description>项目进度   重构了代码
+  修正了大部分bug
+  一. 重要代码模块 1. Qtimer  https://blog.csdn.net/jia666666/article/details/81672344
+ Qtimer是Qt自带的定时器类, 位于PyQt5.Qcore下, 和单片机的中断函数非常像, 并且提供单次触发和多次触发两种触发方式
+多次触发 timer.timeout.connect(function) ... timer = Qtimer() timer.start(1000) 这里timeout是Qtimer的中断信号, 这里设定timer.start(1000)代表每一秒执行一次中断, 在番茄钟里, 我使用这个中断来进行时间的更新, 时间的更新仍然使用的是原生的time模块
+如果要停止Qtimer,使用
+timer.stop() 2. 自定义信号  https://blog.csdn.net/foreveronly/article/details/82453697
+ 二. 已解决的问题 1. 拖动窗口时时间不走动的问题 加完Qtimer中断完全没有问题
+3. 进程无法完全退出问题 -&amp;gt; window.close()效果问题 -&amp;gt; 响铃bug 通过将子窗口变为主窗口类的成员, 并使用以下语句初始化
+class MainWindow(QMainWindow): def __init__(self): super().__init__() #子窗口建立 self.subBreak = BreakWindow(self)# 注意这里 class BreakWindow(QDialog): def __init__(self,parent=None): super().__init__(parent) 关键也就是加入def __init__(self,parent=None), 使主从窗口关联起来(具体实现逻辑尚不清晰), 再加上合理的退出判断, 就可以实现干净的退出了</description>
+    </item>
+    
+    <item>
+      <title>[T-CLK] 番茄钟基本功能建设</title>
+      <link>https://dynais.github.io/project/posts/project.tclk.%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/project/posts/project.tclk.%E7%95%AA%E8%8C%84%E9%92%9F%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%BB%BA%E8%AE%BE/</guid>
+      <description>&lt;h2 id=&#34;项目进度&#34;&gt;项目进度&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;加入了自己指定时间的模块&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>[T-CLK] 番茄钟倒计时模块的基本实现</title>
+      <link>https://dynais.github.io/project/posts/project.tclk.%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/project/posts/project.tclk.%E7%95%AA%E8%8C%84%E9%92%9F%E5%80%92%E8%AE%A1%E6%97%B6%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0/</guid>
+      <description>&lt;h2 id=&#34;项目进度&#34;&gt;项目进度&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;实现了番茄钟最基本的倒计时功能&lt;/li&gt;
+&lt;li&gt;实现了按钮交互的功能&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>[T-CLK] Python&#43;Qt5项目环境的搭建</title>
+      <link>https://dynais.github.io/project/posts/project.tclk.python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/project/posts/project.tclk.python&#43;qt5%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+      <description>一. 软件 1. Pycharm 2019.3.3 ​	Pycharm主要负责进行主体逻辑的编写, 以及统筹整个项目, 此外环境的搭建大多也在Pycharm里完成
+2. Qt 5.12.7 / Qt Creator ​	Qt原本是为C++设计的UI界面搭建软件, 通过加入Py包之后同样也可以为Python编写桌面图形应用程序, 这里用的是官网的免费版
+二. 环境搭建(对于已有Anaconda3) 1.Python解释器 由于已经安装了Anaconda3, 所以没有再安装原生的解释器, 也不清楚, 但觉得应该可以通用
+2. 配置环境变量(对于Anaconda3) 对于Anaconda3的用户, 需要再自行配置一下环境变量, 在环境变量的path选项卡中添加Anaconda的以下目录
+不然在Pycharm中搭建环境时会遇到提示pip无法成功的提示, 导致包无法安装
+3. 在Pycharm里搭建环境/安装必要的包 完成以上两步准备就可以开始配置Pycharm了
+首先新建一个项目
+有几点需要注意的地方:
+首先, 确保New environment using中是新建了一个环境,而不是使用Conda.
+其次, 确保Base interpreter中选择的是pythonw解释器, 而不是python
+最后注意, 此处不需勾选
+然后就可以让它新建一个项目了
+打开工程后进入 文件 -&amp;gt; 设置 -&amp;gt; 项目 -&amp;gt; Project Interpreter 在这里管理需要用到的包文件
+需要使用Qt编程的话, 必须添加QtPy和PyQt5两个包
+Pycharm会自己管理, 下载好就算是配置完成了
+三. 工作流 大致的思路是:
+ 使用Qt Creator创作图形界面 使用包内置函数转化Qt的.ui文件为.py文件, 作为包导入到程序中 使用Pycharm编写整体逻辑  1.</description>
+    </item>
+    
+  </channel>
+</rss>

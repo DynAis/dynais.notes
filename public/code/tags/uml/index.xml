@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>UML on Code</title>
+    <link>https://dynais.github.io/code/tags/uml/</link>
+    <description>Recent content in UML on Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/code/tags/uml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UML类图</title>
+      <link>https://dynais.github.io/code/posts/code.uml%E7%B1%BB%E5%9B%BE/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.uml%E7%B1%BB%E5%9B%BE/</guid>
+      <description>&lt;p&gt;通过以下两篇文章应该能看懂大部分编程时使用的UML类图&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UTF8编解码</title>
+      <link>https://dynais.github.io/code/posts/code.utf8%E7%BC%96%E8%A7%A3%E7%A0%81/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.utf8%E7%BC%96%E8%A7%A3%E7%A0%81/</guid>
+      <description>&lt;p&gt;UTF8的基本知识&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

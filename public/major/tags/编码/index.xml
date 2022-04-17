@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>编码 on Major</title>
+    <link>https://dynais.github.io/major/tags/%E7%BC%96%E7%A0%81/</link>
+    <description>Recent content in 编码 on Major</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/major/tags/%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>马尔科夫链及其平稳分布的求法</title>
+      <link>https://dynais.github.io/major/posts/major.%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE%E5%8F%8A%E5%85%B6%E5%B9%B3%E7%A8%B3%E5%88%86%E5%B8%83%E7%9A%84%E6%B1%82%E6%B3%95/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/major/posts/major.%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE%E5%8F%8A%E5%85%B6%E5%B9%B3%E7%A8%B3%E5%88%86%E5%B8%83%E7%9A%84%E6%B1%82%E6%B3%95/</guid>
+      <description>&lt;p&gt;&amp;ldquo;马尔科夫链的平稳分布就是矩阵的自乘收敛&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

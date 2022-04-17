@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>模拟电路 on Major</title>
+    <link>https://dynais.github.io/major/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/</link>
+    <description>Recent content in 模拟电路 on Major</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/major/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>倍压整流电路</title>
+      <link>https://dynais.github.io/major/posts/major.%E5%80%8D%E5%8E%8B%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/major/posts/major.%E5%80%8D%E5%8E%8B%E6%95%B4%E6%B5%81%E7%94%B5%E8%B7%AF/</guid>
+      <description>&lt;p&gt;这东西真的有用吗?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

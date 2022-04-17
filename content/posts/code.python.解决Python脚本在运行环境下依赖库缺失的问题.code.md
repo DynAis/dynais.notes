@@ -1,13 +1,12 @@
 ---
-title: 解决Python脚本在运行环境下依赖库缺失的问题
+title: '解决Python脚本在运行环境下依赖库缺失的问题'
 tags: 
   - Python
 date: '2021-02-23'
 ---
 
-在某一个虚拟环境中完成脚本后, 想要实际使用时可能会出现错误
-![](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20210223124433.png?x-oss-process=image/resize,h_2000/quality,q_90#center)
-这是由于虚拟环境和运行环境不一致导致依赖库缺失无法`import`导致的
+解决脚本在某一个虚拟环境中完成后, 想要实际使用时可能会出现库依赖不存在的问题
+
 <!--more-->
 
 ---

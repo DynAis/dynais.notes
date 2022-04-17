@@ -8,5 +8,7 @@
     "de-DE"
   ],
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "./"
+  "attachmentFolderPath": "./",
+  "fileSortOrder": "alphabetical",
+  "newFileLocation": "current"
 }

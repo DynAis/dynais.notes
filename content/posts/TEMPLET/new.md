@@ -7,7 +7,6 @@ date: '{{date}}'
 ShowToc: true
 draft: true
 ---
-
 A templet for quick generate content.
 <!--more-->
 

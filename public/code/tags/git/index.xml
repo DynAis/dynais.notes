@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Git on Code</title>
+    <link>https://dynais.github.io/code/tags/git/</link>
+    <description>Recent content in Git on Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/code/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Git作为版本管理工具</title>
+      <link>https://dynais.github.io/code/posts/code.%E4%BD%BF%E7%94%A8git%E4%BD%9C%E4%B8%BA%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/code.%E4%BD%BF%E7%94%A8git%E4%BD%9C%E4%B8%BA%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <description>&lt;p&gt;介绍了Git作为版本管理工具的一些基本概念和在控制台下常见指令的使用方法, 因为GUI界面下的操作很直观所以并没有费力介绍.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DuinoAccess on Project</title>
+    <link>https://dynais.github.io/project/tags/duinoaccess/</link>
+    <description>Recent content in DuinoAccess on Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/project/tags/duinoaccess/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[DA] DuinoAccess</title>
+      <link>https://dynais.github.io/project/posts/project.da.duinoaccess/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/project/posts/project.da.duinoaccess/</guid>
+      <description>&lt;p&gt;这次也是因为闲的在家没有事情做，所以又给自己开了一个新坑，其实蛮早以前就有过想做一个电脑上能用的指纹锁的想法了，但是一直没有动手，刚好这次有机会，并且也是刚刚新组了一台电脑，就想着要把这个项目给做了。&lt;/p&gt;
+&lt;p&gt;这个项目的一个主要的灵感来源是@&lt;a href=&#34;https://space.bilibili.com/20259914/dynamic&#34;&gt;稚晖君&lt;/a&gt;很早以前发在Arduino论坛上的一个项目 (&lt;a href=&#34;https://www.arduino.cn/thread-86889-1-3.html&#34;&gt;Link: 如何制作一个带指纹识别的机械键盘&lt;/a&gt;), 这次项目的的主要思路都和他的差不多，只不过我想做成独立的一个模块，并且最好能够实现便携功能，也就是说如果可以的话我想加上蓝牙的功能&lt;/p&gt;
+&lt;p&gt;然后这次的文章大概也会写好几部分，具体取决于我最后能不能最后好好完成这个项目&amp;hellip;&lt;/p&gt;
+&lt;p&gt;这是一个开源项目，后续也会一直更新进度，对你有帮助的话可以给我个星星，传送门：https://github.com/DynAis/duino-access&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

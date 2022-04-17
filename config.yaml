@@ -12,15 +12,16 @@ enableInlineShortcodes: true
 enableRobotsTXT: true
 enableEmoji: true
 buildDrafts: true
-# buildFuture: false
+buildFuture: true
 # buildExpired: false
 pygmentsUseClasses: true
+googleAnalytics: G-RB48HHB90Q
 
 
 
-minify:
-    disableXML: true
-    minifyOutput: true
+# minify:
+    # disableXML: true
+    # minifyOutput: true
 
 
 
@@ -195,6 +196,8 @@ params :
     ShowToc: true
     TocOpen: false
     math: true
+    defaultContentLanguage: "zh"
+    hasCJKLanguage: true
     # editPost:
     #     URL: "https://github.com/<path_to_repo>/content"
     #     Text: "Suggest Changes" # edit text
@@ -205,11 +208,13 @@ params :
     # Main Page Configs
     # ShowBreadCrumbs: true
     assets:
-        favicon: "favicon.ico/"
-        favicon16x16:  "favicon-16x16.png/"
-        favicon32x32:  "favicon-32x32.png/"
-        apple_touch_icon:  "apple-touch-icon.png/"
-        safari_pinned_tab:  "safari-pinned-tab.svg/"
+        favicon: "/favicon.ico/"
+        favicon16x16:  "/favicon-16x16.png/"
+        favicon32x32:  "/favicon-32x32.png/"
+        apple_touch_icon:  "/apple-touch-icon.png/"
+        safari_pinned_tab:  "/safari-pinned-tab.svg/"
+    label:
+        icon: "/apple-touch-icon.png/"
 
 
 # taxonomies:
@@ -255,6 +260,31 @@ outputs:
         - HTML
         - RSS
         - JSON # is necessary
+
+
+
+privacy:
+    disqus:
+        disable: false
+    googleAnalytics:
+        anonymizeIP: false
+        disable: false
+        respectDoNotTrack: false
+        useSessionStorage: false
+    instagram:
+        disable: false
+        simple: false
+    twitter:
+        disable: false
+        enableDNT: false
+        simple: false
+    vimeo:
+        disable: false
+        enableDNT: false
+        simple: false
+    youtube:
+        disable: false
+        privacyEnhanced: false
 
 
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>信号与系统 on Major</title>
+    <link>https://dynais.github.io/major/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 信号与系统 on Major</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/major/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从全通滤波器到最小相位系统</title>
+      <link>https://dynais.github.io/major/posts/major.%E4%BB%8E%E5%85%A8%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%88%B0%E6%9C%80%E5%B0%8F%E7%9B%B8%E4%BD%8D%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/major/posts/major.%E4%BB%8E%E5%85%A8%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%88%B0%E6%9C%80%E5%B0%8F%E7%9B%B8%E4%BD%8D%E7%B3%BB%E7%BB%9F/</guid>
+      <description>&lt;p&gt;&amp;ldquo;非最小相位系统之所以成为, 是因为其包含了全通滤波器&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>复信号的意义及其变换方法</title>
+      <link>https://dynais.github.io/major/posts/major.%E5%A4%8D%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%84%8F%E4%B9%89%E5%8F%8A%E5%85%B6%E5%8F%98%E6%8D%A2%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/major/posts/major.%E5%A4%8D%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%84%8F%E4%B9%89%E5%8F%8A%E5%85%B6%E5%8F%98%E6%8D%A2%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;实信号具有共轭对称的频谱，从信息的角度来看，其负频谱部分是冗余的，因此为了信号处理方便，去掉频域的负半平面，只保留正频谱部分的信号，其频谱不存在共轭对称性，这样产生的频谱所对应的时域信号就是一个复信号，这个复信号称为解析信号.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>采样定理</title>
+      <link>https://dynais.github.io/major/posts/major.%E9%87%87%E6%A0%B7%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/major/posts/major.%E9%87%87%E6%A0%B7%E5%AE%9A%E7%90%86/</guid>
+      <description>&lt;p&gt;一些Nyquist采样定理与香农采样定理&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

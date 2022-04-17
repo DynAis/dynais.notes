@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker on Code</title>
+    <link>https://dynais.github.io/code/tags/docker/</link>
+    <description>Recent content in Docker on Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/code/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker部署</title>
+      <link>https://dynais.github.io/code/posts/_code.docker%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/posts/_code.docker%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;记录Docker应用部署流程, 镜像发布/部署&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

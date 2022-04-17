@@ -5,8 +5,6 @@ tags:
 date: 2020-04-08
 ---
 
-<!-- toc -->
-
 ## 一. 软件
 
 ### 1. Pycharm 2019.3.3
@@ -33,7 +31,7 @@ date: 2020-04-08
 
 对于Anaconda3的用户, 需要再自行配置一下环境变量, 在环境变量的`path`选项卡中添加Anaconda的以下目录
 
-![image-20200408140342164](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725010627.png)
+![image-20200408140342164](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725010627.png?x-oss-process=image/format,jpg/interlace,1#center)
 
 不然在Pycharm中搭建环境时会遇到提示pip无法成功的提示, 导致包无法安装
 
@@ -45,7 +43,7 @@ date: 2020-04-08
 
 首先新建一个项目
 
-![image-20200408140546920](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725010630.png)
+![image-20200408140546920](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725010630.png?x-oss-process=image/format,jpg/interlace,1#center)
 
 有几点需要注意的地方: 
 
@@ -55,7 +53,7 @@ date: 2020-04-08
 
 **最后注意, 此处不需勾选**
 
-![image-20200408141111529](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725010633.png)
+![image-20200408141111529](https://dynais-imh-hub.oss-cn-hangzhou.aliyuncs.com/img/20200725010633.png?x-oss-process=image/format,jpg/interlace,1#center)
 
 然后就可以让它新建一个项目了
 

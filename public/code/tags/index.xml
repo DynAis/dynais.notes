@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Code</title>
+    <link>https://dynais.github.io/code/tags/</link>
+    <description>Recent content in Tags on Code</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/code/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Batch</title>
+      <link>https://dynais.github.io/code/tags/batch/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/batch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://dynais.github.io/code/tags/c/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://dynais.github.io/code/tags/docker/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://dynais.github.io/code/tags/git/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://dynais.github.io/code/tags/python/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSH</title>
+      <link>https://dynais.github.io/code/tags/ssh/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UML</title>
+      <link>https://dynais.github.io/code/tags/uml/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/uml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>汇编</title>
+      <link>https://dynais.github.io/code/tags/%E6%B1%87%E7%BC%96/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/%E6%B1%87%E7%BC%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://dynais.github.io/code/tags/machine-learning/</link>
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenCV</title>
+      <link>https://dynais.github.io/code/tags/opencv/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CMD</title>
+      <link>https://dynais.github.io/code/tags/cmd/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/code/tags/cmd/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

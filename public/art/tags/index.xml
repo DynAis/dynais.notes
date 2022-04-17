@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Art</title>
+    <link>https://dynais.github.io/art/tags/</link>
+    <description>Recent content in Tags on Art</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyrights © 2022 DynAis. All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dynais.github.io/art/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Art</title>
+      <link>https://dynais.github.io/art/tags/art/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dynais.github.io/art/tags/art/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
