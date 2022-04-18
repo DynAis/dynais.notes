@@ -19,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c87c971ae8664895",
+    "id": "8af63a1d8e5e6c53",
     "type": "split",
     "children": [
       {
-        "id": "2efbe88ed3e11321",
+        "id": "2942d694295a631b",
         "type": "tabs",
         "children": [
           {
-            "id": "f5fe6de60570d67d",
+            "id": "e194c7d11fda8d8b",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,7 +35,7 @@
             }
           },
           {
-            "id": "738c6a89ceb39630",
+            "id": "a6ecd8868b098bc7",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -56,15 +56,15 @@
     "width": 300
   },
   "right": {
-    "id": "40d34434df4365e8",
+    "id": "fce497b1a22786f9",
     "type": "split",
     "children": [
       {
-        "id": "466cd9f2afbdbbd9",
+        "id": "40ebba7080e61a65",
         "type": "tabs",
         "children": [
           {
-            "id": "24bbbd6df95318d1",
+            "id": "c77ee7dc3663a328",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -79,29 +79,13 @@
                 "unlinkedCollapsed": true
               }
             }
-          },
-          {
-            "id": "68d22a9b9e59d98b",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "164df2c6ab27164f",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "active": "5237a6fda06090c6",
   "lastOpenFiles": [
