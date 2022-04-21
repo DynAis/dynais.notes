@@ -7,8 +7,12 @@
         "id": "5237a6fda06090c6",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,15 +89,15 @@
   },
   "active": "5237a6fda06090c6",
   "lastOpenFiles": [
+    "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
+    "content/posts/code.python.使用Anaconda管理Python环境.code.md",
+    "content/posts/code.python.解决Python脚本在运行环境下依赖库缺失的问题.code.md",
     "content/posts/TEMPLET/__.md",
     "content/posts/TEMPLET/header.md",
     "content/posts/TEMPLET/imageProcess.md",
     "content/posts/TEMPLET/instagram.md",
     "content/posts/TEMPLET/new.md",
     "content/posts/TEMPLET/twitter.md",
-    "content/posts/TEMPLET/video.md",
-    "content/posts/TEMPLET/youtube.md",
-    "content/posts/art.玻璃松.art.md",
-    "content/posts/vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md"
+    "content/posts/TEMPLET/video.md"
   ]
 }
