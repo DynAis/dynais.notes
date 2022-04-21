@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
-            "mode": "preview",
+            "file": "content/posts/_Ausgabe06.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
+                "file": "content/posts/_Ausgabe06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "5237a6fda06090c6",
   "lastOpenFiles": [
-    "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
-    "content/posts/code.python.使用Anaconda管理Python环境.code.md",
-    "content/posts/code.python.解决Python脚本在运行环境下依赖库缺失的问题.code.md",
-    "content/posts/TEMPLET/__.md",
+    "content/posts/_Ausgabe06.md",
+    "content/posts/_art.UDIM.art.md",
+    "content/posts/_项目表.md",
     "content/posts/TEMPLET/header.md",
     "content/posts/TEMPLET/imageProcess.md",
     "content/posts/TEMPLET/instagram.md",
     "content/posts/TEMPLET/new.md",
     "content/posts/TEMPLET/twitter.md",
-    "content/posts/TEMPLET/video.md"
+    "content/posts/TEMPLET/video.md",
+    "content/posts/TEMPLET/youtube.md"
   ]
 }
