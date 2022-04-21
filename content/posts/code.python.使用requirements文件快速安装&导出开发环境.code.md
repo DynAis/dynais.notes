@@ -37,6 +37,13 @@ pip install pipreqs # 安装pipreqs
 pipreqs ./
 ```
 
+## 问题补充
+1. 报错 `'gbk' codec can't decode byte 0xb0 in position 772: illegal multibyte sequence`
+换成
+```shell
+pipreqs ./ --encoding=utf8
+```
+
 ## 参考
 
 无
