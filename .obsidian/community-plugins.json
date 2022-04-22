@@ -1,5 +1,6 @@
 [
   "obsidian-git",
   "obsidian-image-auto-upload-plugin",
-  "quick-latex"
+  "quick-latex",
+  "obsidian-pandoc"
 ]

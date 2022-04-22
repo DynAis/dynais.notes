@@ -10,5 +10,6 @@
   "useMarkdownLinks": true,
   "attachmentFolderPath": "./",
   "fileSortOrder": "alphabetical",
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "communityThemeSortOrder": "download"
 }
