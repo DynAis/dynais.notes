@@ -7,12 +7,8 @@
         "id": "5237a6fda06090c6",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "content/posts/_Aufgabe07.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_Aufgabe07.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +84,15 @@
   },
   "active": "5237a6fda06090c6",
   "lastOpenFiles": [
-    "content/posts/_Aufgabe07.md",
+    "content/posts/_Ausgabe06.md",
     "content/posts/_art.UDIM.art.md",
-    "content/posts/_Aufgabe06.md",
-    "content/posts/TEMPLET/md.header.md",
-    "content/posts/TEMPLET/latex.env.aligned.md",
-    "content/posts/_Aufgabe06.pdf",
-    "content/posts/_major.latex.Latex公式查找表.major.md",
-    "content/posts/TEMPLET/md.youtube.md",
-    "content/posts/TEMPLET/md.video.md",
-    "content/posts/TEMPLET/md.twitter.md"
+    "content/posts/_项目表.md",
+    "content/posts/TEMPLET/header.md",
+    "content/posts/TEMPLET/imageProcess.md",
+    "content/posts/TEMPLET/instagram.md",
+    "content/posts/TEMPLET/new.md",
+    "content/posts/TEMPLET/twitter.md",
+    "content/posts/TEMPLET/video.md",
+    "content/posts/TEMPLET/youtube.md"
   ]
 }
