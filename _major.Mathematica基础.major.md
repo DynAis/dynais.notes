@@ -23,6 +23,8 @@ draft: true
 - 虚数 `I`
 - 赋值 `=`
 	赋值`x=1`,之后会自动带入,取消赋值`x=.`
+- 近似 `N[EXPRESSION, DECIMAL_NUMBER]`
+	Mathematica给出近似小数
 ### 逻辑运算
 `If[LOGIC,TRUE,FALSE]` 相当于一个三元运算符
 ### 1.2 化简 `Simplify`
@@ -35,6 +37,7 @@ draft: true
 ### 1.5 导数/积分
 `D[FUNKTION,VAR]`
 `Integrate[FUNKTION,VAR]`无穷积分
+`Integrate[FUNKTION,{VAR, MIN, MAX}]`无穷积分
 ### 1.6 展开式
 `Series[FUNKTION, {VAR, LOCATION, ORD}]`
 ### 1.7 极限
