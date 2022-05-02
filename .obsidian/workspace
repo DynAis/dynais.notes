@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "未命名.md",
+            "file": "_major.Mathematica基础.major.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fce497b1a22786f9",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名.md",
+                "file": "_major.Mathematica基础.major.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,7 +90,7 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
-    "未命名.md",
+    "_major.Mathematica基础.major.md",
     "_Internet02.md",
     "content/posts/_Ausgabe06.md",
     "content/posts/_art.UDIM.art.md",
