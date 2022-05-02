@@ -7,8 +7,12 @@
         "id": "de3a2d460b7fdbf2",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "未命名.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,6 +89,7 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
+    "未命名.md",
     "_Internet02.md",
     "content/posts/_Ausgabe06.md",
     "content/posts/_art.UDIM.art.md",
@@ -92,7 +98,6 @@
     "content/posts/TEMPLET/imageProcess.md",
     "content/posts/TEMPLET/instagram.md",
     "content/posts/TEMPLET/new.md",
-    "content/posts/TEMPLET/twitter.md",
-    "content/posts/TEMPLET/video.md"
+    "content/posts/TEMPLET/twitter.md"
   ]
 }
