@@ -43,5 +43,6 @@ draft: true
 ## 2 画图
 ### 2.1 二维图像
 `Plot[FUNKTION, {VAR, X_MIN, X_MAX}]`
+`PlotLabels->{LABEL1, LABEL2}`
 
 ## 参考
