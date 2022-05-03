@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "_major.Mathematica基础.major.md",
+            "file": "content/posts/code.python.使用Anaconda管理Python环境.code.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_major.Mathematica基础.major.md",
+                "file": "content/posts/code.python.使用Anaconda管理Python环境.code.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +90,7 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
+    "content/posts/code.python.使用Anaconda管理Python环境.code.md",
     "_major.Mathematica基础.major.md",
     "_Internet02.md",
     "content/posts/_Ausgabe06.md",
@@ -98,7 +99,6 @@
     "content/posts/TEMPLET/header.md",
     "content/posts/TEMPLET/imageProcess.md",
     "content/posts/TEMPLET/instagram.md",
-    "content/posts/TEMPLET/new.md",
-    "content/posts/TEMPLET/twitter.md"
+    "content/posts/TEMPLET/new.md"
   ]
 }
