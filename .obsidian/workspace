@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/code.python.在JupyterNotebook中切换环境.code.md",
+            "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/code.python.在JupyterNotebook中切换环境.code.md",
+                "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
+    "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
     "content/posts/code.python.在JupyterNotebook中切换环境.code.md",
     "content/posts/art.玻璃松.art.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
@@ -97,7 +98,6 @@
     "content/posts/project.tclk.番茄钟倒计时模块的基本实现.project.md",
     "content/posts/code.python.使用Anaconda管理Python环境.code.md",
     "_major.Mathematica基础.major.md",
-    "_Internet02.md",
-    "content/posts/_Ausgabe06.md"
+    "_Internet02.md"
   ]
 }
