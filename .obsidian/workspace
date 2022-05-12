@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/_code.Docker部署.code.md",
+            "file": "content/posts/_vrc.详解ParentConstraint.vrc.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_code.Docker部署.code.md",
+                "file": "content/posts/_vrc.详解ParentConstraint.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
+    "content/posts/_vrc.详解ParentConstraint.vrc.md",
+    "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
+    "content/posts/_major.latex.Latex公式查找表.major.md",
     "content/posts/_code.Docker部署.code.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
     "content/posts/project.tclk.Python+Qt5项目环境的搭建.project.md",
     "content/posts/project.tclk.番茄钟重构.project.md",
     "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
     "content/posts/code.python.在JupyterNotebook中切换环境.code.md",
-    "content/posts/art.玻璃松.art.md",
-    "content/posts/project.tclk.番茄钟倒计时模块的基本实现.project.md",
-    "content/posts/code.python.使用Anaconda管理Python环境.code.md",
-    "_major.Mathematica基础.major.md"
+    "content/posts/art.玻璃松.art.md"
   ]
 }
