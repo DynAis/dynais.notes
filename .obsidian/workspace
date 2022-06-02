@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/vrc.blender.Blender-MD动画数据流程.vrc.md",
+            "file": "_major.Mathematica基础.major.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/vrc.blender.Blender-MD动画数据流程.vrc.md",
+                "file": "_major.Mathematica基础.major.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
+    "_major.Mathematica基础.major.md",
     "content/posts/vrc.blender.Blender-MD动画数据流程.vrc.md",
     "content/posts/md.md",
     "content/posts/_major.latex.Latex公式查找表.major.md",
@@ -97,7 +98,6 @@
     "content/posts/_code.Docker部署.code.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
     "content/posts/project.tclk.Python+Qt5项目环境的搭建.project.md",
-    "content/posts/project.tclk.番茄钟重构.project.md",
-    "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md"
+    "content/posts/project.tclk.番茄钟重构.project.md"
   ]
 }
