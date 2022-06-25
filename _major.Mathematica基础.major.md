@@ -49,12 +49,3 @@ draft: true
 `PlotLabels->{LABEL1, LABEL2}`
 
 ## 参考
-
-```plantuml
-@startuml
-
-!theme plain
-Bob -> Alice: Hello!
-
-@enduml
-```
