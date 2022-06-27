@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/code.python.在JupyterNotebook中切换环境.code.md",
+            "file": "content/posts/code.使用Git作为版本管理工具.code.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/code.python.在JupyterNotebook中切换环境.code.md",
+                "file": "content/posts/code.使用Git作为版本管理工具.code.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
+    "content/posts/code.使用Git作为版本管理工具.code.md",
     "content/posts/code.python.在JupyterNotebook中切换环境.code.md",
     "content/posts/code.python.使用Anaconda管理Python环境.code.md",
     "_major.Mathematica基础.major.md",
@@ -97,7 +98,6 @@
     "content/posts/_major.latex.Latex公式查找表.major.md",
     "content/posts/_vrc.详解ParentConstraint.vrc.md",
     "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
-    "content/posts/_code.Docker部署.code.md",
-    "content/posts/project.tclk.番茄钟基本功能建设.project.md"
+    "content/posts/_code.Docker部署.code.md"
   ]
 }
