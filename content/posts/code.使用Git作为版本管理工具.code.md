@@ -127,11 +127,17 @@ Git中, 分支(Branch)指的是相对于主干(Master)来说的其他"分支版�
 
 ### 2.6 回滚/合并
 
-- `git checkout [hash] [branch]`
-  
-    *回滚版本*  
-    
+*回滚版本*  
+- `git checkout [hash] [branch]`  
+- `git reset --hard [hash]`
+
+*合并版本*
 - `git merge`
+
+### 2.7 删除分支
+
+- `git branch -d [branch]`
+
 
 ## 参考
 
