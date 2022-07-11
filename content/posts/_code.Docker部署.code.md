@@ -105,3 +105,5 @@ root@ubuntu:/dockerfile/df_test1# docker build-t="df_test9" --no-cache.
 说明：
 
        1）构建的时候，加上--no-cache即可；
+
+docker run -it --rm --name cloud_connector dynais/bbb-azure-iot
