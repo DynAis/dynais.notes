@@ -90,6 +90,7 @@
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
     "content/posts/_code.Docker部署.code.md",
+    "content/posts/code.在Linux上更改ip地址.code.md",
     "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
     "content/posts/_major.latex.Latex公式查找表.major.md",
     "content/posts/_art.UDIM.art.md",
@@ -97,7 +98,6 @@
     "content/posts/code.批处理.code.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
     "content/posts/project.tclk.番茄钟倒计时模块的基本实现.project.md",
-    "content/posts/project.tclk.番茄钟重构.project.md",
-    "content/posts/project.tclk.Python+Qt5项目环境的搭建.project.md"
+    "content/posts/project.tclk.番茄钟重构.project.md"
   ]
 }
