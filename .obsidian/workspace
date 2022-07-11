@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/_code.Docker部署.code.md",
+            "file": "content/posts/code.使用Git作为版本管理工具.code.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_code.Docker部署.code.md",
+                "file": "content/posts/code.使用Git作为版本管理工具.code.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "de3a2d460b7fdbf2",
   "lastOpenFiles": [
+    "content/posts/code.使用Git作为版本管理工具.code.md",
     "content/posts/_code.Docker部署.code.md",
     "content/posts/code.在Linux上更改ip地址.code.md",
     "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
@@ -97,7 +98,6 @@
     "content/posts/_项目表.md",
     "content/posts/code.批处理.code.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
-    "content/posts/project.tclk.番茄钟倒计时模块的基本实现.project.md",
-    "content/posts/project.tclk.番茄钟重构.project.md"
+    "content/posts/project.tclk.番茄钟倒计时模块的基本实现.project.md"
   ]
 }
