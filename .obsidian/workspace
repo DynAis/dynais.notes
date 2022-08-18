@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "de3a2d460b7fdbf2",
+        "id": "262a91ad3d271cab",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -36,7 +36,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "pyinstaller",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -45,7 +45,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -82,8 +83,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "de3a2d460b7fdbf2",
+  "active": "262a91ad3d271cab",
   "lastOpenFiles": [
+    "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
+    "content/posts/project.tclk.番茄钟基本功能建设.project.md",
     "content/posts/md (1).md",
     "content/posts/md.md",
     "content/posts/art.玻璃松.art.md",
@@ -91,8 +94,6 @@
     "content/posts/_vrc.详解ParentConstraint.vrc.md",
     "content/posts/_major.latex.Latex公式查找表.major.md",
     "content/posts/_code.python.使用python完成一个简单的控制台应用 (1).code.md",
-    "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
-    "content/posts/_code.Docker部署.code.md",
-    "content/posts/_art.UDIM.art.md"
+    "content/posts/_code.Docker部署.code.md"
   ]
 }
