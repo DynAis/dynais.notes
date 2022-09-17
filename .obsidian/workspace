@@ -45,8 +45,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -83,7 +82,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "262a91ad3d271cab",
+  "active": "e194c7d11fda8d8b",
   "lastOpenFiles": [
     "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
