@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/posts/_major.latex.Latex公式查找表.major.md",
+            "file": "content/posts/art.vfx.简单VFX工作流.art.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "latex",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -49,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_major.latex.Latex公式查找表.major.md",
+                "file": "content/posts/art.vfx.简单VFX工作流.art.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,15 +89,15 @@
   },
   "active": "262a91ad3d271cab",
   "lastOpenFiles": [
+    "content/posts/code.使用VSCode+SSH实现远程开发.code.md",
+    "content/posts/art.Spleeter实现背景人声轨道分离.art.md",
+    "content/posts/_major.latex.Latex公式查找表.major.md",
     "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
     "content/posts/md (1).md",
     "content/posts/md.md",
     "content/posts/art.玻璃松.art.md",
     "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
-    "content/posts/_vrc.详解ParentConstraint.vrc.md",
-    "content/posts/_major.latex.Latex公式查找表.major.md",
-    "content/posts/_code.python.使用python完成一个简单的控制台应用 (1).code.md",
-    "content/posts/_code.Docker部署.code.md"
+    "content/posts/_vrc.详解ParentConstraint.vrc.md"
   ]
 }
