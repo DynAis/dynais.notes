@@ -28,9 +28,33 @@
                 "currentVersion": "1.0.0"
               }
             }
+          },
+          {
+            "id": "e8b5b8a38c13316f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/_major.Mathematica基础.major.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8632d0a93002f01e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/_vrc.赋予模型雕塑质感.vrc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -88,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/code.python.使用Anaconda管理Python环境.code.md",
+                "file": "content/posts/_vrc.赋予模型雕塑质感.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,8 +133,10 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "279a843f33e540fa",
+  "active": "8632d0a93002f01e",
   "lastOpenFiles": [
+    "content/posts/_major.Mathematica基础.major.md",
+    "未命名.md",
     "content/posts/art.vfx.简单VFX工作流.art.md",
     "content/posts/code.使用VSCode+SSH实现远程开发.code.md",
     "content/posts/art.Spleeter实现背景人声轨道分离.art.md",
@@ -118,8 +144,6 @@
     "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
     "content/posts/project.tclk.番茄钟基本功能建设.project.md",
     "content/posts/md (1).md",
-    "content/posts/md.md",
-    "content/posts/art.玻璃松.art.md",
-    "content/posts/_vrc.VRC自定义模型工作流.vrc.md"
+    "content/posts/md.md"
   ]
 }
