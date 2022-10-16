@@ -1,0 +1,125 @@
+{
+  "main": {
+    "id": "c070eb9f20370200",
+    "type": "split",
+    "children": [
+      {
+        "id": "b75a4552d6c6ee80",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "262a91ad3d271cab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/code.python.使用Anaconda管理Python环境.code.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "279a843f33e540fa",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.0.0"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8af63a1d8e5e6c53",
+    "type": "split",
+    "children": [
+      {
+        "id": "2942d694295a631b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e194c7d11fda8d8b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a6ecd8868b098bc7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fce497b1a22786f9",
+    "type": "split",
+    "children": [
+      {
+        "id": "40ebba7080e61a65",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c77ee7dc3663a328",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/posts/code.python.使用Anaconda管理Python环境.code.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "279a843f33e540fa",
+  "lastOpenFiles": [
+    "content/posts/art.vfx.简单VFX工作流.art.md",
+    "content/posts/code.使用VSCode+SSH实现远程开发.code.md",
+    "content/posts/art.Spleeter实现背景人声轨道分离.art.md",
+    "content/posts/_major.latex.Latex公式查找表.major.md",
+    "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
+    "content/posts/project.tclk.番茄钟基本功能建设.project.md",
+    "content/posts/md (1).md",
+    "content/posts/md.md",
+    "content/posts/art.玻璃松.art.md",
+    "content/posts/_vrc.VRC自定义模型工作流.vrc.md"
+  ]
+}
