@@ -59,7 +59,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
+                "file": "content/posts/_vrc.详解ParentConstraint.vrc.md",
                 "mode": "source",
                 "source": false
               }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
+                "file": "content/posts/_vrc.详解ParentConstraint.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,15 +147,15 @@
   },
   "active": "2b4f0c0fbc7a234a",
   "lastOpenFiles": [
-    "content/posts/_vrc.赋予模型雕塑质感.vrc.md",
+    "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
     "content/posts/_vrc.详解ParentConstraint.vrc.md",
-    "content/posts/_major.Mathematica基础.major.md",
-    "未命名.md",
-    "content/posts/art.vfx.简单VFX工作流.art.md",
-    "content/posts/code.使用VSCode+SSH实现远程开发.code.md",
-    "content/posts/art.Spleeter实现背景人声轨道分离.art.md",
-    "content/posts/_major.latex.Latex公式查找表.major.md",
-    "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
-    "content/posts/project.tclk.番茄钟基本功能建设.project.md"
+    "media/202204170025698.png.jpg",
+    "media/202204170026030.png.jpg",
+    "media/202204170028500.png.jpg",
+    "content/posts/major.阻断电容及其在高频电路中的运用.major.md",
+    "content/posts/major.de.德福考试图表描述.major.md",
+    "content/posts/major.PSpice模拟数据导入Excel工作流.major.md",
+    "content/posts/major.PSpice中常用的Cursor查询命令.major.md",
+    "content/posts/project.da.DuinoAccess.project.md"
   ]
 }

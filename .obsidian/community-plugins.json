@@ -1,7 +1,7 @@
 [
   "obsidian-git",
-  "obsidian-image-auto-upload-plugin",
   "quick-latex",
   "obsidian-pandoc",
-  "obsidian-plantuml"
+  "obsidian-plantuml",
+  "obsidian-local-images"
 ]
