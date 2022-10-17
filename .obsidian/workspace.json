@@ -52,9 +52,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "2b4f0c0fbc7a234a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -112,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_vrc.赋予模型雕塑质感.vrc.md",
+                "file": "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,8 +145,10 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "8632d0a93002f01e",
+  "active": "2b4f0c0fbc7a234a",
   "lastOpenFiles": [
+    "content/posts/_vrc.赋予模型雕塑质感.vrc.md",
+    "content/posts/_vrc.详解ParentConstraint.vrc.md",
     "content/posts/_major.Mathematica基础.major.md",
     "未命名.md",
     "content/posts/art.vfx.简单VFX工作流.art.md",
@@ -142,8 +156,6 @@
     "content/posts/art.Spleeter实现背景人声轨道分离.art.md",
     "content/posts/_major.latex.Latex公式查找表.major.md",
     "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
-    "content/posts/project.tclk.番茄钟基本功能建设.project.md",
-    "content/posts/md (1).md",
-    "content/posts/md.md"
+    "content/posts/project.tclk.番茄钟基本功能建设.project.md"
   ]
 }
