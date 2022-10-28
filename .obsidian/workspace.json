@@ -83,14 +83,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/_项目表.md",
+                "file": "content/posts/_art.UDIM.art.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9eecc6d11d9a53b2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/TEMPLET/md.new.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -148,7 +160,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_项目表.md",
+                "file": "content/posts/TEMPLET/md.new.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,17 +178,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "44c8edf8a07c0d20",
+  "active": "9eecc6d11d9a53b2",
   "lastOpenFiles": [
-    "content/posts/_art.UDIM.art.md",
-    "content/posts/_项目表.md",
-    "content/posts/_vrc.详解ParentConstraint.vrc.md",
-    "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
-    "media/202204170025698.png.jpg",
-    "media/202204170026030.png.jpg",
-    "media/202204170028500.png.jpg",
-    "content/posts/major.阻断电容及其在高频电路中的运用.major.md",
-    "content/posts/major.de.德福考试图表描述.major.md",
-    "content/posts/major.PSpice模拟数据导入Excel工作流.major.md"
+    "content/posts/TEMPLET/md.twitter.md",
+    "content/posts/TEMPLET/md.new.md",
+    "content/posts/TEMPLET/md.instagram.md",
+    "content/posts/TEMPLET/md.imageProcess.md",
+    "content/posts/TEMPLET/md.header.md",
+    "content/posts/TEMPLET/latex.env.aligned.md",
+    "content/posts/_code.Docker部署.code.md",
+    "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
+    "content/posts/_protocol.SOF-Software Projectc Convention.protocol.md",
+    "content/posts/_art.UDIM.art.md"
   ]
 }

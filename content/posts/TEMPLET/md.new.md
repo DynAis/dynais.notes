@@ -1,5 +1,5 @@
 ---
-title: "How did you find hire?"
+title: "How did you find here?"
 # author: 
 tags:
   - TEMPLET
@@ -7,15 +7,15 @@ date: '{{date}}'
 ShowToc: true
 draft: true
 ---
-A templet for quick generate content.
+A template for quickly generating content.
 <!--more-->
 
 ---
 
-## 前置知识
+## The following knowledge is required
 
-## 1 Temp
+## 1
 
-## 2 Temp
+## 2
 
-## 参考
+## References
