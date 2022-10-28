@@ -8,9 +8,9 @@
     "de-DE"
   ],
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "./",
+  "attachmentFolderPath": "media",
   "fileSortOrder": "alphabetical",
-  "newFileLocation": "current",
+  "newFileLocation": "folder",
   "communityThemeSortOrder": "download",
   "pdfExportSettings": {
     "pageSize": "Letter",
@@ -18,5 +18,6 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "newFileFolderPath": "content"
 }

@@ -23,6 +23,8 @@ A template for quickly generating content.
 
 ## Environment Management (Conda)
 
+## Libraries Management 
+
 ## Sourcecode Management (Git)
 
 ## Document (MkDocs)
