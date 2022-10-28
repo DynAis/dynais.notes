@@ -1,8 +1,9 @@
 ---
-title: "How did you find here?"
+title: "SOF-Software Projectc Convention"
 # author: 
 tags:
-  - TEMPLET
+  - protocol
+  - software
 date: '2022-10-29'
 ShowToc: true
 draft: true
@@ -11,11 +12,21 @@ A template for quickly generating content.
 <!--more-->
 
 ---
+## What a good SOF project should be?
+- Reusable
+- Clean
+- Simple
 
-## Required knowledge
+## Folder structure
 
-## 1 
+## README File
 
-## 2
+## Environment Management (Conda)
+
+## Sourcecode Management (Git)
+
+## Document (MkDocs)
+
+## Binary file/GUI (Gooey/DearPyGui)
 
 ## References
