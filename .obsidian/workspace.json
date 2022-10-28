@@ -4,105 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "b75a4552d6c6ee80",
+        "id": "5c4145a530246d2f",
         "type": "tabs",
         "children": [
           {
-            "id": "262a91ad3d271cab",
+            "id": "68f1cc5793cf4bce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/code.python.使用Anaconda管理Python环境.code.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "279a843f33e540fa",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.0.0"
-              }
-            }
-          },
-          {
-            "id": "e8b5b8a38c13316f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/_major.Mathematica基础.major.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8632d0a93002f01e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/_vrc.赋予模型雕塑质感.vrc.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2b4f0c0fbc7a234a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/_art.UDIM.art.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5509d89d4600043e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/_code.Video Barcode.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "44c8edf8a07c0d20",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/_art.UDIM.art.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9eecc6d11d9a53b2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/TEMPLET/md.new.md",
+                "file": "content/posts/_protocol.SOF-Software Projectc Convention.protocol.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -160,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/TEMPLET/md.new.md",
+                "file": "content/posts/_protocol.SOF-Software Projectc Convention.protocol.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,17 +95,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "9eecc6d11d9a53b2",
+  "active": "68f1cc5793cf4bce",
   "lastOpenFiles": [
-    "content/posts/TEMPLET/md.twitter.md",
-    "content/posts/TEMPLET/md.new.md",
-    "content/posts/TEMPLET/md.instagram.md",
-    "content/posts/TEMPLET/md.imageProcess.md",
-    "content/posts/TEMPLET/md.header.md",
-    "content/posts/TEMPLET/latex.env.aligned.md",
-    "content/posts/_code.Docker部署.code.md",
+    "content/posts/_vrc.赋予模型雕塑质感.vrc.md",
+    "content/posts/_code.Video Barcode.md",
+    "content/posts/_major.latex.Latex公式查找表.major.md",
     "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
+    "content/posts/_vrc.详解ParentConstraint.vrc.md",
+    "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
+    "content/posts/art.玻璃松.art.md",
+    "content/posts/未命名.md",
     "content/posts/_protocol.SOF-Software Projectc Convention.protocol.md",
-    "content/posts/_art.UDIM.art.md"
+    "content/posts/_code.Docker部署.code.md"
   ]
 }

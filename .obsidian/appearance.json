@@ -1,5 +1,6 @@
 {
   "translucency": true,
   "baseFontSize": 16,
-  "accentColor": ""
+  "accentColor": "",
+  "monospaceFontFamily": "YaHei Consolas Hybrid"
 }

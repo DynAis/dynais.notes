@@ -12,7 +12,7 @@ A template for quickly generating content.
 
 ---
 
-## The following knowledge is required
+## Required knowledge
 
 ## 1
 
