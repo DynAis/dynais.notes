@@ -20,7 +20,7 @@ Like this one down below.
 
 ![](Pasted%20image%2020221029005433.png)
 
-- Simple - one line command to generate
+- Simple - with one line command to generate, and also have a simple GUI
 - Beautiful - Barcode itself should look great, the color must select carefully
 - Flexibel - The Programm should able to generate Barcode with different Size and Width as well as bar count
 
