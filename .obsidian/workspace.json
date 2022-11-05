@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/_vrc.To create a in game controlable object.vrc.md",
-                "mode": "source",
+                "file": "content/posts/_major.Mathematica基础.major.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -90,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_vrc.To create a in game controlable object.vrc.md",
+                "file": "content/posts/_major.Mathematica基础.major.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +110,7 @@
   },
   "active": "765ba9e15f80aa14",
   "lastOpenFiles": [
+    "content/_vrc.To create a in game controlable object.vrc.md",
     "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
     "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
     "content/posts/_vrc.详解ParentConstraint.vrc.md",
@@ -118,7 +119,6 @@
     "content/posts/_code.Movie Barcode.md",
     "content/posts/_major.Mathematica基础.major.md",
     "content/posts/movie_barcode_header.webp",
-    "content/posts/project.da.DuinoAccess.project.md",
-    "content/posts/Pasted image 20221029004514.png.md"
+    "content/posts/project.da.DuinoAccess.project.md"
   ]
 }
