@@ -26,8 +26,11 @@ OminiController() is a project aim to create a Easy-to-use Controller for the ga
 
 ## 1 Overview
 
-## 2 Prepare in Unity
+## 2 Prepare Data in Unity
 
-## 3 
+## 3 Do some Code with Python 🐍
+
 
 ## References
+- [OSCLeash - A new way to get object position data and export to osc](https://github.com/ZenithVal/OSCLeash)
+- [vrc-worldobject - A brillant way to pose and sync object use osc and animation](https://github.com/seanedwards/vrc-worldobject/blob/main/docs/parameter-multiplexing.md)
