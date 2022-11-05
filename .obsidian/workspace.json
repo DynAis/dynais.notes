@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
+                "file": "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "765ba9e15f80aa14",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/_vrc.To create a in game controlable object.vrc.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
+                "file": "content/_vrc.To create a in game controlable object.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,17 +108,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "68f1cc5793cf4bce",
+  "active": "765ba9e15f80aa14",
   "lastOpenFiles": [
+    "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
+    "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
+    "content/posts/_vrc.详解ParentConstraint.vrc.md",
+    "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
     "content/posts/code.python.使用Anaconda管理Python环境.code.md",
     "content/posts/_code.Movie Barcode.md",
     "content/posts/_major.Mathematica基础.major.md",
     "content/posts/movie_barcode_header.webp",
     "content/posts/project.da.DuinoAccess.project.md",
-    "content/posts/Pasted image 20221029004514.png.md",
-    "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
-    "content/posts/_code.Docker部署.code.md",
-    "content/posts/major.从全通滤波器到最小相位系统.major.md",
-    "content/posts/vrc.blender.Blender-MD动画数据流程.vrc.md"
+    "content/posts/Pasted image 20221029004514.png.md"
   ]
 }
