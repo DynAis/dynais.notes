@@ -19,5 +19,5 @@
     "downscalePercent": 100
   },
   "showUnsupportedFiles": true,
-  "newFileFolderPath": "content"
+  "newFileFolderPath": "content/posts"
 }
