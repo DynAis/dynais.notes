@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "cb63028dcadecfca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/_vrc.Build a OpenHAB OS with MQTT server.vrc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -90,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_vrc.A In-Game 3D navigation system - OminiController().vrc.md",
+                "file": "content/_vrc.Build a OpenHAB OS with MQTT server.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,15 +120,15 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "9ac31256fcef1816",
+  "active": "cb63028dcadecfca",
   "lastOpenFiles": [
+    "content/posts/_vrc.A In-Game 3D navigation system - OminiController().vrc.md",
     "content/posts/code.python.使用Anaconda管理Python环境.code.md",
     "content/posts/_protocol.SOF-Software Projectc Convention.protocol.md",
     "content/posts/project.da.DuinoAccess.project.md",
-    "content/posts/_vrc.A In-Game 3D navigation system - OminiController().vrc.md",
     "content/posts/_vrc.详解ParentConstraint.vrc.md",
     "content/_vrc.To create a in game controlable object.vrc.md",
-    "content/未命名.md",
+    "content/_vrc.Build a OpenHAB OS with MQTT server.vrc.md",
     "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
     "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
     "content/posts/_major.latex.Latex公式查找表.major.md"
