@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/project.da.DuinoAccess.project.md",
+                "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/project.da.DuinoAccess.project.md",
+                "file": "content/posts/code.python.使用requirements文件快速安装&导出开发环境.code.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,6 +134,7 @@
   },
   "active": "1ffc7044beeb9012",
   "lastOpenFiles": [
+    "content/posts/project.da.DuinoAccess.project.md",
     "content/posts/project.tclk.番茄钟重构.project.md",
     "content/posts/project.tclk.Python+Qt5项目环境的搭建.project.md",
     "content/posts/vrc.网页端模型展示测试(以VRCBBS徽章为例).vrc.md",
@@ -142,7 +143,6 @@
     "content/posts/_vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md",
     "content/posts/_project.tclk.番茄钟基本功能建设.project.md",
     "content/posts/project.tclk.番茄钟倒计时模块的基本实现.project.md",
-    "content/posts/@major.PSpice中常用的Cursor查询命令.major.md",
-    "content/posts/@major.PSpice模拟数据导入Excel工作流.major.md"
+    "content/posts/@major.PSpice中常用的Cursor查询命令.major.md"
   ]
 }

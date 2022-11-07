@@ -1,4 +1,4 @@
-./---
+---
 title: "使用requirements文件快速安装/导出开发环境"
 # author: 
 tags:
