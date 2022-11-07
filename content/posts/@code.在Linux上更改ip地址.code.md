@@ -5,7 +5,7 @@ tags:
   - Linux
 date: '2022-07-11'
 ShowToc: true
-draft: false
+draft: true
 ---
 在Linux上更改ip地址
 <!--more-->

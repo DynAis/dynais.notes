@@ -6,7 +6,7 @@ tags:
   - MD
 date: '2022-04-17'
 ShowToc: true
-draft: false
+draft: true
 ---
 从Blender导出动画人物到MD后导入回Blender的流程
 <!--more-->

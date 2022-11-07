@@ -3,6 +3,7 @@ title: 使用差分散列检测重复图片
 tags:
   - OpenCV
 date: 2020-04-22
+draft: true
 ---
 
 关于散列(Hash), 网上的介绍有很多,这里就不费力介绍.

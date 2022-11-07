@@ -3,6 +3,7 @@ title: PSpice中常用的Cursor查询命令
 tags:
   - PSpice
 date: 2020-12-17
+draft: true
 ---
 
 受够了在 Probe 窗口中用鼠标拖 Cursor 来找结果数据了, 所以想找一下 Probe 的 SerchCommand 结果连官方用户指导里都找不到, 好不容易才在帮助文档里找到了, 写文档的真不是人, 记录一下防止以后忘了

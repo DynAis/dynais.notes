@@ -3,6 +3,7 @@ title: PSpice模拟数据导入Excel工作流
 tags:
   - PSpice
 date: 2020-12-17
+draft: true
 ---
 
 基本思想是先保存到 csv 逗号分隔符文件再导入 Excel 里分析

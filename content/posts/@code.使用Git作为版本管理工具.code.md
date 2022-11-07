@@ -5,7 +5,7 @@ tags:
   - Git
 date: '2022-04-16'
 ShowToc: true
-draft: false
+draft: true
 ---
 
 介绍了Git作为版本管理工具的一些基本概念和在控制台下常见指令的使用方法, 因为GUI界面下的操作很直观所以并没有费力介绍.

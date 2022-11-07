@@ -3,6 +3,7 @@ title: 线性回归模型
 tags:
   - Machine Learning
 date: 2021-02-21
+draft: true
 ---
 
 线性回归是回归问题中的一种，线性回归假设目标值与特征之间线性相关，即满足一个多元一次方程。

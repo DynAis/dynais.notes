@@ -5,7 +5,7 @@ tags:
   - Blender
 date: '2022-04-17'
 ShowToc: true
-draft: false
+draft: true
 ---
 拷贝任意来源的人物动作(如Mixamo, MMD)作为自己的资产使用. 原理使用了骨骼限定修改器.
 

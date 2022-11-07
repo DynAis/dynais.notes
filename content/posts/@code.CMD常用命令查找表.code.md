@@ -3,6 +3,7 @@ title: CMD常用命令查找表
 tags:
   - CMD
 date: 2020-01-15
+draft: true
 ---
 
 记了一些常用的CMD命令

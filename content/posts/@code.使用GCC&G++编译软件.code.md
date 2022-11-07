@@ -5,7 +5,7 @@ tags:
   - C
 date: '2022-04-16'
 ShowToc: true
-draft: false
+draft: true
 ---
 
 描述了常见名词 GCC, G++, GDB, GNU 的含义. 并简单介绍了使用 GCC/G++ 的基本使用命令, 并且给出了一个使用命令行和 VScode 编译的例子.

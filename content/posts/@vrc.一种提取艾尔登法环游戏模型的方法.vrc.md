@@ -5,7 +5,7 @@ tags:
   - 解包
 date: '2022-04-17'
 ShowToc: true
-draft: false
+draft: true
 ---
 提取游戏内模型, 美中不足的是还没找到提取动作数据的方法, 方法很大程度上参考只狼与黑魂的方法.
 <!--more-->

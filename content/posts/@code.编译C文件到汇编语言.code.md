@@ -6,7 +6,7 @@ tags:
   - 汇编
 date: '2022-04-16'
 ShowToc: true
-draft: false
+draft: true
 ---
 
 用 GCC 编译 `.c` 文件到汇编语言, 便于汇编语言的学习

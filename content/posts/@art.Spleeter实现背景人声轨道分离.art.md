@@ -3,7 +3,7 @@ title: "Spleeter实现背景人声轨道分离"
 # author: 
 date: '2022-04-17'
 ShowToc: true
-draft: false
+draft: true
 ---
 使用spleeter的python包实现提取MP3文件的背景和人声轨道
 <!--more-->
