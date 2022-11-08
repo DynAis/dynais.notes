@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/_major.Mathematica基础.major.md",
+                "file": "content/search.vrc.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_major.Mathematica基础.major.md",
+                "file": "content/search.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,15 +134,15 @@
   },
   "active": "1ffc7044beeb9012",
   "lastOpenFiles": [
-    "content/posts/art.节奏变化在艺术造型中的应用.art.md",
-    "content/posts/art.ps.线稿提取.art.md",
-    "content/posts/art.vfx.简单VFX工作流.art.md",
-    "content/posts/project.da.DuinoAccess.project.md",
-    "content/posts/@code.python.Python性能测试.python.md",
-    "content/posts/@code.python.Colab自动挂机代码.code.md",
-    "content/posts/@code.python.在JupyterNotebook中切换环境.code.md",
-    "content/posts/@code.python.使用requirements文件快速安装&导出开发环境.code.md",
-    "content/posts/@code.python.使用Anaconda管理Python环境.code.md",
-    "content/posts/@code.python.配置Jupyter Notebook默认工作路径.code.md"
+    "content/search.project.md",
+    "content/search.major.md",
+    "content/search.code.md",
+    "content/search.art.md",
+    "content/archives.vrc.md",
+    "content/archives.project.md",
+    "content/archives.major.md",
+    "content/archives.code.md",
+    "content/archives.art.md",
+    "content/posts/_major.Mathematica基础.major.md"
   ]
 }
