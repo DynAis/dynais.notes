@@ -1,4 +1,4 @@
-baseURL: 'https://dynais.github.io/'
+baseURL: 'https://dynais.xyz/'
 languageCode: 'en-us'
 title: 'DynAis'
 theme: 'hugo-PaperMod'
@@ -31,23 +31,23 @@ languages:
         weight: 1
         profileMode:
             enabled: true
-            title: "/* Hi, it's DynAis */" # optional default will be site title
+            title: "/* Hi, it's DynAis (Elusyia)*/" # optional default will be site title
             # subtitle: ""
-            imageUrl: "icon/profile.gif" # optional
+            imageUrl: "icon/bg_101.jpg" # optional
             # imageTitle: "" # optional
             imageWidth: 350 # custom size
             imageHeight: 65  # custom size
             buttons:
-                - name: Major
-                  url: "/major/"
+                # - name: Major
+                #   url: "/major/"
                 - name: Code
                   url: "/code/"
                 - name: Art
                   url: "/art/"
                 - name: VRChat
                   url: "/vrc/"
-                - name: Project
-                  url: "/project/"
+                # - name: Project
+                #   url: "/project/"
 
         socialIcons: # optional
             - name: "twitter"
@@ -63,26 +63,26 @@ languages:
             # - name: "polaris"
             #   url: "https://polaris.dynais.xyz"
 
-    major:
-        languageName: "Major"
-        weight: 2
-        title: Major
-        homeInfoParams:
-            Title: \"Electric Engineering (EE)"
-            Content: >
-                My Major.
+    # major:
+    #     languageName: "Major"
+    #     weight: 2
+    #     title: Major
+    #     homeInfoParams:
+    #         Title: \"Electric Engineering (EE)"
+    #         Content: >
+    #             My Major.
 
-                - Control System | Signal&System | Microcontroller
-        menu:
-            main:
-                - identifier: search
-                  name: Search
-                  url: /search/
-                  weight: 10
-                - identifier: tags
-                  name: Tags
-                  url: /tags/
-                  weight: 20
+    #             - Control System | Signal&System | Microcontroller
+    #     menu:
+    #         main:
+    #             - identifier: search
+    #               name: Search
+    #               url: /search/
+    #               weight: 10
+    #             - identifier: tags
+    #               name: Tags
+    #               url: /tags/
+    #               weight: 20
 
     code:
         languageName: "Code"
@@ -115,7 +115,7 @@ languages:
         homeInfoParams:
             Title: \"Photoshop has stopped working"
             Content: >
-                Drawing for fun. Not professional.
+                Just for fun. Not professional.
 
                 - Photograph | Digital 2D | Digital 3D
         socialIcons:
@@ -141,13 +141,18 @@ languages:
         weight: 5
         title: VRChat
         homeInfoParams:
-            Title: \"A "
-            Content: Unity | Blender | MD | SP | SD | ZB
+            Title: \"A Digital Tailor. A VRChat Player."
+            Content: >
+                I want to share some Techs with you.
+
+                - Unity | Blender | MD | SP | SD | ZB
         socialIcons:
-        - name: "twitter"
-          url: "https://mobile.twitter.com/dyn_ais"
-        - name: discord
-          url: "https://discord.com/channels/DynAis#1788"
+        - name: twitter
+          url: "https://twitter.com/elusyia"
+        - name: sketchfab
+          url: "https://sketchfab.com/elusyia"
+        - name: booth
+          url: "https://elusyia.booth.pm/"
         - name: vrchat
           url: "https://vrchat.com/home/user/usr_2afe6511-0ea4-4e0f-ac66-55767641b1ac"
         menu:

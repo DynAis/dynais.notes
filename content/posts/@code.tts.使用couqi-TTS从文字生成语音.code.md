@@ -5,7 +5,7 @@ tags:
   - TTS
 date: '2022-04-17'
 ShowToc: true
-draft: false
+draft: true
 ---
 描述了如何开箱即用的使用TTS框架进行文本转语音
 <!--more-->
