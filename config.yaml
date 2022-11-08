@@ -151,8 +151,12 @@ languages:
           url: "https://twitter.com/elusyia"
         - name: sketchfab
           url: "https://sketchfab.com/elusyia"
+        - name: "github"
+          url: "https://github.com/elusyia"
         - name: booth
           url: "https://elusyia.booth.pm/"
+        - name: bilibili
+          url: "https://space.bilibili.com/1063977950"
         - name: vrchat
           url: "https://vrchat.com/home/user/usr_2afe6511-0ea4-4e0f-ac66-55767641b1ac"
         menu:
