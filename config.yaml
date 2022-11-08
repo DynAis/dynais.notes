@@ -141,8 +141,8 @@ languages:
         weight: 5
         title: VRChat
         homeInfoParams:
-            Title: \"Metaverse do not need Meta"
-            Content: Unity | Blender | Houdini | MD | SP | ZB
+            Title: \"A "
+            Content: Unity | Blender | MD | SP | SD | ZB
         socialIcons:
         - name: "twitter"
           url: "https://mobile.twitter.com/dyn_ais"
@@ -161,26 +161,26 @@ languages:
                   url: /tags/
                   weight: 20
 
-    project:
-        languageName: "Project"
-        weight: 6
-        title: Project
-        homeInfoParams:
-            Title: \"Project Forever"
-            Content: Personal Project record.
-        socialIcons:
-        - name: github
-          url: "https://github.com/DynAis"
-        menu:
-            main:
-                - identifier: search
-                  name: Search
-                  url: /search/
-                  weight: 10
-                - identifier: tags
-                  name: Tags
-                  url: /tags/
-                  weight: 20
+    # project:
+    #     languageName: "Project"
+    #     weight: 6
+    #     title: Project
+    #     homeInfoParams:
+    #         Title: \"Project Forever"
+    #         Content: Personal Project record.
+    #     socialIcons:
+    #     - name: github
+    #       url: "https://github.com/DynAis"
+    #     menu:
+    #         main:
+    #             - identifier: search
+    #               name: Search
+    #               url: /search/
+    #               weight: 10
+    #             - identifier: tags
+    #               name: Tags
+    #               url: /tags/
+    #               weight: 20
 
 
 # Theme param
