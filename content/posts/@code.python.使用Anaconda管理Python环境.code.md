@@ -5,7 +5,7 @@ tags:
   - Python
 date: '2022-04-16'
 ShowToc: true
-draft: false
+draft: true
 ---
 
 使用Conda更方便得管理Python环境

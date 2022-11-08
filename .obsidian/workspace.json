@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/code.python.使用Anaconda管理Python环境.code.md",
+                "file": "content/posts/@code.python.使用Anaconda管理Python环境.code.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/project.da.DuinoAccess.project.md",
+                "file": "content/posts/_major.Mathematica基础.major.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/project.da.DuinoAccess.project.md",
+                "file": "content/posts/_major.Mathematica基础.major.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,15 +134,15 @@
   },
   "active": "1ffc7044beeb9012",
   "lastOpenFiles": [
-    "content/posts/major.基本概率论.major.md",
-    "content/posts/@code.tts.使用couqi-TTS从文字生成语音.code.md",
-    "content/posts/code.UTF8编解码.code.md",
-    "content/posts/code.UML类图.code.md",
-    "content/posts/major.使用Matlab对系统建模.major.md",
+    "content/posts/art.节奏变化在艺术造型中的应用.art.md",
+    "content/posts/art.ps.线稿提取.art.md",
+    "content/posts/art.vfx.简单VFX工作流.art.md",
     "content/posts/project.da.DuinoAccess.project.md",
-    "content/posts/major.倍压整流电路.major.md",
-    "content/posts/major.采样定理.major.md",
-    "content/posts/major.从全通滤波器到最小相位系统.major.md",
-    "content/posts/major.二进制多项式算术法.major.md"
+    "content/posts/@code.python.Python性能测试.python.md",
+    "content/posts/@code.python.Colab自动挂机代码.code.md",
+    "content/posts/@code.python.在JupyterNotebook中切换环境.code.md",
+    "content/posts/@code.python.使用requirements文件快速安装&导出开发环境.code.md",
+    "content/posts/@code.python.使用Anaconda管理Python环境.code.md",
+    "content/posts/@code.python.配置Jupyter Notebook默认工作路径.code.md"
   ]
 }

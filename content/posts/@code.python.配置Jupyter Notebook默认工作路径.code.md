@@ -5,7 +5,7 @@ tags:
   - Python
 date: '2022-04-16'
 ShowToc: true
-draft: false
+draft: true
 ---
 
 配置Jupyter Notebook默认工作路径

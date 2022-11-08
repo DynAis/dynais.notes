@@ -5,7 +5,7 @@ tags:
   - Python
 date: '2022-04-16'
 ShowToc: true
-draft: false
+draft: true
 ---
 
 通过 `requirements.txt` 文件快速安装和导出python环境的方法

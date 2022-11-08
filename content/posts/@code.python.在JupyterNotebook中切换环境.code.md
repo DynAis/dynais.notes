@@ -5,7 +5,7 @@ tags:
   - Python
 date: '2022-05-04'
 ShowToc: false
-draft: false
+draft: true
 ---
 解决ipy笔记本直接切换环境报错问题
 <!--more-->
