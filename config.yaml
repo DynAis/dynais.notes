@@ -93,7 +93,7 @@ languages:
             Content: >
               Just kidding :D
 
-              - NLP | Transformer | DeepLearning
+              - Python | C/C++ | Matlab
         socialIcons:
         - name: github
           url: "https://github.com/DynAis"
@@ -143,22 +143,20 @@ languages:
         homeInfoParams:
             Title: \"A Digital Tailor. A VRChat Player."
             Content: >
-                I want to share some Techs with you.
+                I want to share some techs with you.
 
                 - Unity | Blender | MD | SP | SD | ZB
         socialIcons:
         - name: twitter
           url: "https://twitter.com/elusyia"
-        - name: sketchfab
-          url: "https://sketchfab.com/elusyia"
         - name: "github"
           url: "https://github.com/elusyia"
         - name: booth
           url: "https://elusyia.booth.pm/"
-        - name: bilibili
-          url: "https://space.bilibili.com/1063977950"
-        - name: vrchat
-          url: "https://vrchat.com/home/user/usr_2afe6511-0ea4-4e0f-ac66-55767641b1ac"
+        - name: polaris
+          url: "https://polaris.dynais.xyz"
+        - name: sketchfab
+          url: "https://sketchfab.com/elusyia"
         menu:
             main:
                 - identifier: search
