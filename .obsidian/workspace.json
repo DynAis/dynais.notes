@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/search.vrc.md",
+                "file": "content/posts/@code.python.Python性能测试.python.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/search.vrc.md",
+                "file": "content/posts/@code.python.Python性能测试.python.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,6 +134,8 @@
   },
   "active": "1ffc7044beeb9012",
   "lastOpenFiles": [
+    "content/posts/_code.python.使用python完成一个简单的控制台应用.code.md",
+    "content/search.vrc.md",
     "content/search.project.md",
     "content/search.major.md",
     "content/search.code.md",
@@ -141,8 +143,6 @@
     "content/archives.vrc.md",
     "content/archives.project.md",
     "content/archives.major.md",
-    "content/archives.code.md",
-    "content/archives.art.md",
-    "content/posts/_major.Mathematica基础.major.md"
+    "content/archives.code.md"
   ]
 }
