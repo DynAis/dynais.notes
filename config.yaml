@@ -33,7 +33,7 @@ languages:
             enabled: true
             title: "/* Hi, it's DynAis (Elusyia)*/" # optional default will be site title
             # subtitle: ""
-            imageUrl: "icon/bg_101.jpg" # optional
+            imageUrl: "icon/bg_102.jpg" # optional
             # imageTitle: "" # optional
             imageWidth: 350 # custom size
             imageHeight: 65  # custom size
