@@ -57,9 +57,9 @@
             "id": "b86dcdf3d54f5b29",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "image",
               "state": {
-                "currentVersion": "1.1.9"
+                "file": "public/favicon-32x32.png"
               }
             }
           }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "static/icon/logo_pjpola_sigle_star.png",
+                "file": "public/favicon-32x32.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,15 +152,15 @@
   },
   "active": "b86dcdf3d54f5b29",
   "lastOpenFiles": [
+    "public/favicon-16x16.png",
+    "public/apple-touch-icon.png",
+    "public/android-chrome-512x512.png",
+    "public/android-chrome-192x192.png",
+    "media/Pasted image 20221106234920.png",
     "static/icon/safari-pinned-tab.svg",
     "static/icon/logo_pjpola_sigle_star.png",
     "static/icon/favicon-32x32.png",
     "static/icon/favicon-16x16.png",
-    "static/icon/android-chrome-512x512.png",
-    "static/icon/android-chrome-192x192.png",
-    "public/android-chrome-512x512.png",
-    "public/android-chrome-192x192.png",
-    "public/favicon-16x16.png",
-    "public/favicon-32x32.png"
+    "static/icon/android-chrome-512x512.png"
   ]
 }
