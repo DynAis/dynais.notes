@@ -62,9 +62,21 @@
                 "file": "public/favicon-32x32.png"
               }
             }
+          },
+          {
+            "id": "d1e4796396e5cba7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "public/vrc/未命名.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "public/favicon-32x32.png",
+                "file": "public/vrc/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,8 +162,9 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "b86dcdf3d54f5b29",
+  "active": "d1e4796396e5cba7",
   "lastOpenFiles": [
+    "public/favicon-32x32.png",
     "public/favicon-16x16.png",
     "public/apple-touch-icon.png",
     "public/android-chrome-512x512.png",
@@ -160,7 +173,6 @@
     "static/icon/safari-pinned-tab.svg",
     "static/icon/logo_pjpola_sigle_star.png",
     "static/icon/favicon-32x32.png",
-    "static/icon/favicon-16x16.png",
-    "static/icon/android-chrome-512x512.png"
+    "static/icon/favicon-16x16.png"
   ]
 }
