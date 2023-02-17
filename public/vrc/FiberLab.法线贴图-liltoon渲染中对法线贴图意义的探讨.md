@@ -24,12 +24,18 @@ A template for quickly generating content.
 闪耀暖暖
 
 Extention
-
+![](Pasted%20image%2020230217075700.png)
+![](Pasted%20image%2020230217075829.png)
 muuque(三角面)
-
+![](Pasted%20image%2020230217080144.png)
+![](Pasted%20image%2020230217080241.png)
+![](Pasted%20image%2020230217080545.png)
 北极星
 
 ## 3.2 面数的影响
+![](Pasted%20image%2020230217080545.png)
+
+![](Pasted%20image%2020230217081342.png)
 
 ## 3.3 法线修改的影响
 
