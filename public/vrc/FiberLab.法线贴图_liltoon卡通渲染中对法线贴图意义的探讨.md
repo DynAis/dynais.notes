@@ -1,13 +1,16 @@
 ---
-title: "How did you find here?"
+title: "FiberLab.法线贴图:liltoon卡通渲染中对法线贴图意义的探讨"
 # author: 
 tags:
-  - TEMPLET
+  - liltoon
+  - normal map
+  - vrchat
+  - fiberlab
 date: '2023-02-17'
 ShowToc: true
 draft: true
 ---
-A template for quickly generating content.
+
 <!--more-->
 
 ---
