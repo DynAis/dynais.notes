@@ -55,10 +55,21 @@ also recommand hires.fix with denoising strength 0.5~0.6.
 if you have some problem with this model, pleas check "Use old karras scheduler sigmas (0.1 to 10)" on settings.
 ```
 
+#### MIX-Pro-V3
+![](Pasted%20image%2020230223225947.png)
+```
+MIX-Pro-V3 使用指南:
+
+All sample images did not using highrexfix
+```
+
+#### Easynegative
+
+
 
 ### 1.2 常用tag
 ```
-flat color, colorful, 1girl, {{white background}}, standing,full body,illustration,extremely detailed CG,8k wallpaper
+flat color, 1girl, solo, {{white background}}, standing, full body, illustration, {{simple background}}, extremely detailed CG
 
 EasyNegative
 ```
