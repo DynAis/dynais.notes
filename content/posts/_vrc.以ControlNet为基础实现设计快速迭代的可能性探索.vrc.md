@@ -69,7 +69,7 @@ All sample images did not using highrexfix
 
 ### 1.2 常用tag
 ```
-flat color, 1girl, solo, {{white background}}, standing, full body, illustration, {{simple background}}, extremely detailed CG
+1girl, solo, (white background:1.3),  (simple background:1.4), standing, full body, illustration, ((masterpiece,best quality)), 
 
 EasyNegative
 ```
