@@ -74,6 +74,10 @@ flat color, 1girl, solo, {{white background}}, standing, full body, illustration
 EasyNegative
 ```
 
+```
+ 959514491
+ 
+```
 ## 2 实用性测试
 
 ### 2.1 场景一: 根据关键词生产设计灵感
