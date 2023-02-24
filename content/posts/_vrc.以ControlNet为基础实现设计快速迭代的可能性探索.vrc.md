@@ -58,7 +58,7 @@ All sample images did not using highrexfix
 
 ### 1.2 常用tag
 ```
-1girl, solo, (simple background:1.4), standing, full body, illustration, ((masterpiece,best quality)), 
+1girl, solo, (simple background:1.4), standing, full body, illustration, ((masterpiece,best quality)), character design
 
 EasyNegative
 ```
