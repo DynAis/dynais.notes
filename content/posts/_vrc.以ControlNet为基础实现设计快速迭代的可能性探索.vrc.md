@@ -58,15 +58,13 @@ All sample images did not using highrexfix
 
 ### 1.2 常用tag
 ```
-1girl, solo, ((White background)), ((Simple background)), standing, full body, illustration, white hair, side braided chignon, short hair,((masterpiece,best quality)), looking at viewer, depth of field
+1girl, solo, ((White background)), ((Simple background)), standing, full body, illustration, white hair, side braided chignon, short hair,((masterpiece,best quality)), looking at viewer, depth of field, cinematic light
+```
 
+```
 EasyNegative, extra fingers,fewer fingers,
 ```
 
-```
-
- 
-```
 ## 2 实用性测试
 
 ### 2.1 场景一: 根据关键词生产设计灵感
