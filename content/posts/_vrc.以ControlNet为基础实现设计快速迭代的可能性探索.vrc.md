@@ -23,7 +23,7 @@ draft: true
 
 ### 1.1 模型选择
 
-#### dalcefo_v3_anime_pastelMix
+#### [dalcefo_v3_anime_pastelMix](https://civitai.com/models/5398/dalcefov3animepastelmix)
 
 ![](Pasted%20image%2020230223225307.png)
 ```
@@ -39,7 +39,8 @@ if you have some problem with this model, pleas check "Use old karras scheduler 
 ```
 
 
-#### MIX-Pro-V3
+#### [MIX-Pro-V3](https://civitai.com/models/7241/mix-pro-v3)
+
 ![](Pasted%20image%2020230223225947.png)
 ```
 MIX-Pro-V3 使用指南:
@@ -47,10 +48,11 @@ MIX-Pro-V3 使用指南:
 All sample images did not using highrexfix
 ```
 
-#### Counterfeit v2.5
+#### [Counterfeit v2.5](https://huggingface.co/gsdf/Counterfeit-V2.5)
+
 ![](Pasted%20image%2020230224022458.png)
 
-#### Easynegative
+#### [Easynegative](https://huggingface.co/datasets/gsdf/EasyNegative)
 
 
 
@@ -69,19 +71,27 @@ EasyNegative
 
 ### 2.1 场景一: 根据关键词生产设计灵感
 
+
 ### 2.2 场景二: 根据配色生产设计灵感
+
 
 ### 2.3 场景三: 根据已有线稿生产服装细节
 
+
 ### 2.4 场景四: 设计变异
+
 
 ### 2.5 场景五: 配色变异
 
+
 ### 2.6 场景六: 基于设计图打光/AO
+
 
 ### 2.7 场景七: 基于贴图打光/AO
 
+
 ### 2.8 场景八: 基于渲染图打光/AO
+
 
 ## 3 总结
 
