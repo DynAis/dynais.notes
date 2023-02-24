@@ -58,9 +58,9 @@ All sample images did not using highrexfix
 
 ### 1.2 常用tag
 ```
-1girl, solo, (simple background:1.4), standing, full body, illustration, ((masterpiece,best quality)), character design
+1girl, solo, (White background:1.4), standing, full body, illustration, white hair, side braided chignon, short hair,((masterpiece,best quality)), character design, looking at viewer, on ground, depth of field  
 
-EasyNegative
+EasyNegative, extra fingers,fewer fingers,
 ```
 
 ```
