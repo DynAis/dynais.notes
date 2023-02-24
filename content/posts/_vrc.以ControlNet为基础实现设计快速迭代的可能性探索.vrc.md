@@ -38,22 +38,6 @@ also recommand hires.fix with denoising strength 0.5~0.7.
 if you have some problem with this model, pleas check "Use old karras scheduler sigmas (0.1 to 10)" on settings.
 ```
 
-#### dalcefo_v3_painting
-
-![](Pasted%20image%2020230223225335.png)
-```
-dalcefo_v3_painting 使用指南:
-
-trigger word is "dalcefo" but it might needs not.
-
-strongly recommand "realistic" prompt
-
-without the prompt "realistic" generate anime style.
-
-also recommand hires.fix with denoising strength 0.5~0.6.
-
-if you have some problem with this model, pleas check "Use old karras scheduler sigmas (0.1 to 10)" on settings.
-```
 
 #### MIX-Pro-V3
 ![](Pasted%20image%2020230223225947.png)
@@ -63,19 +47,22 @@ MIX-Pro-V3 使用指南:
 All sample images did not using highrexfix
 ```
 
+#### Counterfeit v2.5
+![](Pasted%20image%2020230224022458.png)
+
 #### Easynegative
 
 
 
 ### 1.2 常用tag
 ```
-1girl, solo, (white background:1.3),  (simple background:1.4), standing, full body, illustration, ((masterpiece,best quality)), 
+1girl, solo, (simple background:1.4), standing, full body, illustration, ((masterpiece,best quality)), 
 
 EasyNegative
 ```
 
 ```
- 959514491
+
  
 ```
 ## 2 实用性测试
