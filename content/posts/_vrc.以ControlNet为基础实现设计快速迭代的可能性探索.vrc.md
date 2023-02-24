@@ -58,7 +58,7 @@ All sample images did not using highrexfix
 
 ### 1.2 常用tag
 ```
-1girl, solo, (White background:1.4), standing, full body, illustration, white hair, side braided chignon, short hair,((masterpiece,best quality)), character design, looking at viewer, on ground, depth of field  
+1girl, solo, ((White background)), ((Simple background)), standing, full body, illustration, white hair, side braided chignon, short hair,((masterpiece,best quality)), looking at viewer, depth of field
 
 EasyNegative, extra fingers,fewer fingers,
 ```
@@ -70,7 +70,7 @@ EasyNegative, extra fingers,fewer fingers,
 ## 2 实用性测试
 
 ### 2.1 场景一: 根据关键词生产设计灵感
-关键词: 森林, 百合花
+关键词: 
 
 ### 2.2 场景二: 根据配色生产设计灵感
 
