@@ -149,14 +149,13 @@
                 "file": "未命名.canvas",
                 "viewState": {
                   "x": 0,
-                  "y": 0,
+                  "y": -465,
                   "zoom": 0
                 }
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -176,7 +175,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名.canvas",
+                "file": "content/posts/_vrc.以ControlNet为基础实现设计快速迭代的可能性探索.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -204,10 +203,10 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "9ac31256fcef1816",
+  "active": "42a941af53a912f5",
   "lastOpenFiles": [
-    "content/posts/_vrc.以ControlNet为基础实现设计快速迭代的可能性探索.vrc.md",
     "未命名.canvas",
+    "content/posts/_vrc.以ControlNet为基础实现设计快速迭代的可能性探索.vrc.md",
     "content/posts/_vrc.A In-Game 3D navigation system - OminiController().vrc.md",
     "media/Pasted image 20230224022458.png",
     "media/Pasted image 20230223225947.png",
