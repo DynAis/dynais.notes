@@ -43,8 +43,16 @@ A template for quickly generating content.
 对Y施加动画
 {GIF动画演示}
 
-## 
+## 防止移动时穿模
+![](Pasted%20image%2020230303142047.png)
 
+## 性能
+无
+![](Pasted%20image%2020230303143134.png)
+LOD3
+![](Pasted%20image%2020230303143207.png)
+LOD2
+![](Pasted%20image%2020230303143254.png)
 ## References
 - [Unity Documents: Cloth](https://docs.unity3d.com/Manual/class-Cloth.html)
 - [Cloth Physics Tutorial Unity 2019.4.31](https://www.youtube.com/watch?v=x91OyRjruxo)
