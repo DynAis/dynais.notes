@@ -95,14 +95,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/_vrc.以ControlNet为基础实现设计快速迭代的可能性探索.vrc.md",
+                "file": "content/posts/_vrc.A In-Game 3D navigation system - OminiController().vrc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "607309ae0b870b18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/_vrc.Unity布料系统及在角色服装上的使用.vrc.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -175,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/_vrc.以ControlNet为基础实现设计快速迭代的可能性探索.vrc.md",
+                "file": "content/posts/_vrc.Unity布料系统及在角色服装上的使用.vrc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -203,32 +215,34 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "42a941af53a912f5",
+  "active": "607309ae0b870b18",
   "lastOpenFiles": [
-    "未命名.canvas",
-    "content/posts/_vrc.以ControlNet为基础实现设计快速迭代的可能性探索.vrc.md",
+    "content/posts/Cloth.md",
+    "content/posts/_vrc.Unity布料系统及在角色服装上的使用.vrc.md",
     "content/posts/_vrc.A In-Game 3D navigation system - OminiController().vrc.md",
+    "content/posts/_vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md",
+    "content/posts/_vrc.Build a OpenHAB OS and MQTT server.vrc.md",
+    "content/posts/_vrc.FiberLab.法线贴图_liltoon卡通渲染中对法线贴图意义的探讨.vrc.md",
+    "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
+    "content/posts/_vrc.以ControlNet为基础实现设计快速迭代的可能性探索.vrc.md",
+    "content/posts/_vrc.详解ParentConstraint.vrc.md",
+    "content/posts/@art.Spleeter实现背景人声轨道分离.art.md",
+    "未命名.canvas",
     "media/Pasted image 20230224022458.png",
     "media/Pasted image 20230223225947.png",
-    "content/posts/_vrc.FiberLab.法线贴图_liltoon卡通渲染中对法线贴图意义的探讨.vrc.md",
-    "content/posts/_vrc.Build a OpenHAB OS and MQTT server.vrc.md",
     "content/posts/_vrc.Trick to quickly pose avatar and bring it back to Unity.vrc.md",
-    "content/posts/_vrc.VRC自定义模型工作流.vrc.md",
     "content/posts/art.vfx.简单VFX工作流.art.md",
     "content/posts/art.ps.线稿提取.art.md",
     "content/posts/@vrc.一种提取艾尔登法环游戏模型的方法.vrc.md",
     "content/posts/@vrc.blender.Blender-MD动画数据流程.vrc.md",
     "content/posts/@art.使用ARKIT在网页嵌入USDZ文件.art.md",
-    "content/posts/_vrc.详解ParentConstraint.vrc.md",
     "media/Pasted image 20230223225335.png",
     "media/Pasted image 20230223225307.png",
     "content/posts/art.节奏变化在艺术造型中的应用.art.md",
     "content/posts/_project.tclk.番茄钟基本功能建设.project.md",
     "public/favicon-32x32.png",
-    "content/posts/_vrc.blender.在Blender中拷贝任意骨骼动作.vrc.md",
     "content/posts/@major.PSpice中常用的Cursor查询命令.major.md",
     "content/posts/@code.python.解决Python脚本在运行环境下依赖库缺失的问题.code.md",
-    "content/posts/@art.Spleeter实现背景人声轨道分离.art.md",
     "content/archives.code.md",
     "content/archives.major.md",
     "content/archives.vrc.md",
