@@ -58,7 +58,7 @@ All sample images did not using highrexfix
 
 ### 1.2 常用tag
 ```
-1girl, solo, ((White background)), ((Simple background)), standing, full body, illustration, white hair, side braided chignon, short hair,((masterpiece,best quality)), looking at viewer, depth of field, cinematic light
+1girl, solo, ((White background)), standing, full body, illustration, white hair, side braided chignon, short hair,((masterpiece,best quality)), looking at viewer, depth of field
 ```
 
 ```
